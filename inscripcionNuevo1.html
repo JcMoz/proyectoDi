@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SICNO</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+     <link href="css/estilo.css" rel="stylesheet">
+
+  </head>
+
+  <body class="fixed-nav sticky-footer  bg-info" id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top" id="mainNav">
+      <a class="navbar-brand" href="#">SICNO</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav bg-secondary " id="exampleAccordion">
+
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+              <i class="fa fa-fw fa-circle" style="color: white"></i>
+              <span class="nav-link-text" style="color: white">
+                Inscripción</span>
+            </a>
+            <ul class="sidenav-second-level collapse bg-secondary " id="collapseComponents">
+              <li>
+                <a href="inscripcionNuevo.html" style="color: white">Nuevo</a>
+              </li>
+              <li>
+                <a href="#" style="color: white">Antiguo</a>
+              </li>
+            </ul>         
+
+          </li>
+        </ul>
+
+        <ul class="navbar-nav sidenav-toggler">
+          <li class="nav-item">
+            <a class="nav-link text-center bg-secondary "  id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left" style="color: white"></i>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal"  style="color: white" data-target="#exampleModal">
+              <i class="fa fa-fw fa-sign-out" style="color: white"></i>
+              Usuario</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+   
+    <!-- /.content-wrapper Mi codigo -->
+        <div class="content-wrapper">
+     <div class="container-fluid">
+     <font face="Arial Narrow" size="5" color="#001f4d">Ficha de resgistro de estudiantes.
+     </font>
+       
+       <div class="row">
+         
+   
+   
+          <div class="col-md-8">
+            <div class="panel panel-default">
+            <div class="panel-heading" align="center">Datos de matricula</div>
+              <div class="panel-body">
+              <font face="Arial Narrow" size="4" color="#001f4d">Turno : </font>
+              <input type="radio" name="turnoMa">Mañana
+              <input type="radio" name="turnoTa">Tarde &nbsp &nbsp &nbsp &nbsp &nbsp
+              <font face="Arial Narrow" size="4" color="#001f4d"> Nivel : </font>
+              <input type="radio" name="nivel1">Primer Ciclo
+              <input type="radio" name="nivel2">Segundo Ciclo
+              <input type="radio" name="nivel3">Tercer Ciclo
+                    <div align="center">
+                      <font face="Arial Narrow" size="4" color="#001f4d">Grado a matricular : </font>
+                      
+                     <select name="Grado">
+    <option value="pri">Primero</option>
+    <option value="se">Segundo</option>
+    <option value="ter">Tercero</option>
+     <option value="cuar">Cuarto</option>
+      <option value="quin">Quinto</option>
+       <option value="sex">Sexto</option>
+        <option value="sep">Séptimo</option>
+         <option value="oct">Octavo</option>
+          <option value="nov">Noveno</option>
+</select>
+  &nbsp &nbsp &nbsp <font face="Arial Narrow" size="4" color="#001f4d">Secciones: </font>
+   <select name="Secciones">
+    <option value=seA>A</option>
+    <option value="seB">B</option>
+    <option value="secC">C</option>
+    </select>
+                        
+                      </div>
+                     
+                      
+                       
+                       <br><div align="center">
+                         <input class="form-control" type="text" placeholder=" Documentos que presento para la Matricula " align="center" name="nie">
+                       </div>
+                       <br>
+                      
+
+            </div>
+            <br>
+            <div class="panel-heading" align="center">Datos de Familiares</div>
+              <div class="panel-body">
+              <div align="center">
+                 <font face="Arial Narrow" size="4" color="#001f4d">Datos del padre </font> <br>
+              </div>
+              
+               &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomP" placeholder="     Nombres del Padre " size="40">   &nbsp &nbsp &nbsp
+                <INPUT class="form-group" type="text"  name="apelliP" placeholder=" Apellidos  " size="40"><br>
+                 &nbsp &nbsp<INPUT class="form-group" type="text"  name="profesionP" placeholder="Profesion u oficio " size="15">
+                 &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telP" placeholder=" Telefono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiP" placeholder="    Dui  " size="15">
+                 <INPUT class="form-control" type="text"  name="direccionP" placeholder="  Direccion  ">
+                 <br>
+            </div><!--cierre de panel body-->
+            
+         
+        </div>
+     </div>
+      <div class="col-md-4">
+            <div class="panel panel-default">
+            <div class="panel-body">
+                  <!--imagen   -->
+                  <div align="center">
+                  <img src="imagenes/inscripcion4.jpg" class="img-responsive">
+                  </div>
+                </div> 
+                <br>
+            <div align="center">
+              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-info" onclick="location='/DiseñoPrueba/inscripcionNuevo2.html'" >
+               <input type="submit" value="Cancelar" name="cancel" class="btn-secondary">
+             
+            </div>
+        </div>
+     </div>
+     </div>
+     </div>
+     </div>
+    
+        <!--Mi codigo -->
+
+    <footer class="sticky-footer" >
+      <div class="container">
+        <div class="text-center">
+          <small>Derechos Reservados UES-FMP 2017</small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up" ></i>
+    </a>
+
+    <!-- Logout Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Select "Logout" below if you are ready to end your current session.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/sb-admin.min.js"></script>
+
+  </body>
+
+</html>
