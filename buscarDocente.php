@@ -1,3 +1,8 @@
+<?php 
+  session_start();
+  include_once "php_conexion.php";
+    error_reporting(0);
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,8 +27,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/estilo.css" rel="stylesheet">
-    
+     <link href="css/estilo.css" rel="stylesheet">
 
   </head>
 
@@ -52,8 +56,7 @@
               <li>
                 <a href="#" style="color: white">Antiguo</a>
               </li>
-            </ul>         
-
+            </ul> 
           </li>
 <!--Termina Modulo de inscripcion-->
 <!--Modulo de Creacion de Horarios-->
@@ -135,10 +138,10 @@
             </a>
             <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseDocentes">
               <li><!--poner codigo de los que contiene el modulo de expediente docente-->
-                <a href="ingresarDocente.html"  style="color: white">Registrar Docente</a>
-              </li>
+                <a href="ingresarDocente.php"  style="color: white">Registrar Docente</a>
+              </li>s
               <li>
-                <a href="register.html"  style="color: white">Modificar Docente</a>
+                <a href="buscarDocente.php"  style="color: white">Modificar Docente</a>
               </li>
             </ul>
           </li>
@@ -167,6 +170,8 @@
             </ul>
           </li>
 <!--Termina Modulo de Reportes-->
+
+
         </ul><!--cierre-->
 
         <ul class="navbar-nav sidenav-toggler">
@@ -190,100 +195,168 @@
 
    
     <!-- /.content-wrapper -->
-   <div class="content-wrapper">
-     <div class="container-fluid">
-     <font face="Arial Narrow" size="5" color="#001f4d">Ficha de resgistro de estudiantes.
-     </font>
-       
+     <div class="content-wrapper">
+     <div class="container-fluid">     
        <div class="row">
-         
-   
-   
-          <div class="col-md-8">
-            <div class="panel panel-default">
-            <div class="panel-heading" align="center">Estudios Realizados</div>
-              <div class="panel-body"><!--panel estudios realizados-->
-              <br>
-                   &nbsp &nbsp&nbsp<INPUT class="form-group" type="text"  name="Ugrado" placeholder=" Ultimo Grado que curso ">
-                     &nbsp &nbsp &nbsp  &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<INPUT class="form-group" type="text"  name="añoC" placeholder="Año que lo Curso">  &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                       <input class="form-control" type="text"  placeholder=" Nombre del centro educativo  " name="inCurso"> 
-                       <br>
-                       <div align="center">
-                         <input class="form-group" type="text" placeholder="       Codigo" name="cod">
-                       </div>
-                      
+         <div class="col-md-12">
+         <!--Aqui-->
+          <div align="center">
+      <table width="90%">
+          <tr>
+            <td>
+              <table class="table table-bordered">
+                  <tr class="info">
+                    <td>
+                      <div class="row-fluid">
+                            <div class="span6">
+                              <h2 class="text-info">
+                                    <img src="img/profesor.png" width="80" height="80">
+                                    Expediente Docente
+                                </h2>
+                            </div>
+                            <div class="span6">
+                              <form name="form1" method="post" action="">
+                                  <div class="input-append">
+                                  <input type="text" name="buscar" class="input-xlarge" autocomplete="off" autofocus placeholder="Buscar Profesores">
+                                    <button type="submit" class="btn-secondary">
+                                    <strong>
+                                    <i class="icon-search"></i> Buscar
+                                    </strong>
+                                    </button>
+                                     
+                                    </div>
 
-       </div>
-            <br> <br>
-            <div class="panel-heading" align="center">Datos de matricula</div>
-              <div class="panel-body">
-              <br>
-              &nbsp &nbsp<font face="Arial Narrow" size="4" color="#001f4d">Turno : </font>
-              <input type="radio" name="turnoMa">Mañana
-              <input type="radio" name="turnoTa">Tarde &nbsp &nbsp &nbsp &nbsp &nbsp
-              <font face="Arial Narrow" size="4" color="#001f4d"> Nivel : </font>
-              <input type="radio" name="nivel1">Primer &nbsp &nbsp
-              <input type="radio" name="nivel2">Segundo &nbsp &nbsp
-              <input type="radio" name="nivel3">Tercer Ciclo
+                                </form>
+                                 <input type="submit" value="Ingresar nuevo docente" name="Guardar" class="btn btn-info" onclick="location='/proyectoDi/ingresarDocente.php'" > 
 
-                    <div align="center">
-                    <br>
-                      <font face="Arial Narrow" size="4" color="#001f4d">Grado a matricular : </font>
-                      
-                     <select name="Grado">
-    <option value="pri">Primero</option>
-    <option value="se">Segundo</option>
-    <option value="ter">Tercero</option>
-     <option value="cuar">Cuarto</option>
-      <option value="quin">Quinto</option>
-       <option value="sex">Sexto</option>
-        <option value="sep">Séptimo</option>
-         <option value="oct">Octavo</option>
-          <option value="nov">Noveno</option>
-</select>
-  &nbsp &nbsp &nbsp <font face="Arial Narrow" size="4" color="#001f4d">Secciones: </font>
-   <select name="Secciones">
-    <option value=seA>A</option>
-    <option value="seB">B</option>
-    <option value="secC">C</option>
-    </select>
+                            </div>
+                        </div>
+                    </td>
+                  </tr>
+                </table>
+            </td>
+          </tr>
+        </table>
+        
+        <table width="90%">
+          <tr>
+            <td>
+                 <!--Esta es la tabla de los maestros-->
+              <table class="table table-bordered table table-hover">
+                  <tr class="info">
+                    
+                    <td><strong class="text-info">Nombre y Apellido</strong></td>
+                    <td><strong class="text-info">DUI</strong></td>
+                    <td><strong class="text-info">NIP</strong></td>
+                    <td><strong class="text-info">NIT</strong></td>
+                    <td><strong class="text-info">Especialidad</strong></td>
+                    <td><strong class="text-info">Celulares</strong></td>
+                    <td><center><strong class="text-info">Estado</strong></center></td>
+                    <td> </td>
+                  </tr>
+                  <?php
+            if(!empty($_POST['buscar'])){
+              $buscar=limpiar($_POST['buscar']);
+              $pa=mysql_query("SELECT * FROM docente WHERE nom_doc LIKE '%$buscar%' or ape_doc LIKE '%$buscar%'");          
+            }else{
+              $pa=mysql_query("SELECT * FROM docente");        
+            }
+            while($row=mysql_fetch_array($pa)){
+              if($row['tipo']=='a'){
+                $tipo='Administrador';
+              }else{
+                $tipo='Profesor';
+              }
+          ?>
+                  <tr>
+                    <td><?php echo $row['nom_doc'].' '.$row['ape_doc']; ?></td>
+                    <td><?php echo $row['dui_doc']; ?></td>
+                    <td><?php echo $row['nip_doc']; ?></td>
+                    <td><?php echo $row['nit']; ?></td>
+                    <td><?php echo $row['esp_doc']; ?></td>
+                    <td><?php echo $row['cel']; ?></td>
+                    <td><center><?php echo estado($row['estado']); ?></center></td>
+                    <td><a href="" class="btn btn-secondary" >editar</a></td>
+                    <td>
+                      <center>
+                          <a href="#a<?php echo $row['id']; ?>" title="Editar Profesor" role="button" class="btn mine" data-toggle="modal">
+                              <i class="icon-edit"></i>
+                            </a>
+                        </center>
                         
-                      </div>
-                     
-                      
-                       
-                       <br><div align="center">
-                         <input class="form-control" type="text" placeholder=" Documentos que presento para la Matricula " align="center" name="nie">
+                        <div id="a<?php echo $row['id_doc']; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <form name="form2" method="post" action="">
+                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h3 id="myModalLabel">Actualizar Profesor</h3>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <strong>DUI</strong><br>
+                                        <input type="text" name="doc" autocomplete="off" readonly value="<?php echo $row['doc']; ?>"><br>
+                                        <strong>NIT</strong><br>
+                                        <input type="text" name="nit" autocomplete="off" readonly value="<?php echo $row['nit']; ?>"><br>
+                                        <strong>Nombre del Profesor</strong><br>
+                                        <input type="text" name="nom" autocomplete="off" required value="<?php echo $row['nom']; ?>"><br>
+                                        <strong>Apellidos del Profesor</strong><br>
+                                        <input type="text" name="ape" autocomplete="off" required value="<?php echo $row['ape']; ?>"><br>
+                                        <strong>Especialidades</strong><br>
+                                        <input type="text" name="especialidad" autocomplete="off" required value="<?php echo $row['especialidad'];?>"><br>
+                                        <strong>Correo</strong><br>
+                                        <input type="email" name="correo" autocomplete="off" required value="<?php echo $row['correo']; ?>"><br>
+                                        <strong>Tipo de Usuario</strong><br>
+                                        <select name="tipo">
+                                          <option value="p" <?php if($row['tipo']=='p'){ echo 'selected'; } ?>>Profesor</option>
+                                            <option value="a" <?php if($row['tipo']=='a'){ echo 'selected'; } ?>>Administrador</option>
+                                        </select>
+                                    </div>
+                                    <div class="span6">
+                                        <strong>NIP</strong><br>
+                                        <input type="text" name="nip" autocomplete="off" readonly value="<?php echo $row['nip']; ?>"><br>
+                                        <strong>Nivel</strong><br>
+                                        <input type="text" name="nivel" autocomplete="off" required value="<?php echo $row['nivel']; ?>"><br>
+                                        <strong>Dirección</strong><br>
+                                        <input type="text" name="dir" autocomplete="off" required value="<?php echo $row['dir']; ?>"><br>
+                                        <strong>Teléfonos</strong><br>
+                                        <input type="text" name="tel" autocomplete="off" value="<?php echo $row['tel']; ?>"><br>
+                                        <strong>Celulares</strong><br>
+                                        <input type="text" name="cel" autocomplete="off" required value="<?php echo $row['cel']; ?>"><br>
+                                        <strong>Fecha de Nacimiento</strong><br>
+                                        <input type="date" name="fecha" autocomplete="off" required value="<?php echo $row['fecha']; ?>"><br>
+                                        <strong>Estado</strong><br>
+                                        <select name="estado">
+                                            <option value="s" <?php if($row['estado']=='s'){ echo 'selected'; } ?>>Activo</option>
+                                            <option value="n" <?php if($row['estado']=='n'){ echo 'selected'; } ?>>No Activo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> <strong>Cerrar</strong></button>
+                                <button type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>Actualizar Registro</strong></button>
+                            </div>
+                            </form>
                        </div>
-                       <br>
-
-            </div><!--cierre de panel body-->
-            <br>
-            
-         
-        </div>
-     </div>
-      <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                  <!--imagen   -->
-                  <div align="center">
-                  <img src="imagenes/inscripcion3.png" class="img-responsive">
-                  </div>
-              
-                </div>
-                <br> <br> <br>
-                <div align="center">
-              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-info" onclick="location='/proyectoDi/inscripcionNuevo1.html'">
-              <input type="submit" value="Cancelar" name="cancel" class="btn-secondary">
-            </div>    
-        </div>
-     </div>
-     </div>
+                        
+                    </td>
+                  </tr>
+                  <?php } ?>
+                </table>
+                <!--Fin tabla maestro-->
+            </td>
+          </tr>
+        </table>
+    
+    </div>
 
      </div>
      </div>
-        <!--Mi codigo -->
+     </div>
+     </div>
+    
+        <!--ojo -->
 
     <footer class="sticky-footer" >
       <div class="container">

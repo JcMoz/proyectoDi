@@ -22,8 +22,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin.css" rel="stylesheet">
-    <!--my css JcMoz-->
-    <link href="css/estilos.css" rel="stylesheet">
+     <link href="css/estilo.css" rel="stylesheet">
 
   </head>
 
@@ -37,25 +36,24 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav bg-secondary " id="exampleAccordion">
+
 <!--Modulo de inscripcion-->
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inscripcion">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInscripcion" data-parent="#exampleAccordion">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
               <i class="fa fa-fw fa-circle" style="color: white"></i>
               <span class="nav-link-text" style="color: white">
                 Inscripción</span>
             </a>
-            <ul class="sidenav-second-level collapse bg-secondary " id="collapseInscripcion">
+            <ul class="sidenav-second-level collapse bg-secondary " id="collapseComponents">
               <li>
                 <a href="inscripcionNuevo.html" style="color: white">Nuevo</a>
               </li>
               <li>
                 <a href="#" style="color: white">Antiguo</a>
               </li>
-            </ul>         
-
+            </ul> 
           </li>
 <!--Termina Modulo de inscripcion-->
-
 <!--Modulo de Creacion de Horarios-->
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Creacion de horarios">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCreacion" data-parent="#exampleAccordion">
@@ -116,6 +114,12 @@
               <li>
                 <a href="register.html"  style="color: white">Registration Page</a>
               </li>
+              <li>
+                <a href="forgot-password.html"  style="color: white">Forgot Password Page</a>
+              </li>
+              <li>
+                <a href="blank.html"  style="color: white">Blank Page</a>
+              </li>
             </ul>
           </li>
 <!--Termina Modulo de Control de notas-->
@@ -133,12 +137,6 @@
               </li>
               <li>
                 <a href="buscarDocente.php"  style="color: white">Modificar Docente</a>
-              </li>
-              <li>
-                <a href="forgot-password.html"  style="color: white">Forgot Password Page</a>
-              </li>
-              <li>
-                <a href="blank.html"  style="color: white">Blank Page</a>
               </li>
             </ul>
           </li>
@@ -167,7 +165,9 @@
             </ul>
           </li>
 <!--Termina Modulo de Reportes-->
-        </ul><!-- cierre -->
+
+
+        </ul><!--cierre-->
 
         <ul class="navbar-nav sidenav-toggler">
           <li class="nav-item">
@@ -189,26 +189,93 @@
     </nav>
 
    
-    <!-- /.content-wrapper -->
-    <div class="content" align="center">
-    <div class="row">
-  <div class="col-md-12" align="center">
-      <div align="center">
-                  <img src="imgE/.jpg" class="img-responsive" width="70%">
+    <!-- /.content-wrapper mi codigo-->
+     <div class="content-wrapper">
 
+     <div class="container-fluid"> <!--Comienza container Fluid-->
+
+     <font face="Arial Narrow" size="5" color="#001f4d">Ingresar docente.</font>
+       
+       <div class="row"> <!--Comienza los row-->
+
+         <div class="col-md-8">
+            <div class="panel panel-default">
+            <br>
+            <div class="panel-heading" align="center">Datos de docente</div>
+              <div class="panel-body">
+              <br>
+                  &nbsp<INPUT class="form-group" type="text"  name="nombreDo" placeholder="        Nombres del docente" size="35">
+                       &nbsp &nbsp<INPUT class="form-group" type="text"  name="apellidosDo" placeholder="      Apellidos del docente" size="35"><br>
+                        <input class="form-control" type="text" name="direccionDo" placeholder="     Direccion      "> 
+                        <br>
+                        <div align="center">
+                        <INPUT class="form-group" type="text"  name="telDo" placeholder="   Telefono" size="15"> &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+                        <font face="Arial Narrow" size="4" color="#001f4d">Genero : </font>
+                      <select name="Genero">
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        
+                    </select>
+                          
+                        </div>
+                      
+
+                       &nbsp &nbsp &nbsp &nbsp<font face="Arial Narrow" size="4" color="#001f4d">Fecha de nacimiento : </font> 
+                       <input class="form-group" type="date" name="fecha">
+                       <br>
+                       <input class="form-control" type="text" name="direccionDo" placeholder="     Correo electronico      "> 
+
+                       <br>
+                       
+
+                         &nbsp &nbsp &nbsp &nbsp<input class="form-group" type="text" placeholder="           Nip      " align="center" name="nip"> &nbsp &nbsp
+                         <input class="form-group" type="text" placeholder="           Nit      " align="center" name="nit">&nbsp &nbsp <input class="form-group" type="text" placeholder="           Dui      " align="center" name="dui">
+                    <br>
+                    <input class="form-control" type="text" name="direccionDo" placeholder="    Especialidad     "> 
+                    
+                      
+                      
+     <br>
+            </div><!--cierre del panel body-->
+            <br>
+
+            <br>
+          </div>
+     </div>
+          <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                  <!--imagen   -->
+                  <div align="center">
+                  <img src="imagenes/inscripcion1.gif" class="img-responsive">
                   </div>
-         </div>
+              
+                </div>
+                <br> <br> <br>
+                <div align="center">
+              <input type="submit" value="Guardar" name="guardar" class="btn btn-info">
+              <input type="submit" value="Cancelar" name="cancel" class="btn-secondary">
+            </div>    
+        </div>
+     </div>
+   
+   
+        
+     </div> <!--Termina los row-->
+
+     </div><!--Termina container fluid-->
+
+     </div><!--cierrre de content-wrapper mi codigo-->
+    
         <!--ojo -->
 
     <footer class="sticky-footer" >
       <div class="container">
         <div class="text-center">
           <img src="imagenes/mine.png" width="50" height="50">
-        <small>Derechos Reservados UES-FMP 2017</small>
-          <img src="imagenes/mine.png" width="50" height="50">
-        
+          <small>Derechos Reservados UES-FMP 2017</small>
+            <img src="imagenes/mine.png" width="50" height="50">
         </div>
-        
       </div>
     </footer>
 
