@@ -58,6 +58,102 @@ include_once './molde/menu_navegacion.php';
                             <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Calificar</a>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="text-center">1224554</td>
+                        <td class="text-center">Buky Albino</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">ok</td>
+                        <td class="text-center">ko</td>
+                        <td class="text-center">
+                            <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Calificar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1224554</td>
+                        <td class="text-center">Buky Albino</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">ok</td>
+                        <td class="text-center">ko</td>
+                        <td class="text-center">
+                            <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Calificar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1224554</td>
+                        <td class="text-center">Buky Albino</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">ok</td>
+                        <td class="text-center">ko</td>
+                        <td class="text-center">
+                            <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Calificar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1224554</td>
+                        <td class="text-center">Chele Oscuro</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">ok</td>
+                        <td class="text-center">ko</td>
+                        <td class="text-center">
+                            <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Calificar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1224554</td>
+                        <td class="text-center">Buky Albino</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">ok</td>
+                        <td class="text-center">ko</td>
+                        <td class="text-center">
+                            <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Calificar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1224554</td>
+                        <td class="text-center">Buky Albino</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">ok</td>
+                        <td class="text-center">ko</td>
+                        <td class="text-center">
+                            <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Calificar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1224554</td>
+                        <td class="text-center">Buky Albino</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">ok</td>
+                        <td class="text-center">ko</td>
+                        <td class="text-center">
+                            <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Calificar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1224554</td>
+                        <td class="text-center">Buky Albino</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">ok</td>
+                        <td class="text-center">ko</td>
+                        <td class="text-center">
+                            <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Calificar</a>
+                        </td>
+                    </tr>
 
 
                 </tbody>
