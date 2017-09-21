@@ -46,7 +46,7 @@
             </a>
             <ul class="sidenav-second-level collapse bg-secondary " id="collapseInscripcion">
               <li>
-                <a href="inscripcionNuevo.html" style="color: white">Nuevo</a>
+                <a href="inscripcionNuevo.php" style="color: white">Nuevo</a>
               </li>
               <li>
                 <a href="#" style="color: white">Antiguo</a>
@@ -111,10 +111,10 @@
             </a>
             <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseNotas">
               <li><!--poner codigo de los que contiene el control de notas-->
-                <a href="login.html"  style="color: white">Login Page</a>
+                <a href="ingresoActividades.php"  style="color: white">Ingreso de Actividades</a>
               </li>
               <li>
-                <a href="register.html"  style="color: white">Registration Page</a>
+                <a href="registrarNotas.php"  style="color: white">Registrar Notas</a>
               </li>
             </ul>
           </li>

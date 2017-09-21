@@ -25,5 +25,4 @@
 
     </head>
 
-    <body class="fixed-nav sticky-footer  bg-info" id="page-top">
-    
+    <body>

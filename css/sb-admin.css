@@ -8,7 +8,8 @@ html {
   min-height: 100%; }
 
 body.sticky-footer {
-  margin-bottom: 56px; }
+  margin-bottom: 56px; 
+}
   body.sticky-footer .content-wrapper {
     min-height: calc(100vh - 56px - 56px); }
 
@@ -29,7 +30,8 @@ body.fixed-nav {
   text-align: center;
   color: white;
   background: rgba(52, 58, 64, 0.5);
-  line-height: 45px; }
+  line-height: 45px;
+   }
   .scroll-to-top:focus, .scroll-to-top:hover {
     color: white; }
   .scroll-to-top:hover {
@@ -349,3 +351,13 @@ footer.sticky-footer {
 @media (min-width: 992px) {
   body.sidenav-toggled footer.sticky-footer {
     width: calc(100% - 55px); } }
+
+   <style type="text/css"> 
+   div.scroll_horizontal {
+    width: 400px;
+    overflow: auto;
+    border: 1px solid #666;
+    background-color: #ccc;
+    padding: 8px;
+   }
+   </style>
