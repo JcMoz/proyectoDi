@@ -29,11 +29,11 @@
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCreacion" data-parent="#exampleAccordion">
                             <i class="fa fa-fw fa-circle" style="color: white"></i>
                             <span class="nav-link-text" style="color: white">
-                                Creacion de Horarios</span>
+                                Creación de Horarios</span>
                         </a>
                         <ul class="sidenav-second-level collapse bg-secondary " id="collapseCreacion">
                             <li>
-                                <a href="login.html" style="color: white">Login Page</a>
+                                <a href="creacionHorario-1-4.php" style="color: white">Creacion de Horario 1-4</a>-
                             </li>
                             <li>
                                 <a href="register.html"  style="color: white">Registration Page</a>
