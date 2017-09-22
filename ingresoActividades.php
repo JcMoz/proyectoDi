@@ -67,6 +67,7 @@ include_once './molde/menu_navegacion.php';
         <div align="center">
             <input type="submit" value="Guardar" name="guardar" class="btn btn-info">
         </div>
+       
     </div><!--terminada container fluid-->
 </div><!--termina mi codigo-->
 <?php

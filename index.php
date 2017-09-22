@@ -116,6 +116,9 @@
               <li>
                 <a href="registrarNotas.php"  style="color: white">Registrar Notas</a>
               </li>
+              <li>
+                <a href="modificarNotas.php"  style="color: white">Modificar Notas</a>
+              </li>
             </ul>
           </li>
 <!--Termina Modulo de Control de notas-->

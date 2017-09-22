@@ -2,14 +2,35 @@
 include_once './molde/inicio.php';
 include_once './molde/menu_navegacion.php';
 ?>
+<!--comienza mi codigo-->
 <div class="content-wrapper">
-    <!--Comienza container fluid-->
+	<!--Comienza container fluid-->
     <div class="container-fluid">
-        <div align="center">
-            <font face="Arial Narrow" size="5" color="#001f4d">Registrar Notas</font>
-            <img src="imagenes/lapizA.ico" width="50" height="50">
-        </div>
-        <div>
+    	<!--Encabezado de la pantalla-->
+    <div class="row-fluid" align="center">
+                            <div class="span6">
+                              <h2 class="text-info">
+                                    <img src="imagenes/bus.png" width="50" height="50">
+                                    Buscar Notas
+                                </h2>
+                            </div>
+                            <div class="span6">
+                              <form name="form1" method="post" action="">
+                                  <div class="input-append">
+                                  <input type="text" name="buscar" class="input-xlarge" autocomplete="off" autofocus placeholder="         Alumno ">
+                                    <button type="submit" class="btn-secondary">
+                                    <strong>
+                                    <i class="icon-search"></i> Buscar
+                                    </strong>
+                                    </button>
+                                     
+                                    </div>
+
+                                </form>
+                              <br>
+                            </div>
+                        </div> <!--Fin de Encabezado de la pantalla-->
+           <div>
             &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<input class="form-group" type="text" name="maestro" size="50" placeholder="        Nombre del Maestro">  &nbsp &nbsp
             <input class="form-group" type="text" name="grado" size="15" placeholder="          Grado">  &nbsp &nbsp
             <input class="form-group" type="text" name="ano" size="15" placeholder="          Año">
@@ -17,8 +38,7 @@ include_once './molde/menu_navegacion.php';
             &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<input class="form-group" type="text" name="asig" size="30" placeholder="        Asignatura">  &nbsp &nbsp &nbsp
             <input class="form-group" type="text" name="period" size="20" placeholder="             Periodo">
         </div>
-
-
+        <!--**************************codigo de la tabla ***********************************-->
         <div class="row">
             <div class="col">
                 <!--Comienza tabla-->
@@ -68,7 +88,7 @@ include_once './molde/menu_navegacion.php';
                         <td class="text-center">3.3</td>
                                                 
                         <td class="text-center">
-                            <a class="btn btn-success btn-block btn-large" href="calificar.php">Calificar
+                            <a class="btn btn-success btn-block btn-large" href="notasModificar.php">Modificar
                             </a></td>
                     </tr>
 
@@ -79,10 +99,11 @@ include_once './molde/menu_navegacion.php';
             </div>
         </div><!--fin de row-->
         
-        
+        <!--***************************fin de codigo*****************************************-->
 
-    </div><!--terminada container fluid-->
-</div><!--termina mi codigo-->
+
+    </div><!--fin de container fluid-->
+</div><!--fin de mi codigo content wrapper-->
 <?php
 include_once './molde/fin.php';
 ?>

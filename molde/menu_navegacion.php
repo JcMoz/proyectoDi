@@ -85,7 +85,7 @@
                                 <a href="registrarNotas.php"  style="color: white">Registrar Notas</a>
                             </li>
                             <li>
-                                <a href="forgot-password.html"  style="color: white">Forgot Password Page</a>
+                                <a href="modificarNotas.php"  style="color: white">Modificar Notas</a>
                             </li>
                             <li>
                                 <a href="blank.html"  style="color: white">Blank Page</a>
