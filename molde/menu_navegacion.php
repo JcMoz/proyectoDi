@@ -19,7 +19,7 @@
                                 <a href="inscripcionNuevo.php" style="color: white">Nuevo</a>
                             </li>
                             <li>
-                                <a href="#" style="color: white">Antiguo</a>
+                                <a href="buscarAlumno.php" style="color: white">Antiguo</a>
                             </li>
                         </ul> 
                     </li>
