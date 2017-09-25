@@ -38,19 +38,20 @@ include_once './molde/menu_navegacion.php';
                     <th class="text-center">Acción</th>
                     <th class="text-center">Nombres</th>
                     <th class="text-center">Apellidos</th>
-                    <th class="text-center">Telefono</th>
-                    <th class="text-center">Dirección</th>
+                    <th class="text-center">Nie</th>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="text-center"><!--boton de modificar-->
                                 <a class="btn btn-large btn-block btn-large" href="modificarDocente.php">Editar
                                 </a>
+                                <button class="btn btn-large btn-block btn-large"type="button"  data-toggle="modal" data-target="#modal-default">Editar
+              </button>
                             </td>
                             <td class="text-center"></td>
                             <td class="text-center"></td>
                             <td class="text-center"></td>
-                            <td class="text-center"></td>
+                           
                         </tr>
 
                     </tbody>

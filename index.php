@@ -174,8 +174,7 @@
           </li>
 <!--Termina Modulo de Reportes-->
         </ul><!-- cierre -->
-
-        <ul class="navbar-nav sidenav-toggler">
+                  <ul class="navbar-nav sidenav-toggler">
           <li class="nav-item">
             <a class="nav-link text-center bg-secondary "  id="sidenavToggler">
               <i class="fa fa-fw fa-angle-left" style="color: white"></i>
@@ -183,29 +182,14 @@
           </li>
         </ul>
 
-       <div class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top " id="mainNav">    
-
-  <ul class="navbar-nav ml-auto nav-group" >
-           <div class="dropdown ">
-
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Left Align" >
-             Nombre de usuario 
-            <span class="caret"></span>
-          </button>
-
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-             <div style="background-color: ">
-            <li><a href="#" >Modificar Contraseña</a></li>
-            <li><a href="#">Ayuda</a></li>
-            <span class="glyphicon glyphicon-user"></span>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Salir</a></li>
-              </div>
-          </ul>
-
-           </div>
-      
-  </ul>
+        <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal"  style="color: white" data-target="#exampleModal">
+              <i class="fa fa-fw fa-sign-out" style="color: white"></i>
+              Usuario</a>
+          </li>
+        </ul>
   
   </div>
       </div>
