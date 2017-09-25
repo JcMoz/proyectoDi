@@ -65,13 +65,13 @@
             </a>
             <ul class="sidenav-second-level collapse bg-secondary " id="collapseCreacion">
               <li>
-                <a href="creacionHorario-1-4.php" style="color: white">Creacion de Horario 1-4</a>
+                <a href="creacionHorario-1-2.php" style="color: white">Grados 1-2</a>
               </li>
               <li>
-                <a href="register.html"  style="color: white">Registration Page</a>
+                <a href="creacionHorario-1-3.php"  style="color: white">Grados 3-4</a>
               </li>
               <li>
-                <a href="forgot-password.html"  style="color: white">Forgot Password Page</a>
+                <a href="horario-6-9.php"  style="color: white">Horarios 6-9 Grado</a>
               </li>
               <li>
                 <a href="blank.html"  style="color: white">Blank Page</a>
