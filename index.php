@@ -88,16 +88,16 @@
             </a>
             <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseSeguridad">
               <li>
-                <a href="login.html"  style="color: white">Copia de Seguridad</a>
+                <a href="crearCopiaSeguridad.php"  style="color: white">Copia de Seguridad</a>
                 <ul>
                   
                 </ul>
               </li>
               <li>
-                <a href="register.html"  style="color: white">Registrar Usuario</a>
+                <a href="registrarUsuario.php"  style="color: white">Registrar Usuario</a>
               </li>
               <li>
-                <a href="forgot-password.html"  style="color: white">Dar alta y baja</a>
+                <a href="darAltaBaja.php"  style="color: white">Dar alta y baja</a>
               </li>
               <li>
                 <a href="blank.html"  style="color: white">Bitacora</a>
@@ -183,14 +183,31 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav ml-auto">
-        
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="modal"  style="color: white" data-target="#exampleModal">
-              <i class="fa fa-fw fa-sign-out" style="color: white"></i>
-              Usuario</a>
-          </li>
-        </ul>
+       <div class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top " id="mainNav">    
+
+  <ul class="navbar-nav ml-auto nav-group" >
+           <div class="dropdown ">
+
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Left Align" >
+             Nombre de usuario 
+            <span class="caret"></span>
+          </button>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+             <div style="background-color: ">
+            <li><a href="#" >Modificar Contraseña</a></li>
+            <li><a href="#">Ayuda</a></li>
+            <span class="glyphicon glyphicon-user"></span>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Salir</a></li>
+              </div>
+          </ul>
+
+           </div>
+      
+  </ul>
+  
+  </div>
       </div>
     </nav>
 
