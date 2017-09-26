@@ -15,10 +15,10 @@ include_once './molde/menu_navegacion.php';
                         <br>
                         &nbsp<INPUT class="form-group" type="text"  name="nombreDo" placeholder="        Nombres del docente" size="35">
                         &nbsp &nbsp<INPUT class="form-group" type="text"  name="apellidosDo" placeholder="      Apellidos del docente" size="35"><br>
-                        <input class="form-control" type="text" name="direccionDo" placeholder="     Direccion      "> 
+                        <input class="form-control" type="text" name="direccionDo" placeholder="     Dirección      "> 
                         <br>
                         <div align="center">
-                            <INPUT class="form-group" type="text"  name="telDo" placeholder="   Telefono" size="15"> &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+                            <INPUT class="form-group" type="text"  name="telDo" placeholder="   Teléfono" size="15"> &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
                             <font face="Arial Narrow" size="4" color="#001f4d">Genero : </font>
                             <select name="Genero">
                                 <option value="Femenino">Femenino</option>
@@ -29,10 +29,10 @@ include_once './molde/menu_navegacion.php';
                         &nbsp &nbsp &nbsp &nbsp<font face="Arial Narrow" size="4" color="#001f4d">Fecha de nacimiento : </font> 
                         <input class="form-group" type="date" name="fecha">
                         <br>
-                        <input class="form-control" type="text" name="direccionDo" placeholder="     Correo electronico      "> 
+                        <input class="form-control" type="text" name="direccionDo" placeholder="     Correo electrónico      "> 
                         <br>
-                        &nbsp &nbsp &nbsp &nbsp<input class="form-group" type="text" placeholder="           Nip      " align="center" name="nip"> &nbsp &nbsp
-                        <input class="form-group" type="text" placeholder="           Nit      " align="center" name="nit">&nbsp &nbsp <input class="form-group" type="text" placeholder="           Dui      " align="center" name="dui">
+                        &nbsp &nbsp &nbsp &nbsp<input class="form-group" type="text" placeholder="           NIP      " align="center" name="nip"> &nbsp &nbsp
+                        <input class="form-group" type="text" placeholder="           NIT      " align="center" name="nit">&nbsp &nbsp <input class="form-group" type="text" placeholder="           DUI     " align="center" name="dui">
                         <br>
                         <input class="form-control" type="text" name="direccionDo" placeholder="    Especialidad     "> 
                         <br>

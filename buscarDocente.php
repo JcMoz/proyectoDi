@@ -89,18 +89,18 @@ include_once './molde/menu_navegacion.php';
       <INPUT class="form-group" type="text"  name="nombreDo" placeholder="        Nombres del docente" size="25">
      <INPUT class="form-group" type="text"  name="apellidosDo" placeholder="      Apellidos del docente" size="25"><br>
 
-    <input class="form-group" type="text" name="direccionDo" placeholder="     Direccion      " size="50"> 
+    <input class="form-group" type="text" name="direccionDo" placeholder="     Dirección      " size="50"> 
                         <br>
 
                         <div align="center">
-                            <INPUT class="form-group" type="text"  name="telDo" placeholder="   Telefono" size="15">
+                            <INPUT class="form-group" type="text"  name="telDo" placeholder="   Teléfono" size="15">
                         </div>
 
-<input class="form-group" type="text" name="direccionDo" placeholder="     Correo electronico      " size="50"> 
+<input class="form-group" type="text" name="direccionDo" placeholder="     Correo electrónico      " size="50"> 
                         <br>
-        <input class="form-group" type="text" placeholder="           Nip      " align="center" name="nip" size="15">
-        <input class="form-group" type="text" placeholder="           Nit      " align="center" name="nit" size="15">
-         <input class="form-group" type="text" placeholder="           Dui      " align="center" name="dui" size="15">
+        <input class="form-group" type="text" placeholder="           NIP      " align="center" name="nip" size="15">
+        <input class="form-group" type="text" placeholder="           NIT      " align="center" name="nit" size="15">
+         <input class="form-group" type="text" placeholder="          DUI     " align="center" name="dui" size="15">
                         <br>
 <input class="form-group" type="text" name="direccionDo" placeholder="    Especialidad     " size="50"> 
 

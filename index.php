@@ -68,10 +68,16 @@
                 <a href="creacionHorario-1-2.php" style="color: white">Grados 1-2</a>
               </li>
               <li>
-                <a href="creacionHorario-1-3.php"  style="color: white">Grados 3-4</a>
+                <a href="modificacionHorario-1-2.php" style="color: white">Modificación Grados 1-2</a>
               </li>
               <li>
-                <a href="horario-6-9.php"  style="color: white">Horarios 6-9 Grado</a>
+                <a href="creacionHorario-3-4.php"  style="color: white">Grados 3-4</a>
+              </li>
+              <li>
+                <a href="modificacionHorario-3-4.php"  style="color: white">Modificación Grados 3-4</a>
+              </li>
+              <li>
+                <a href="horario-6-9.php"  style="color: white">Horarios 5-9 Grado</a>
               </li>
               <li>
                 <a href="blank.html"  style="color: white">Blank Page</a>
@@ -202,7 +208,7 @@
 
               <div class="modal-header">
                  
-                <h4 class="modal-title">Selecione Cuadro de Notas </h4>
+                <h4 class="modal-title">Seleccione Cuadro de Notas </h4>
               </div>
 
               <div class="modal-body">

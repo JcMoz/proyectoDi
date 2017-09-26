@@ -42,12 +42,12 @@ include_once './molde/menu_navegacion.php';
             <div class="panel-heading" align="center">Datos de Recidencia</div>
               <div class="panel-body">
               <br>
-                  <INPUT class="form-control" type="text"  name="direccion" placeholder=" Direccion "><br>
-                  <INPUT class="form-control" type="text"  name="distanciaC" placeholder="Distancia en kilómetros entre el centro educativo y recidencia">
+                  <INPUT class="form-control" type="text"  name="direccion" placeholder=" Dirección "><br>
+                  <INPUT class="form-control" type="text"  name="distanciaC" placeholder="Distancia en kilómetros entre el Centro Educativo y recidencia">
                   <br>
-                     &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="depto" placeholder=" Departamento">  &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                       <input class="form-group" type="text"  placeholder="  Municipio  " name="municipio"> &nbsp &nbsp &nbsp &nbsp
-                      <input class="form-group" type="text" placeholder="  Telefono   " name="telefono">
+                     &nbsp &nbsp<INPUT class="form-group" type="text"  name="depto" placeholder=" Departamento">  &nbsp &nbsp&nbsp 
+                       <input class="form-group" type="text"  placeholder="  Municipio  " name="municipio"> &nbsp 
+                      <input class="form-group" type="text" placeholder="  Teléfono   " name="telefono">
 
             </div><!--cierre de panel body-->
             <br>

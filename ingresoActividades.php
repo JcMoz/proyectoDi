@@ -10,12 +10,20 @@ include_once './molde/menu_navegacion.php';
             <font face="Arial Narrow" size="5" color="#001f4d">Ingresar Actividades</font>
             <img src="imagenes/pencil.png" width="50" height="50">
         </div>
-        <div class="pt-5">
+        <div class="pt-5" align="center">
             <select name="perido">
                 <option value="pe">Periodos</option>
-                <option value="pri">Primer Perido</option>
-                <option value="se">Segundo Perido</option>
-                <option value="te">Tercer Perido</option>
+                <option value="pri">Primer</option>
+                <option value="se">Segundo</option>
+                <option value="te">Tercer</option>
+            </select>  &nbsp &nbsp &nbsp
+            <select name="grado">
+                <option value="gra">Grado</option>
+                
+            </select> &nbsp &nbsp &nbsp
+             <select name="ma">
+                <option value="mat">Materia</option>
+                
             </select>
         </div>
 

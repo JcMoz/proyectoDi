@@ -22,7 +22,7 @@ include_once './molde/menu_navegacion.php';
                        <input class="form-control" type="text"  placeholder=" Nombre del centro educativo  " name="inCurso"> 
                        <br>
                        <div align="center">
-                         <input class="form-group" type="text" placeholder="       Codigo" name="cod">
+                         <input class="form-group" type="text" placeholder="       Código" name="cod">
                        </div>
                       
 

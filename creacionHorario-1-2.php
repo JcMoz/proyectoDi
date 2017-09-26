@@ -21,7 +21,7 @@ include_once './molde/menu_navegacion.php';
                 <th class="text-center">Hora</th>
                 <th class="">Lunes</th>
                 <th class="">Martes</th>
-                <th class="">Miercoles</th>
+                <th class="">Miércoles</th>
                 <th class="">Jueves</th>
                 <th class="">Viernes</th>
                 <th class="">Grado</th>
@@ -436,7 +436,7 @@ include_once './molde/menu_navegacion.php';
         </div><!--fin de row-->
    <!--botones-->
     <div align="center">
-              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-info" onclick="location='/proyectoDi/inscripcionNuevo3.php'">
+              <input type="submit" value="Guardar" name="Siguiente" class="btn btn-info" onclick="location='/proyectoDi/inscripcionNuevo3.php'">
               <input type="submit" value="Cancelar" name="cancel" class="btn-secondary">
             </div>    
     </div><!--fin container fluid-->

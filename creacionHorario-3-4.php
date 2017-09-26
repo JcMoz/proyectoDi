@@ -21,7 +21,7 @@ include_once './molde/menu_navegacion.php';
                 <th class="text-center">Hora</th>
                 <th class="">Lunes</th>
                 <th class="">Martes</th>
-                <th class="">Miercoles</th>
+                <th class="">Miércoles</th>
                 <th class="">Jueves</th>
                 <th class="">Viernes</th>
                 <th class="">Grado</th>

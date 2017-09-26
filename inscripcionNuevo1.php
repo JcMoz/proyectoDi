@@ -22,8 +22,8 @@ include_once './molde/menu_navegacion.php';
                &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomP" placeholder="     Nombres del Padre " size="35"> 
                 <INPUT class="form-group" type="text"  name="apelliP" placeholder=" Apellidos  " size="35"><br>
                  &nbsp &nbsp<INPUT class="form-group" type="text"  name="profesionP" placeholder="Profesion u oficio " size="15">
-                 &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telP" placeholder=" Telefono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiP" placeholder="    Dui  " size="15">
-                 <INPUT class="form-control" type="text"  name="direccionP" placeholder="  Direccion  ">
+                 &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telP" placeholder=" Teléfono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiP" placeholder="    Dui  " size="15">
+                 <INPUT class="form-control" type="text"  name="direccionP" placeholder="  Dirección  ">
                  <br>
             
                       
@@ -36,8 +36,8 @@ include_once './molde/menu_navegacion.php';
                &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomP" placeholder="     Nombres de la Madre " size="35">
                 <INPUT class="form-group" type="text"  name="apelliM" placeholder=" Apellidos  " size="35"><br>
                  &nbsp &nbsp<INPUT class="form-group" type="text"  name="profesionM" placeholder="Profesion u oficio " size="15">
-                 &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telM" placeholder=" Telefono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiM" placeholder="      Dui  " size="15">
-                 <INPUT class="form-control" type="text"  name="direccionM" placeholder="  Direccion  ">
+                 &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telM" placeholder=" Teléfono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiM" placeholder="      Dui  " size="15">
+                 <INPUT class="form-control" type="text"  name="direccionM" placeholder="  Dirección  ">
          
             </div><!--cierre de panel body-->
             <div class="panel-heading" align="center">Datos del encargado</div>
@@ -47,8 +47,8 @@ include_once './molde/menu_navegacion.php';
                &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomE" placeholder="     Nombres del Encargado/a " size="35"> 
                 <INPUT class="form-group" type="text"  name="apelliE" placeholder=" Apellidos  " size="35"><br>
                  &nbsp &nbsp<INPUT class="form-group" type="text"  name="profesionE" placeholder="Profesion u oficio " size="15">
-                 &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telE" placeholder=" Telefono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiE" placeholder="  Dui  " size="15">
-                 <INPUT class="form-control" type="text"  name="direccionE" placeholder="  Direccion  ">
+                 &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telE" placeholder=" Teléfono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiE" placeholder="  Dui  " size="15">
+                 <INPUT class="form-control" type="text"  name="direccionE" placeholder="  Dirección  ">
          
             </div><!--cierre de panel body-->
             
