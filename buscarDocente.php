@@ -44,8 +44,7 @@ include_once './molde/menu_navegacion.php';
                     <tbody>
                         <tr>
                             <td class="text-center"><!--boton de modificar-->
-                                <a class="btn btn-success btn-block btn-large" href="modificarDocente.php">Modificar
-                                </a>
+                                <button class="btn btn-primary btn-block btn-large " type="button"  data-toggle="modal" data-target="#modal-default">Modificar</button>
                             </td>
                             <td class="text-center"></td>
                             <td class="text-center"></td>
@@ -58,6 +57,83 @@ include_once './molde/menu_navegacion.php';
             </div>
                         <!--termina tabla-->
       </div><!--Fin de Dimencion de la pantalla-->
+
+       <!--******************************Dialog**************************-->
+            <div class="modal modal-info fade in" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                 
+                <h4 class="modal-title"> Modificar datos de docente<img src="imagenes/profe.png" width="70" height="70"> </h4>
+              </div>
+
+              <div class="modal-body">
+
+<div class="box-body">
+              <!-- Date -->
+              
+
+
+              <div class="box box-info">
+          
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal">
+              <div class="box-body">
+
+                  <div class="row" > 
+          
+
+     <div class="col-md-12">
+      <INPUT class="form-group" type="text"  name="nombreDo" placeholder="        Nombres del docente" size="25">
+     <INPUT class="form-group" type="text"  name="apellidosDo" placeholder="      Apellidos del docente" size="25"><br>
+
+    <input class="form-group" type="text" name="direccionDo" placeholder="     Direccion      " size="50"> 
+                        <br>
+
+                        <div align="center">
+                            <INPUT class="form-group" type="text"  name="telDo" placeholder="   Telefono" size="15">
+                        </div>
+
+<input class="form-group" type="text" name="direccionDo" placeholder="     Correo electronico      " size="50"> 
+                        <br>
+        <input class="form-group" type="text" placeholder="           Nip      " align="center" name="nip" size="15">
+        <input class="form-group" type="text" placeholder="           Nit      " align="center" name="nit" size="15">
+         <input class="form-group" type="text" placeholder="           Dui      " align="center" name="dui" size="15">
+                        <br>
+<input class="form-group" type="text" name="direccionDo" placeholder="    Especialidad     " size="50"> 
+
+     </div><!--fin columna-->
+
+                
+              </div><!--fin row-->
+
+              </div>
+            
+            </form>
+
+          </div>
+     
+            </div>
+
+
+              </div>
+
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras  <img src="../public/dist/img/ico/Backup Green Button.ico"></button>
+                <button type="button" class="btn btn-primary" >Guardar</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+          
+
+       
+            <!--****************************fin Dialo******************************-->
 
     </div><!--termina container fluid-->
 

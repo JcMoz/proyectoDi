@@ -48,28 +48,29 @@ include_once './molde/menu_navegacion.php';
 
                 <tbody>
                     <tr>
-                        <td class="text-center">1224554</td>
-                        <td class="text-center">Maria de los Angeles Mejia Martinez</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
                                                 
                         <td class="text-center">
-                            <a class="btn btn-success btn-block btn-large" href="calificar.php">Calificar
-                            </a></td>
+                            <button class="btn btn-success btn-block btn-large " type="button"  data-toggle="modal" data-target="#calificar">Calificar
+                            </button>
+                            </td>
                     </tr>
 
                 </tbody>
@@ -78,6 +79,74 @@ include_once './molde/menu_navegacion.php';
         <!--termina tabla-->
             </div>
         </div><!--fin de row-->
+        <!--******************************Dialog**************************-->
+            <div class="modal modal-info fade in" id="calificar">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                 
+                <h4 class="modal-title">Calificar<img src="imagenes/cali.ico" width="70" height="70"></h4>
+                
+              </div>
+
+              <div class="modal-body">
+            <!-- form start -->
+            <form class="form-horizontal">
+              <div class="box-body">
+
+                  <div class="row" > 
+          
+
+     <div align="center" class="col-md-12">
+               <select name="actividades1">
+               <!--Nota poner la opcion de Refuerzo en el combo para ingresar esa calificacion-->
+          <option value="acti1">Actividades</option>
+
+          </select> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+          Calificacion <input class="form-group" type="text" name="ca" placeholder=" 10.0" size="3">
+
+          <br>
+
+          <select name="actividades1">
+          <option value="acti1">Actividades</option>
+
+          </select> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+          Calificacion <input class="form-group" type="text" name="ca" placeholder=" 10.0" size="3">
+          <br>
+
+          <select name="actividades1">
+          <option value="acti1">Actividades</option>
+
+          </select> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+          Calificacion <input class="form-group" type="text" name="ca" placeholder=" 10.0" size="3">
+           
+         
+     </div><!--fin columna-->
+
+                
+              </div><!--fin row-->
+
+              </div>
+            
+            </form>
+
+              </div>
+
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras </button>
+                <button type="button"  class="btn btn-primary">Guardar</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+          
+
+       
+            <!--****************************fin Dialo******************************-->
         
         
 

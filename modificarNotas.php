@@ -68,24 +68,24 @@ include_once './molde/menu_navegacion.php';
 
                 <tbody>
                     <tr>
-                        <td class="text-center">1224554</td>
-                        <td class="text-center">Maria de los Angeles Mejia Martinez</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
-                        <td class="text-center">3.3</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
                                                 
                         <td class="text-center">
                             <a class="btn btn-success btn-block btn-large" href="notasModificar.php">Modificar

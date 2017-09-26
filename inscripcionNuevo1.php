@@ -19,8 +19,8 @@ include_once './molde/menu_navegacion.php';
               <div class="panel-body">
               <br>
               
-               &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomP" placeholder="     Nombres del Padre " size="40">   &nbsp &nbsp &nbsp
-                <INPUT class="form-group" type="text"  name="apelliP" placeholder=" Apellidos  " size="40"><br>
+               &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomP" placeholder="     Nombres del Padre " size="35"> 
+                <INPUT class="form-group" type="text"  name="apelliP" placeholder=" Apellidos  " size="35"><br>
                  &nbsp &nbsp<INPUT class="form-group" type="text"  name="profesionP" placeholder="Profesion u oficio " size="15">
                  &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telP" placeholder=" Telefono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiP" placeholder="    Dui  " size="15">
                  <INPUT class="form-control" type="text"  name="direccionP" placeholder="  Direccion  ">
@@ -33,8 +33,8 @@ include_once './molde/menu_navegacion.php';
               <div class="panel-body">
               <!-- codigo-->
               <br>
-               &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomP" placeholder="     Nombres de la Madre " size="40">   &nbsp &nbsp &nbsp
-                <INPUT class="form-group" type="text"  name="apelliM" placeholder=" Apellidos  " size="40"><br>
+               &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomP" placeholder="     Nombres de la Madre " size="35">
+                <INPUT class="form-group" type="text"  name="apelliM" placeholder=" Apellidos  " size="35"><br>
                  &nbsp &nbsp<INPUT class="form-group" type="text"  name="profesionM" placeholder="Profesion u oficio " size="15">
                  &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telM" placeholder=" Telefono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiM" placeholder="      Dui  " size="15">
                  <INPUT class="form-control" type="text"  name="direccionM" placeholder="  Direccion  ">
@@ -44,8 +44,8 @@ include_once './molde/menu_navegacion.php';
               <div class="panel-body">
               <!-- codigo-->
               <br>
-               &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomE" placeholder="     Nombres del Encargado/a " size="40">   &nbsp &nbsp &nbsp
-                <INPUT class="form-group" type="text"  name="apelliE" placeholder=" Apellidos  " size="40"><br>
+               &nbsp &nbsp<INPUT class="form-group" type="text"  name="nomE" placeholder="     Nombres del Encargado/a " size="35"> 
+                <INPUT class="form-group" type="text"  name="apelliE" placeholder=" Apellidos  " size="35"><br>
                  &nbsp &nbsp<INPUT class="form-group" type="text"  name="profesionE" placeholder="Profesion u oficio " size="15">
                  &nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="telE" placeholder=" Telefono" size="15">&nbsp &nbsp &nbsp &nbsp<INPUT class="form-group" type="text"  name="duiE" placeholder="  Dui  " size="15">
                  <INPUT class="form-control" type="text"  name="direccionE" placeholder="  Direccion  ">
