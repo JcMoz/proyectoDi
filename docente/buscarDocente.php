@@ -1,6 +1,6 @@
 <?php
-include_once './molde/inicio.php';
-include_once './molde/menu_navegacion.php';
+include_once '../plantilla/incio_plantilla.php';
+include_once '../plantilla/menu_navegacion.php';
 ?>
 <!--inicio de content wrapper mi codigo-->
 <div class="content-wrapper">
@@ -140,7 +140,7 @@ include_once './molde/menu_navegacion.php';
 </div><!--Fin de content wrapper mi codigo-->
 
 <?php
-include_once './molde/fin.php';
+include_once '../plantilla/fin_plantilla.php';
 ?>
     
 

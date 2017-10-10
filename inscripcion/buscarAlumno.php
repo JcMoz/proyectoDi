@@ -1,6 +1,6 @@
 <?php
-include_once './molde/inicio.php';
-include_once './molde/menu_navegacion.php';
+include_once '../plantilla/incio_plantilla.php';
+include_once '../plantilla/menu_navegacion.php';
 ?>
 <style>
   .btn-atras{
@@ -19,7 +19,7 @@ include_once './molde/menu_navegacion.php';
     <div class="row-fluid" align="center">
                             <div class="span6">
                               <h2 class="text-info">
-                                    <img src="imagenes/alumnoB.png" width="90" height="90">
+                                    <img src="../imagenes/alumnoB.png" width="90" height="90">
                                     Buscar Alumno
                                 </h2>
                             </div>
@@ -191,7 +191,7 @@ include_once './molde/menu_navegacion.php';
 </div><!--Fin de content wrapper mi codigo-->
 
 <?php
-include_once './molde/fin.php';
+include_once '../plantilla/fin_plantilla.php';
 ?>
     
 

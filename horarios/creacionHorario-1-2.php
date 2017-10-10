@@ -1,14 +1,22 @@
 <?php
-include_once './molde/inicio.php';
-include_once './molde/menu_navegacion.php';
+include_once '../plantilla/incio_plantilla.php';
+include_once '../plantilla/menu_navegacion.php';
 ?>
+
+<style>
+	.btn-cancelar{
+    background-color: #9e9e9e;
+    color: white;
+  }
+
+</style>
 <!--inicio de content wrapper mi codigo-->
 <div class="content-wrapper">
     <div class="container-fluid"> <!--Comienza container Fluid-->
     <!--titulo-->
     <div align="center">
-    	<font face="Arial Narrow" size="5" color="#001f4d">Creación de Horarios de  3°- 4° Grado.</font>
-    	 <img src="imagenes/horario2.png" width="70" height="70">
+    	<font face="Arial Narrow" size="5" color="#001f4d">Creación de Horarios de 1°- 2° Grado.</font>
+    	 <img src="imagenes/horario1.png" width="60" height="60">
    </div>
    <br> <br>
 
@@ -25,7 +33,7 @@ include_once './molde/menu_navegacion.php';
                 <th class="">Jueves</th>
                 <th class="">Viernes</th>
                 <th class="">Grado</th>
-                  <th class="">Docente</th>
+                 <th class="">Docente</th>
                 </thead>
 
                 <tbody>
@@ -218,13 +226,14 @@ include_once './molde/menu_navegacion.php';
 						    <option value="so">Sociales</option>
 						    
 						</select>
-						<br></td>
+						<br>
+						</td>
                         
                                                 
                         <td class="text-center">
                             
                         </td>
-                         <td class="text-center">
+                          <td class="text-center">
                             
                         </td>
                     </tr>
@@ -441,13 +450,13 @@ include_once './molde/menu_navegacion.php';
         <!--termina tabla-->
             </div><!--col-->
         </div><!--fin de row-->
-   <!--Botones-->
+   <!--botones-->
     <div align="center">
-              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-info" onclick="location='/proyectoDi/inscripcionNuevo3.php'">
-              <input type="submit" value="Cancelar" name="cancel" class="btn-secondary">
+              <input type="submit" value="Guardar" name="Siguiente" class="btn btn-info" onclick="location='/proyectoDi/inscripcionNuevo3.php'">
+              <input type="submit" value="Cancelar" name="cancel" class="btn btn-cancelar">
             </div>    
     </div><!--fin container fluid-->
     </div><!--fin contant wrapper-->
 <?php
-include_once './molde/fin.php';
+include_once '../plantilla/fin_plantilla.php';
 ?>

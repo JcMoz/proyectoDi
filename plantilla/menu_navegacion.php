@@ -1,3 +1,4 @@
+
 <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top" id="mainNav">
             <a class="navbar-brand" href="#">CECCC</a>
@@ -7,7 +8,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-sidenav bg-secondary " id="exampleAccordion">
                 <div align="center">
-                <img src="imagenes/sicno.png" width="150" height="150">
+                <img src="../imagenes/sicno.png" width="150" height="150">
                 </div>
 
                     <!--Modulo de inscripcion-->
@@ -19,10 +20,10 @@
                         </a>
                         <ul class="sidenav-second-level collapse bg-secondary " id="collapseComponents">
                             <li>
-                                <a href="inscripcionNuevo.php" style="color: white">Nuevo</a>
+                                <a href="../inscripcion/inscripcionNuevo.php" style="color: white">Nuevo</a>
                             </li>
                             <li>
-                                <a href="buscarAlumno.php" style="color: white">Antiguo</a>
+                                <a href="../inscripcion/buscarAlumno.php" style="color: white">Antiguo</a>
                             </li>
                         </ul> 
                     </li>
@@ -36,22 +37,22 @@
                         </a>
                         <ul class="sidenav-second-level collapse bg-secondary " id="collapseCreacion">
                              <li>
-                                <a href="ingreso_G_S_A.php" style="color: white">Ingresar Grados, Aulas, Materias</a>
+                                 <a href="../horarios/ingreso_G_S_A.php" style="color: white">Ingresar Grados, Aulas, Materias</a>
                             </li>
                             <li>
-                                <a href="../creacionHorario-1-2.php" style="color: white">Grados 1-2</a>
+                                <a href="../horarios/creacionHorario-1-2.php" style="color: white">Grados 1-2</a>
                             </li>
                             <li>
-                                <a href="modificacionHorario-1-2.php" style="color: white">Modificación Grados 1-2</a>
+                                <a href="../horarios/modificacionHorario-1-2.php" style="color: white">Modificación Grados 1-2</a>
                                      </li>
                             <li>
-                                <a href="creacionHorario-3-4.php"  style="color: white">Grados 3-4</a>
+                                <a href="../horarios/creacionHorario-3-4.php"  style="color: white">Grados 3-4</a>
                             </li>
                             <li>
-                              <a href="modificacionHorario-3-4.php"  style="color: white">Modificación Grados 3-4</a>
+                                <a href="../horarios/modificacionHorario-3-4.php"  style="color: white">Modificación Grados 3-4</a>
                                   </li>
                             <li>
-                                <a href="horario-6-9.php"  style="color: white">Horario 5-9 Grado</a>
+                                <a href="../horarios/horario-6-9.php"  style="color: white">Horario 5-9 Grado</a>
                             </li>
                         </ul>
                     </li>
@@ -89,14 +90,14 @@
                         </a>
                         <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseNotas">
                             <li><!--poner codigo de los que contiene el control de notas-->
-                                <a href="ingresoActividades.php"  style="color: white">Ingreso de Actividades</a>
+                                <a href="../notas/ingresoActividades.php"  style="color: white">Ingreso de Actividades</a>
                             </li>
                             <li>
-                                <a class="btn btn-secondary btn-block btn-large " type="button"  data-toggle="modal" data-target="#actividad_R"  style="color: white">Registrar Notas</a>
+                            <a class="btn btn-secondary btn-block btn-large " type="button"  data-toggle="modal" data-target="#actividad_R"  style="color: white">Registrar Notas</a>
                                  
                             </li>
                             <li>
-                                <a href="modificarNotas.php"  style="color: white">Modificar Notas</a>
+                                <a href="../notas/modificarNotas.php"  style="color: white">Modificar Notas</a>
                             </li>
                         </ul>
                     </li>
@@ -111,10 +112,10 @@
                         </a>
                         <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseDocentes">
                             <li><!--poner codigo de los que contiene el modulo de expediente docente-->
-                                <a href="ingresarDocente.php"  style="color: white">Registrar Docente</a>
+                                <a href="../docente/ingresarDocente.php"  style="color: white">Registrar Docente</a>
                             </li>
                             <li>
-                                <a href="buscarDocente.php"  style="color: white">Buscar Docente</a>
+                                <a href="../docente/buscarDocente.php"  style="color: white">Buscar Docente</a>
                             </li>
                         </ul>
                     </li>
@@ -175,59 +176,5 @@
             </div>
         </nav>
         <!-- Fin navegacion -->
-
-               <!--******************************Dialog**************************-->
-            <div class="modal modal-info fade in" id="actividad_R">
-          <div class="modal-dialog">
-            <div class="modal-content">
-
-              <div class="modal-header">
-                 
-                <h4 class="modal-title">Seleccione Cuadro de Notas </h4>
-              </div>
-
-              <div class="modal-body">
-            <!-- form start -->
-            <form class="form-horizontal">
-              <div class="box-body">
-
-                  <div class="row" > 
-          
-
-     <div align="center" class="col-md-12">
-               <select name="Grado">
-          <option value="gra">Grado</option>
-          </select> &nbsp &nbsp &nbsp &nbsp
-          <select name="seccion">
-          <option value="sec">Sección</option>
-          </select>&nbsp &nbsp &nbsp &nbsp
-              <select name="mate">
-          <option value="mat">Materia</option>
-          </select>
-           
-         
-     </div><!--fin columna-->
-
-                
-              </div><!--fin row-->
-
-              </div>
-            
-            </form>
-
-              </div>
-
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras </button>
-                <button type="button"  class="btn btn-primary"onclick="location='/proyectoDi/registrarNotas.php'" >Continuar</button>
-              </div>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-          
-
-       
-            <!--****************************fin Dialo******************************-->
+        
+        

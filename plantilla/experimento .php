@@ -3,10 +3,10 @@
     <head>
         <title>JQuery-validation demo | Bootstrap</title>
 
-        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery.validate.js"></script>
-        <script src="js/reglas_validacion.js"></script>
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.validate.js"></script>
+        <script src="../js/reglas_validacion.js"></script>
     </head>
     <body>
         <div class="container">

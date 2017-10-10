@@ -1,11 +1,9 @@
 <?php
-include_once './molde/inicio.php';
-include_once './molde/menu_navegacion.php';
+include_once '../plantilla/incio_plantilla.php';
+include_once '../plantilla/menu_navegacion.php';
 ?>
 <style >
- .btn-dan{
-    background-color: ;
-  }
+
   .btn-cancelar{
     background-color: #9e9e9e;
     color: white;
@@ -88,5 +86,5 @@ include_once './molde/menu_navegacion.php';
         <!--cierre Mi codigo -->
 
 <?php
-include_once './molde/fin.php';
+include_once '../plantilla/fin_plantilla.php';
 ?>

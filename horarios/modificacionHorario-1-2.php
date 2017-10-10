@@ -1,14 +1,21 @@
 <?php
-include_once './molde/inicio.php';
-include_once './molde/menu_navegacion.php';
+include_once '../plantilla/incio_plantilla.php';
+include_once '../plantilla/menu_navegacion.php';
 ?>
+<style>
+    .btn-atras{
+    background-color: #607d8b;
+    color: white;
+  }
+
+</style>
 <!--inicio de content wrapper mi codigo-->
 <div class="content-wrapper">
     <div class="container-fluid"> <!--Comienza container Fluid-->
     <!--titulo-->
     <div align="center">
-    	<font face="Arial Narrow" size="5" color="#001f4d">Modificar Horarios de 3°- 4° Grado.</font>
-    	 <img src="imagenes/modiHo3.png" width="60" height="60">
+    	<font face="Arial Narrow" size="5" color="#001f4d">Modificar Horarios de 1°- 2° Grado.</font>
+    	 <img src="imagenes/modiHo.png" width="60" height="60">
    </div>
    <br> <br>
 
@@ -63,7 +70,7 @@ include_once './molde/menu_navegacion.php';
                         
                                                 
                         <td class="text-center">
-                       <button class="btn btn-primary btn-block btn-large " type="button"  data-toggle="modal" data-target="#modHo3">Editar </button>
+                       <button class="btn btn-primary btn-block btn-large " type="button"  data-toggle="modal" data-target="#modHo2">Editar </button>
 
                         </td>
                     </tr>
@@ -98,7 +105,7 @@ include_once './molde/menu_navegacion.php';
                             
                         </td>
                         <td class="text-center">
-                        <button class="btn btn-primary btn-block btn-large " type="button"  data-toggle="modal" data-target="#modHo4">Editar </button>
+                        <button class="btn btn-primary btn-block btn-large " type="button"  data-toggle="modal" data-target="#modHo1">Editar </button>
 
                         </td>
                     </tr>
@@ -116,13 +123,13 @@ include_once './molde/menu_navegacion.php';
    
     </div><!--fin container fluid-->
      <!--******************************Dialog**************************-->
-            <div class="modal modal-info fade in" id="modHo3">
+            <div class="modal modal-info fade in" id="modHo1">
           <div class="modal-dialog">
             <div class="modal-content">
 
               <div class="modal-header">
                  
-                <h5 class="modal-title">Modificar Horario<img src="imagenes/modiHo4.png" width="70" height="70"> </h5>
+                <h5 class="modal-title">Modificar Horario<img src="imagenes/dialogHo2.png" width="70" height="70"> </h5>
               </div>
 
               <div class="modal-body">
@@ -198,7 +205,7 @@ include_once './molde/menu_navegacion.php';
 
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras </button>
+                <button type="button" class="btn btn-atras pull-left" data-dismiss="modal">Atras  <img src="../public/dist/img/ico/Backup Green Button.ico"></button>
                 <button type="button" class="btn btn-primary" >Guardar</button>
               </div>
             </div>
@@ -212,13 +219,13 @@ include_once './molde/menu_navegacion.php';
             <!--****************************fin Dialo******************************-->
 
             <!--******************************Dialog**************************-->
-            <div class="modal modal-info fade in" id="modHo4">
+            <div class="modal modal-info fade in" id="modHo2">
           <div class="modal-dialog">
             <div class="modal-content">
 
               <div class="modal-header">
                  
-                <h5 class="modal-title">Modificar Horario<img src="imagenes/dialogHo.png" width="70" height="70"> </h5>
+                <h5 class="modal-title">Modificar Horario<img src="imagenes/modiHo2.png" width="70" height="70"> </h5>
               </div>
 
               <div class="modal-body">
@@ -294,7 +301,7 @@ include_once './molde/menu_navegacion.php';
 
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras</button>
+                <button type="button" class="btn btn-atras pull-left" data-dismiss="modal">Atras  <img src="../public/dist/img/ico/Backup Green Button.ico"></button>
                 <button type="button" class="btn btn-primary" >Guardar</button>
               </div>
             </div>
@@ -308,5 +315,5 @@ include_once './molde/menu_navegacion.php';
             <!--****************************fin Dialo******************************-->
     </div><!--fin contant wrapper-->
 <?php
-include_once './molde/fin.php';
+include_once '../plantilla/fin_plantilla.php';
 ?>

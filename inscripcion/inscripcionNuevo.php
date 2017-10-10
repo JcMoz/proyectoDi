@@ -1,6 +1,6 @@
 <?php
-include_once './molde/inicio.php';
-include_once './molde/menu_navegacion.php';
+include_once '../plantilla/incio_plantilla.php';
+include_once '../plantilla/menu_navegacion.php';
 
 ?>
 <style >
@@ -78,7 +78,7 @@ include_once './molde/menu_navegacion.php';
 
                 <br> <br> <br>
                 <div align="center">
-              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente" onclick="location='/proyectoDi/inscripcionNuevo3.php'">
+              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente" onclick="location='/proyectoDi/inscripcion/inscripcionNuevo3.php'">
               <input type="submit" value="Cancelar" name="cancel" class=" btn btn-cancelar" >
              
             </div>    
@@ -94,5 +94,5 @@ include_once './molde/menu_navegacion.php';
         <!--ojo -->
 
 <?php
-include_once './molde/fin.php';
+include_once '../plantilla/fin_plantilla.php';
 ?>

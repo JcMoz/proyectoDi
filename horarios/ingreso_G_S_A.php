@@ -1,14 +1,15 @@
 <?php
-include_once './molde/inicio.php';
-include_once './molde/menu_navegacion.php';
+include_once '../plantilla/incio_plantilla.php';
+include_once '../plantilla/menu_navegacion.php';
 ?>
+
 <!--comienza mi codigo-->
 <div class="content-wrapper">
     <!--Comienza container fluid-->
     <div class="container-fluid">
         <div align="center">
             <font face="Arial Narrow" size="5" color="#001f4d">Ingresar</font>
-            <img src="imagenes/aulas.png" width="90" height="90">
+            <img src="../imagenes/aulas.png" width="90" height="90">
         </div>
 
         <div class="row"><!--comienza row-->
@@ -84,5 +85,5 @@ include_once './molde/menu_navegacion.php';
     </div><!--terminada container fluid-->
 </div><!--termina mi codigo-->
 <?php
-include_once './molde/fin.php';
+include_once '../plantilla/fin_plantilla.php';
 ?>
