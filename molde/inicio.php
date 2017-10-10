@@ -22,6 +22,12 @@
         <!-- Custom styles for this template -->
         <link href="css/sb-admin.css" rel="stylesheet">
         <link href="css/estilo.css" rel="stylesheet">
+        
+              
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.validate.js"></script>
+        
+        
 
     </head>
 
