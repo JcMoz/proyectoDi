@@ -1,6 +1,4 @@
-
 <!--ojo -->
-
 <footer class="sticky-footer" >
     <div class="container">
         <div class="text-center">
@@ -37,8 +35,7 @@
         </div>
     </div>
 </div>
-</div>
-</div>
+
 <!--******************************Dialog**************************-->
 <div class="modal modal-info fade in" id="cambiar">
     <div class="modal-dialog">
@@ -88,7 +85,6 @@
 <!--****************************fin Dialo******************************-->
 
 <!-- Bootstrap core JavaScript -->
-<script src="../js/jquery.min.js"></script>
 <script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 
@@ -103,7 +99,7 @@
 <!--Validaciones-->
 <script src="../js/reglas_validacion.js"></script>
 <script src="../js/validacionesDocente.js"></script>
-<!--fin de las validaciones-->
+
 
 
 </body>

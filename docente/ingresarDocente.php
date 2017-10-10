@@ -11,10 +11,12 @@ include_once '../plantilla/menu_navegacion.php';
 </style>
 <!-- /.content-wrapper mi codigo-->
 <div class="content-wrapper">
+    
+    
     <div class="container-fluid"> <!--Comienza container Fluid-->
 
         &nbsp &nbsp &nbsp<font face="Arial Narrow" size="5" color="#001f4d">Ingresar docente.</font>
-        <div class="row"> <!--Comienza los row-->
+        
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <br>
@@ -23,15 +25,18 @@ include_once '../plantilla/menu_navegacion.php';
                         <br>
                         <!--comienza formulario--><form id="FORMULARIO_VALIDADO" method="post" class="form-horizontal" action="">
 
-                            <div class="form-group">
-
-                                <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="firstname1" name="firstname1" placeholder="First name" />
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5">
+                                    <INPUT class="form-control" id="nomDo" name="firstname1" type="text"  placeholder="        Nombres del docente" size="35" required="" minlength="2">
+                                </div>
+                                <div class="col-md-5">
+                                    <INPUT class="form-group" type="text"  name="apellidosDo" placeholder="      Apellidos del docente" size="35"><br>
                                 </div>
                             </div>
 
-                            &nbsp<INPUT class="form-group" id="nomDo" name="firstname1" type="text"  placeholder="        Nombres del docente" size="35">
-                            &nbsp &nbsp<INPUT class="form-group" type="text"  name="apellidosDo" placeholder="      Apellidos del docente" size="35"><br>
+                            
+                            
                             <input class="form-control" type="text" name="direccionDo" placeholder="     Dirección      "> 
                             <br>
                             <div align="">
@@ -75,8 +80,10 @@ include_once '../plantilla/menu_navegacion.php';
                 </div>
             </div>
             </form><!--fin form-->
-        </div> <!--Termina los row-->
+        
     </div><!--Termina container fluid-->
+    
+    
 </div><!--cierrre de content-wrapper mi codigo-->
 <?php
 
