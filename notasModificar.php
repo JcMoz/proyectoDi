@@ -2,6 +2,17 @@
 include_once './molde/inicio.php';
 include_once './molde/menu_navegacion.php';
 ?>
+<style>
+    .btn-cancelar{
+    background-color: #9e9e9e;
+    color: white;
+  }
+      .btn-atras{
+    background-color: #607d8b;
+    color: white;
+  }
+
+</style>
 <!--comienza mi codigo-->
 <div class="content-wrapper">
     <!--Comienza container fluid-->

@@ -7,7 +7,7 @@ include_once './molde/menu_navegacion.php';
     <div class="container-fluid"> <!--Comienza container Fluid-->
     <!--titulo-->
     <div align="center">
-    	<font face="Arial Narrow" size="5" color="#001f4d">Creación de Horarios 3-4 Grado.</font>
+    	<font face="Arial Narrow" size="5" color="#001f4d">Creación de Horarios de  3°- 4° Grado.</font>
     	 <img src="imagenes/horario2.png" width="70" height="70">
    </div>
    <br> <br>
@@ -25,6 +25,7 @@ include_once './molde/menu_navegacion.php';
                 <th class="">Jueves</th>
                 <th class="">Viernes</th>
                 <th class="">Grado</th>
+                  <th class="">Docente</th>
                 </thead>
 
                 <tbody>
@@ -221,6 +222,9 @@ include_once './molde/menu_navegacion.php';
                         
                                                 
                         <td class="text-center">
+                            
+                        </td>
+                         <td class="text-center">
                             
                         </td>
                     </tr>
@@ -421,6 +425,9 @@ include_once './molde/menu_navegacion.php';
                         
                                                 
                         <td class="text-center">
+                            
+                        </td>
+                         <td class="text-center">
                             
                         </td>
                     </tr>

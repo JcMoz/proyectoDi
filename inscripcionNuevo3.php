@@ -1,11 +1,25 @@
 <?php
 include_once './molde/inicio.php';
 include_once './molde/menu_navegacion.php';
+
 ?>
+<style >
+  
+   .btn-cancelar{
+    background-color: #9e9e9e;
+    color: white;
+  }
+   
+  .btn-siguiente{
+    background-color: #607d8b;
+    color: white;
+  }
+</style>
     <!-- /.content-wrapper -->
+
    <div class="content-wrapper">
      <div class="container-fluid">
-     <font face="Arial Narrow" size="5" color="#001f4d">Ficha de resgistro de estudiantes.
+     <font face="Arial Narrow" size="5" color="#001f4d">Ficha de registro de estudiantes.
      </font>
        
        <div class="row">
@@ -17,8 +31,8 @@ include_once './molde/menu_navegacion.php';
             <div class="panel-heading" align="center">Estudios Realizados</div>
               <div class="panel-body"><!--panel estudios realizados-->
               <br>
-                   &nbsp &nbsp&nbsp<INPUT class="form-group" type="text"  name="Ugrado" placeholder=" Ultimo Grado que curso ">
-                     &nbsp &nbsp &nbsp  &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<INPUT class="form-group" type="text"  name="añoC" placeholder="Año que lo Curso">  &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                   &nbsp &nbsp&nbsp<INPUT class="form-group" type="text"  name="Ugrado" placeholder=" Último Grado que cursó ">
+                     &nbsp &nbsp &nbsp  &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<INPUT class="form-group" type="text"  name="añoC" placeholder="Año que lo Cursó">  &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                        <input class="form-control" type="text"  placeholder=" Nombre del centro educativo  " name="inCurso"> 
                        <br>
                        <div align="center">
@@ -37,7 +51,7 @@ include_once './molde/menu_navegacion.php';
               <font face="Arial Narrow" size="4" color="#001f4d"> Nivel : </font>
               <input type="radio" name="nivel1">Primer &nbsp &nbsp
               <input type="radio" name="nivel2">Segundo &nbsp &nbsp
-              <input type="radio" name="nivel3">Tercer Ciclo
+              <input type="radio" name="nivel3">Tercer 
 
                     <div align="center">
                     <br>
@@ -78,17 +92,18 @@ include_once './molde/menu_navegacion.php';
      </div>
       <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-body">
+                <div class="panel">
                   <!--imagen   -->
                   <div align="center">
-                  <img src="imagenes/inscripcion3.png" class="img-responsive">
+                  <img src="imagenes/inscripcion3.png" height="250px" width="300px">
                   </div>
               
                 </div>
                 <br> <br> <br>
                 <div align="center">
-              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-info" onclick="location='/proyectoDi/inscripcionNuevo1.php'">
-              <input type="submit" value="Cancelar" name="cancel" class="btn-secondary">
+              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente" onclick="location='/proyectoDi/inscripcionNuevo1.php'">
+              <input type="submit" value="Cancelar" name="cancel" class="btn btn-cancelar">
+
             </div>    
         </div>
      </div>

@@ -31,12 +31,16 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top" id="mainNav">
-      <a class="navbar-brand" href="#">SICNO</a>
+      <a class="navbar-brand" href="#">CECCC</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav bg-secondary " id="exampleAccordion">
+         <div align="center">
+                <img src="imagenes/sicno.png" width="150" height="150">
+                </div>
+
 <!--Modulo de inscripcion-->
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inscripcion">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInscripcion" data-parent="#exampleAccordion">
@@ -65,6 +69,9 @@
             </a>
             <ul class="sidenav-second-level collapse bg-secondary " id="collapseCreacion">
               <li>
+               <a href="ingreso_G_S_A.php" style="color: white">Ingresar Grados, Aulas, Materias</a>
+             </li>
+              <li>
                 <a href="creacionHorario-1-2.php" style="color: white">Grados 1-2</a>
               </li>
               <li>
@@ -78,9 +85,6 @@
               </li>
               <li>
                 <a href="horario-6-9.php"  style="color: white">Horarios 5-9 Grado</a>
-              </li>
-              <li>
-                <a href="blank.html"  style="color: white">Blank Page</a>
               </li>
             </ul>
           </li>
@@ -103,10 +107,10 @@
                 <a href="registrarUsuario.php"  style="color: white">Registrar Usuario</a>
               </li>
               <li>
-                <a href="darAltaBaja.php"  style="color: white">Dar alta y baja</a>
+                <a href="Bitacora.php"  style="color: white">Bitácora</a>
               </li>
               <li>
-                <a href="blank.html"  style="color: white">Bitacora</a>
+                <a href="mantenimientoUsuarios.php"  style="color: white">Mantenimiento de usuarios</a>
               </li>
             </ul>
           </li>
@@ -145,16 +149,18 @@
               </li>
               <li>
                 <a href="buscarDocente.php"  style="color: white">Modificar Docente</a>
-              </li>
-              <li>
-                <a href="forgot-password.html"  style="color: white">Forgot Password Page</a>
-              </li>
-              <li>
-                <a href="blank.html"  style="color: white">Blank Page</a>
-              </li>
+              </li>  
             </ul>
           </li>
 <!--Termina Modulo de Expediente docente-->
+<!--asignacion-->
+             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="asignacion.php">
+            <i class="fa fa-fw fa-circle" style="color: white"></i>
+            <span class="nav-link-text" style="color: white">Asignacion</span>
+          </a>
+        </li>
+<!--asignacion-->
 
 <!--Modulo de Reportes-->
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Re">
@@ -272,7 +278,6 @@
     <footer class="sticky-footer" >
       <div class="container">
         <div class="text-center">
-          <img src="imagenes/mine.png" width="50" height="50">
         <small>Derechos Reservados UES-FMP 2017</small>
           <img src="imagenes/mine.png" width="50" height="50">
         
@@ -291,23 +296,72 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            Select "Logout" below if you are ready to end your current session.
+            
+           Seleccione "Cerrar sesión" si está listo para finalizar su sesión actual.
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button class="btn btn-success btn-block btn-large " type="button"  data-toggle="modal" data-target="#cambiar1">Cambiar Contraseña </button>
+            <a class="btn btn-primary" href="#">Cerrar sesión</a>
           </div>
         </div>
       </div>
       </div>
       </div>
     </div>
+        <!--******************************Dialog**************************-->
+            <div class="modal modal-info fade in" id="cambiar1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                 
+                <h4 class="modal-title">Cambiar contraseña de usuario.</h4>
+              </div>
+
+              <div class="modal-body">
+            <!-- form start -->
+            <form class="form-horizontal">
+              <div class="box-body">
+
+              <div class="row" > 
+          
+
+     <div align="center" class="col-md-12">
+     <input class="form-control" type="text" name="nombreA" placeholder="Contraseña actual"><br>
+     <input class="form-control" type="text" name="nombreA" placeholder="Nueva contraseña">
+         
+     </div><!--fin columna-->
+
+                
+              </div><!--fin row-->
+
+              </div>
+            
+            </form>
+
+              </div>
+
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras </button>
+                <button type="button"  class="btn btn-primary">Guardar</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+          
+
+       
+            <!--****************************fin Dialo******************************-->
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

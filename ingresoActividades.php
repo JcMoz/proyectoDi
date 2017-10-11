@@ -2,6 +2,13 @@
 include_once './molde/inicio.php';
 include_once './molde/menu_navegacion.php';
 ?>
+<style >
+      .btn-atras{
+    background-color: #607d8b;
+    color: white;
+  }
+    
+</style>
 <!--comienza mi codigo-->
 <div class="content-wrapper">
     <!--Comienza container fluid-->

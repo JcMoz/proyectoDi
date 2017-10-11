@@ -1,11 +1,14 @@
 <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top" id="mainNav">
-            <a class="navbar-brand" href="#">SICNO</a>
+            <a class="navbar-brand" href="#">CECCC</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-sidenav bg-secondary " id="exampleAccordion">
+                <div align="center">
+                <img src="imagenes/sicno.png" width="150" height="150">
+                </div>
 
                     <!--Modulo de inscripcion-->
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
@@ -32,6 +35,9 @@
                                 Creación de Horarios</span>
                         </a>
                         <ul class="sidenav-second-level collapse bg-secondary " id="collapseCreacion">
+                             <li>
+                                <a href="ingreso_G_S_A.php" style="color: white">Ingresar Grados, Aulas, Materias</a>
+                            </li>
                             <li>
                                 <a href="creacionHorario-1-2.php" style="color: white">Grados 1-2</a>
                             </li>
@@ -46,9 +52,6 @@
                                   </li>
                             <li>
                                 <a href="horario-6-9.php"  style="color: white">Horario 5-9 Grado</a>
-                            </li>
-                            <li>
-                                <a href="blank.html"  style="color: white">Blank Page</a>
                             </li>
                         </ul>
                     </li>
@@ -68,10 +71,10 @@
                                 <a href="registrarUsuario.php" style="color: white">Registrar Usuario</a>
                             </li>
                             <li>
-                                <a href="darAltaBaja.php"  style="color: white">Dar alta y baja</a>
+                                <a href="Bitácora.php"  style="color: white">Bitácora</a>
                             </li>
                             <li>
-                                <a href="blank.html"  style="color: white">Bitacora</a>
+                                <a href="mantenimientoUsuarios.php"  style="color: white">Mantenimiento de usuarios</a>
                             </li>
                         </ul>
                     </li>
@@ -95,9 +98,6 @@
                             <li>
                                 <a href="modificarNotas.php"  style="color: white">Modificar Notas</a>
                             </li>
-                            <li>
-                                <a href="blank.html"  style="color: white">Blank Page</a>
-                            </li>
                         </ul>
                     </li>
                     <!--Termina Modulo de Control de notas-->
@@ -119,6 +119,14 @@
                         </ul>
                     </li>
                     <!--Termina Modulo de Expediente docente-->
+                    <!--asignacion-->
+                             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                                <a class="nav-link" href="asignacion.php">
+                               <i class="fa fa-fw fa-circle" style="color: white"></i>
+                                 <span class="nav-link-text" style="color: white">Asignacion</span>
+                              </a>
+                              </li>
+                        <!--asignacion-->
 
                     <!--Modulo de Reportes-->
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Re">

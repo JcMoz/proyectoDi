@@ -3,7 +3,7 @@
 <footer class="sticky-footer" >
     <div class="container">
         <div class="text-center">
-            <img src="imagenes/mine.png" width="50" height="50">
+            
             <small>Derechos Reservados UES-FMP 2017</small>
             <img src="imagenes/mine.png" width="50" height="50">
         </div>
@@ -20,23 +20,71 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Select "Logout" below if you are ready to end your current session.
+                 Seleccione "Cerrar sesión" si está listo para finalizar su sesión actual.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                 <button class="btn btn-success btn-block btn-large " type="button"  data-toggle="modal" data-target="#cambiar">Cambiar Contraseña </button>
+                <a class="btn btn-primary" href="#">Cerrar sesión</a>
             </div>
         </div>
     </div>
 </div>
 </div>
 </div>
+<!--******************************Dialog**************************-->
+            <div class="modal modal-info fade in" id="cambiar">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                 
+                <h4 class="modal-title">Cambiar contraseña de usuario.</h4>
+              </div>
+
+              <div class="modal-body">
+            <!-- form start -->
+            <form class="form-horizontal">
+              <div class="box-body">
+
+              <div class="row" > 
+          
+
+     <div align="center" class="col-md-12">
+     <input class="form-control" type="text" name="nombreA" placeholder="Contraseña actual"><br>
+     <input class="form-control" type="text" name="nombreA" placeholder="Nueva contraseña">
+         
+     </div><!--fin columna-->
+
+                
+              </div><!--fin row-->
+
+              </div>
+            
+            </form>
+
+              </div>
+
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras </button>
+                <button type="button"  class="btn btn-primary">Guardar</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+          
+
+       
+            <!--****************************fin Dialo******************************-->
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

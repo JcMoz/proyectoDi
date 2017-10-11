@@ -38,7 +38,7 @@ include_once './molde/menu_navegacion.php';
                     <th class="text-center">Acción</th>
                     <th class="text-center">Nombres</th>
                     <th class="text-center">Apellidos</th>
-                    <th class="text-center">Telefono</th>
+                    <th class="text-center">Teléfono</th>
                     <th class="text-center">Dirección</th>
                     </thead>
                     <tbody>

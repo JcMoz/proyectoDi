@@ -2,6 +2,13 @@
 include_once './molde/inicio.php';
 include_once './molde/menu_navegacion.php';
 ?>
+<style >
+  
+    .btn-atras{
+    background-color: #607d8b;
+    color: white;
+  }
+</style>
 <div class="content-wrapper">
     <!--Comienza container fluid-->
     <div class="container-fluid">
@@ -43,7 +50,7 @@ include_once './molde/menu_navegacion.php';
                 <th class="text-center">R</th>
                 <th class="text-center">P</th>
                 <th class="text-center">PF</th>
-                <th class="text-center">Accion</th>
+                <th class="text-center">Acción</th>
                 </thead>
 
                 <tbody>
@@ -135,7 +142,7 @@ include_once './molde/menu_navegacion.php';
 
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras </button>
+                <button type="button" class="btn btn-atras pull-left" data-dismiss="modal">Atras </button>
                 <button type="button"  class="btn btn-primary">Guardar</button>
               </div>
             </div>

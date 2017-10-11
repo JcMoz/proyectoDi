@@ -19,7 +19,7 @@ include_once './molde/menu_navegacion.php';
                         <br>
                         <div align="center">
                             <INPUT class="form-group" type="text"  name="telDo" placeholder="   Teléfono" size="15"> &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-                            <font face="Arial Narrow" size="4" color="#001f4d">Genero : </font>
+                            <font face="Arial Narrow" size="4" color="#001f4d">Género : </font>
                             <select name="Genero">
                                 <option value="Femenino">Femenino</option>
                                 <option value="Masculino">Masculino</option>
@@ -34,7 +34,7 @@ include_once './molde/menu_navegacion.php';
                         &nbsp &nbsp &nbsp &nbsp<input class="form-group" type="text" placeholder="           NIP      " align="center" name="nip"> &nbsp &nbsp
                         <input class="form-group" type="text" placeholder="           NIT      " align="center" name="nit">&nbsp &nbsp <input class="form-group" type="text" placeholder="           DUI     " align="center" name="dui">
                         <br>
-                        <input class="form-control" type="text" name="direccionDo" placeholder="    Especialidad     "> 
+                        <input class="form-control" type="text" name="direccionDo" placeholder=" Especialidad     "> 
                         <br>
                     </div><!--cierre del panel body-->
                     <br>
@@ -44,10 +44,10 @@ include_once './molde/menu_navegacion.php';
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
-                    <div class="panel-body">
+                    <div class="panel">
                         <!--imagen   -->
                         <div align="center">
-                            <img src="imagenes/inscripcion1.gif" class="img-responsive">
+                            <img src="imagenes/docente1.png" class="img-responsive">
                         </div>
                     </div>
                     <br> <br> <br>

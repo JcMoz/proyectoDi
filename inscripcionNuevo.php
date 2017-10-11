@@ -1,11 +1,22 @@
 <?php
 include_once './molde/inicio.php';
 include_once './molde/menu_navegacion.php';
+
 ?>
+<style >
+ .btn-cancelar{
+    background-color: #9e9e9e;
+    color: white;
+  }
+  .btn-siguiente{
+    background-color: #607d8b;
+    color: white;
+  }
+</style>
     <!-- /.content-wrapper -->
      <div class="content-wrapper">
      <div class="container-fluid">
-     <font face="Arial Narrow" size="5" color="#001f4d">Ficha de resgistro de estudiantes.
+     <font face="Arial Narrow" size="5" color="#001f4d">Ficha de registro de estudiantes.
      </font>
        
        <div class="row">
@@ -14,9 +25,9 @@ include_once './molde/menu_navegacion.php';
             <div class="panel-heading" align="center">Datos personales</div>
               <div class="panel-body">
               <br>
-                  <INPUT class="form-control" type="text"  name="nombreA" placeholder=" Nombres del Alumno/a">
-                     <INPUT class="form-control" type="text"  name="apellidosA" placeholder=" Apllidos del Alumno/a"><br>
-                      <font face="Arial Narrow" size="4" color="#001f4d">Genero : </font>
+                  <INPUT class="form-control" type="text"  name="nombreA"  placeholder=" Nombres del Alumno/a" auto placeholder="Ingrese el nombre del alumno">
+                     <INPUT class="form-control" type="text"  name="apellidosA" placeholder=" Apellidos del Alumno/a"><br>
+                      <font face="Arial Narrow" size="4" color="#001f4d">Género : </font>
                       <select name="Genero">
     <option value="Femenino">Femenino</option>
     <option value="Masculino">Masculino</option>
@@ -26,7 +37,7 @@ include_once './molde/menu_navegacion.php';
                        <input class="form-group" type="date" name="fecha">
                        <br>
                        
-                         &nbsp &nbsp &nbsp &nbsp <input class="form-group" type="text" placeholder="           Nie      " align="center" name="nie"> &nbsp &nbsp
+                         &nbsp &nbsp &nbsp &nbsp <input class="form-group" type="text" placeholder="           NIE     " align="center" name="nie"> &nbsp &nbsp
                         
                    
                       &nbsp &nbsp &nbsp Nacionalidad: &nbsp<select name="na">
@@ -38,6 +49,8 @@ include_once './molde/menu_navegacion.php';
                       
 
             </div>
+
+
             <br>
             <div class="panel-heading" align="center">Datos de Recidencia</div>
               <div class="panel-body">
@@ -55,17 +68,19 @@ include_once './molde/menu_navegacion.php';
      </div>
           <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-body">
+                <div class="panel">
                   <!--imagen   -->
                   <div align="center">
                   <img src="imagenes/inscripcion1.gif" class="img-responsive">
                   </div>
               
                 </div>
+
                 <br> <br> <br>
                 <div align="center">
-              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-info" onclick="location='/proyectoDi/inscripcionNuevo3.php'">
-              <input type="submit" value="Cancelar" name="cancel" class="btn-secondary">
+              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente" onclick="location='/proyectoDi/inscripcionNuevo3.php'">
+              <input type="submit" value="Cancelar" name="cancel" class=" btn btn-cancelar" >
+             
             </div>    
         </div>
      </div>

@@ -7,7 +7,7 @@ include_once './molde/menu_navegacion.php';
     <div class="container-fluid"> <!--Comienza container Fluid-->
     <!--titulo-->
     <div align="center">
-    	<font face="Arial Narrow" size="5" color="#001f4d">Horarios 6-9 Grado.</font>
+    	<font face="Arial Narrow" size="5" color="#001f4d">Horarios de 6°- 9° Grado.</font>
     	 <img src="imagenes/horario3.png" width="60" height="60">
    </div>
    <br>
@@ -25,6 +25,7 @@ include_once './molde/menu_navegacion.php';
                 <th class="text-center">Jueves</th>
                 <th class="text-center">Viernes</th>
                 <th class="text-center">Grado</th>
+                 <th class="text-center">Docente</th>
                 </thead>
 <!--*********************************fila**************************************-->
                 <tbody>
@@ -69,6 +70,9 @@ include_once './molde/menu_navegacion.php';
 						</td>
                         
                                                 
+                        <td class="text-center">
+                            
+                        </td>
                         <td class="text-center">
                             
                         </td>
@@ -123,6 +127,9 @@ include_once './molde/menu_navegacion.php';
                         <td class="text-center">
                             
                         </td>
+                         <td class="text-center">
+                            
+                        </td>
                     </tr>
 
                 </tbody>
@@ -171,6 +178,9 @@ include_once './molde/menu_navegacion.php';
                         
                                                 
                         <td class="text-center">
+                            
+                        </td>
+                         <td class="text-center">
                             
                         </td>
                     </tr>
@@ -224,6 +234,9 @@ include_once './molde/menu_navegacion.php';
                         <td class="text-center">
                             
                         </td>
+                         <td class="text-center">
+                            
+                        </td>
                     </tr>
 
                 </tbody>
@@ -273,6 +286,9 @@ include_once './molde/menu_navegacion.php';
                         
                                                 
                         <td class="text-center">
+                            
+                        </td>
+                          <td class="text-center">
                             
                         </td>
                     </tr>

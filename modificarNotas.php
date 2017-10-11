@@ -63,7 +63,7 @@ include_once './molde/menu_navegacion.php';
                 <th class="text-center">R</th>
                 <th class="text-center">P</th>
                 <th class="text-center">PF</th>
-                <th class="text-center">Accion</th>
+                <th class="text-center">Acción</th>
                 </thead>
 
                 <tbody>
