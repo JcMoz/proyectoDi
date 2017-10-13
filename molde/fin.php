@@ -99,6 +99,11 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/sb-admin.min.js"></script>
+  <!--Validaciones-->
+<script src="js/reglas_validacion.js"></script>
+<script src="js/validacionesDocente.js"></script>
+<!--fin de las validaciones-->
+
 
 </body>
 

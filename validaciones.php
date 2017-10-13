@@ -27,7 +27,7 @@
                         <div class="panel-body">
                             <form id="FORMULARIO_VALIDADO" method="post" class="form-horizontal" action="">///////////////////////////////////////
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label" for="firstname1">First name</label>
+                                   
                                     <div class="col-sm-5">
                                         <input type="text" class="form-control" id="firstname1" name="firstname1" placeholder="First name" />
                                     </div>
@@ -74,7 +74,7 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-9 col-sm-offset-4">
-                                        <button type="submit" class="btn btn-primary" name="signup1" value="Sign up">Sign up</button>
+                                <button type="submit" class="btn btn-primary" name="signup1" value="Sign up">Sign up</button>
                                     </div>
                                 </div>
                             </form>
