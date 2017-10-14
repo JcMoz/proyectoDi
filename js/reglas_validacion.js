@@ -1,7 +1,8 @@
 
 $.validator.setDefaults({
     submitHandler: function () {
-        alert("submitted!");
+        document.getElementById('pase').value="ok";    
+        document.FORMULARIO_VALIDADO.submit();
     }
 });
 

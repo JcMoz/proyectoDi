@@ -1,8 +1,4 @@
-<?php
 
-include_once '../plantilla/incio_plantilla.php';
-include_once '../plantilla/menu_navegacion.php';
-?>
 <style >
     .btn-cancelar{
         background-color: #9e9e9e;
@@ -11,7 +7,6 @@ include_once '../plantilla/menu_navegacion.php';
 </style>
 <!-- /.content-wrapper mi codigo-->
 <div class="content-wrapper">
-
 
     <div class="container-fluid"> <!--Comienza container Fluid-->
 
@@ -25,6 +20,7 @@ include_once '../plantilla/menu_navegacion.php';
                         <br>
                         <!--comienza formulario-->
                         <form id="FORMULARIO_VALIDADO"  method="post" class="form-register" >
+                            <input type="hidden" name="pase" id="pase"/>
 
                             <div class="row">
                                 <div class="col-md-1"></div>
@@ -50,7 +46,7 @@ include_once '../plantilla/menu_navegacion.php';
                                 <div class="col-md-3">
 
                                     <select class="form-control" name="genero">
-                                       
+
                                         <option value="Femenino">Femenino</option>
                                         <option value="Masculino">Masculino</option>
 
@@ -84,19 +80,19 @@ include_once '../plantilla/menu_navegacion.php';
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
-                                      <input class="form-control" type="text" name="especialidad" placeholder=" Especialidad     "> 
+                                    <input class="form-control" type="text" name="especialidad" placeholder=" Especialidad     "> 
                                     <br>
 
                                 </div>
                             </div>
 
-                          
+
                             <div align="center">
                                 <input type="submit" value="Guardar" name="guardar" class="btn btn-info">
                                 <input type="submit" value="Cancelar" name="cancel" class=" btn btn-cancelar">
-                               
+
                             </div>
-                             <br>
+                            <br>
                         </form><!--termina formulario-->
                     </div><!--cierre del panel body-->
                     <br>
@@ -126,4 +122,40 @@ include_once '../plantilla/menu_navegacion.php';
 <?php
 
 include_once '../plantilla/fin_plantilla.php';
+
+if (isset($_REQUEST['pase'])) {
+    include_once '../conexion/php_conexion.php';
+    $nombre = $_POST["nom"];
+    $apellido = $_POST["apellido"];
+    $direc = $_POST["direccion"];
+    $tel = $_POST["tel"];
+    $sexo = $_POST["genero"];
+    $fec = $_POST["fecha"];
+    $co = $_POST["correo"];
+    $np = $_POST["nit"];
+    $nt = $_POST["nit"];
+    $du = $_POST["dui"];
+    $esp = $_POST["especialidad"];
+
+    $insertar = "INSERT INTO docente (nom_doc,ape_doc,dir_doc,tel_doc,gen_doc,f_nac_doc,cor_doc) VALUES ('$nombre','$apellido','$direc','$tel','$sexo','$fec','$co')";
+    $resultado = mysqli_query($conexion, $insertar);
+    if (!$resultado) {
+        echo'error al registrar';
+    } else {
+        echo 'ususario registrado';
+    }
+}
+
+
+
+//$insertar="INSERT INTO docente (nom_doc,ape_doc,dir_doc,tel_doc,gen_doc,f_nac_doc,cor_doc,nip_doc,nit,dui_doc,esp_doc) VALUES('$nombre',$apellido,$direc',$tel',$sexo',$fec',$co',$np',$nt',$du',$esp')";
+//$resultado=  mysqli_query($conexion, $insertar);
+//if (!$resultado) {
+//    echo'error al registrar';
+//}  else {
+//    echo 'ususario registrado';
+//}
 ?>
+
+
+
