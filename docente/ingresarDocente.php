@@ -1,4 +1,7 @@
-
+<?php
+include_once '../plantilla/incio_plantilla.php';;
+include_once '../plantilla/menu_navegacion.php';;
+?>
 <style >
     .btn-cancelar{
         background-color: #9e9e9e;
