@@ -8,7 +8,11 @@ $.validator.setDefaults({
 $(document).ready(function () {
     $("#FORMULARIO_VALIDADO").validate({
         rules: {
-             nomDo: {
+             nom: {
+                required: true,
+                minlength: 2
+            },
+             apellido: {
                 required: true,
                 minlength: 2
             },
@@ -38,16 +42,20 @@ $(document).ready(function () {
             
         },
         messages: {
-             nomDo: {
-                required: "Por favor ingrese el nombre del docente",
-                minlength: "No existe un nombre con 2 caracteres. ingrese un nombre valido"
+             nom: {
+                required: "Por favor ingrese el nombre.",
+                minlength: "No existe un nombre con 2 caracteres."
+            },
+              apellido: {
+                required: "Por favor ingrese el apellido.",
+                minlength: "No existe un apellido con 2 caracteres."
             },
             firstname1: {
-                required: "Por favor ingrese el nombre del docente"
+                required: "Por favor ingrese el apelliodo del docente"
             },
             username1: {
                 required: "INGRESE UN USUARIO",
-                minlength: "INGRESE 2 CARACTERES"
+                minlength: "INGRESE 2"
             },
             password1: {
                 required: "INGRESE UNA CONTRASE;A",
