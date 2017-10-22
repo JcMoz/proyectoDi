@@ -28,23 +28,25 @@ include_once '../plantilla/menu_navegacion.php';;
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5">
-                                    <INPUT class="form-control" id="Idnom" name="nom" type="text"  placeholder=" Nombres del docente" required="" minlength="2" pattern="[a-z]{1,15}">
+                                    <input type="text" readonly="readonly" id="id-do" name="id-do" style="visibility:hidden; height:5px;"/>
+                                     <input type="text" readonly="readonly" id="pro" name="pro" style="visibility:hidden; height:5px;"/>
+                                    <INPUT class="form-control" id="Idnom" name="nombreDo" type="text"  placeholder=" Nombres del docente" required="" minlength="2" pattern="[a-z]{1,15}">
                                 </div>
                                 <div class="col-md-5">
-                                    <INPUT class="form-control" type="text" id="Idapellido" name="apellido" placeholder="Apellidos del docente" required="" minlength="2" ><br>
+                                    <INPUT class="form-control" type="text" id="Idapellido" name="apellidosDo" placeholder="Apellidos del docente" required="" minlength="2" ><br>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
 
-                                    <input class="form-control" type="text" id="Iddireccion" name="direccion" placeholder="     Dirección      "><br>
+                                    <input class="form-control" type="text" id="Iddireccion" name="direccionDo" placeholder="     Dirección      "><br>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-3">
-                                    <INPUT class="form-control" type="text" id="Idtel" name="tel" placeholder="   Teléfono" size="10">
+                                    <INPUT class="form-control" type="text" id="Idtel" name="telDo" placeholder="   Teléfono" size="10">
                                 </div>
                                 <div class="col-md-3">
 
@@ -63,7 +65,7 @@ include_once '../plantilla/menu_navegacion.php';;
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
-                                    <input class="form-control" type="text" name="correo" placeholder="     Correo electrónico      "> 
+                                    <input class="form-control" type="text" name="coDo" placeholder="     Correo electrónico      "> 
                                     <br>
 
                                 </div>
@@ -77,13 +79,13 @@ include_once '../plantilla/menu_navegacion.php';;
                                     <input class="form-control" type="text" placeholder="        NIT      "  name="nit">
                                 </div>
                                 <div class="col-md-4">
-                                    <input class="form-control" type="text" placeholder="           DUI     " name="dui"> <br>
+                                    <input class="form-control mask-dui" type="text" placeholder="           DUI     " name="dui"> <br>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
-                                    <input class="form-control" type="text" name="especialidad" placeholder=" Especialidad     "> 
+                                    <input class="form-control" type="text" name="esp" placeholder=" Especialidad     "> 
                                     <br>
 
                                 </div>
@@ -123,9 +125,6 @@ include_once '../plantilla/menu_navegacion.php';;
 
 </div><!--cierrre de content-wrapper mi codigo-->
 <?php
-
-include_once '../plantilla/fin_plantilla.php';
-
 if (isset($_REQUEST['pase'])) {
     include_once '../conexion/php_conexion.php';
     $nombre = $_POST["nom"];
@@ -135,30 +134,17 @@ if (isset($_REQUEST['pase'])) {
     $sexo = $_POST["genero"];
     $fec = $_POST["fecha"];
     $co = $_POST["correo"];
-    $np = $_POST["nit"];
+    $np = $_POST["nip"];
     $nt = $_POST["nit"];
     $du = $_POST["dui"];
     $esp = $_POST["especialidad"];
 
-    $insertar = "INSERT INTO docente (nom_doc,ape_doc,dir_doc,tel_doc,gen_doc,f_nac_doc,cor_doc) VALUES ('$nombre','$apellido','$direc','$tel','$sexo','$fec','$co')";
-    $resultado = mysqli_query($conexion, $insertar);
-    if (!$resultado) {
-        echo'error al registrar';
-    } else {
-        echo 'ususario registrado';
-    }
+     mysql_query("INSERT INTO docente(nom_doc,ape_doc,dir_doc,tel_doc,gen_doc,f_nac_doc,cor_doc,nip_doc,nit,dui_doc,esp_doc) VALUES ('$nombre','$apellido','$direc','$tel','$sexo','$fec','$co','$np','$nt','$du','$esp')");
+   
 }
-
-
-
-//$insertar="INSERT INTO docente (nom_doc,ape_doc,dir_doc,tel_doc,gen_doc,f_nac_doc,cor_doc,nip_doc,nit,dui_doc,esp_doc) VALUES('$nombre',$apellido,$direc',$tel',$sexo',$fec',$co',$np',$nt',$du',$esp')";
-//$resultado=  mysqli_query($conexion, $insertar);
-//if (!$resultado) {
-//    echo'error al registrar';
-//}  else {
-//    echo 'ususario registrado';
-//}
+include_once '../plantilla/fin_plantilla.php';
 ?>
-
-
+<script type="text/javascript">
+ $('.mask-dui').mask('00000000-0');
+ </script>
 

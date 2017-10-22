@@ -78,10 +78,15 @@ include_once '../plantilla/menu_navegacion.php';
                       </div>
                      
                       
+              <br>
+              &nbsp &nbsp<font face="Arial Narrow" size="4" color="#001f4d">Documentos : </font>
+              <input type="radio" name="Partida">Partida de Nacimiento &nbsp
+              <input type="radio" name="certificado">Certificado de Notas &nbsp &nbsp &nbsp
+              <input type="radio" name="dui">DUI &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+              <input type="radio" name="conducta">Cetficado de Conducta
+
                        
-                       <br><div align="center">
-                         <input class="form-control" type="text" placeholder=" Documentos que presento para la Matricula " align="center" name="nie">
-                       </div>
+                       <br>
                        <br>
 
             </div><!--cierre de panel body-->
@@ -95,7 +100,7 @@ include_once '../plantilla/menu_navegacion.php';
                 <div class="panel">
                   <!--imagen   -->
                   <div align="center">
-                  <img src="imagenes/inscripcion3.png" height="250px" width="300px">
+                  <img src="../imagenes/inscripcion3.png" height="250px" width="300px">
                   </div>
               
                 </div>
@@ -114,5 +119,9 @@ include_once '../plantilla/menu_navegacion.php';
         <!--Cierre Mi codigo -->
 
 <?php
+
+
+
+
 include_once '../plantilla/fin_plantilla.php';
 ?>

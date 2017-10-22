@@ -77,7 +77,7 @@ include_once '../plantilla/menu_navegacion.php';
 
               <div class="modal-header">
                  
-                <h4 class="modal-title"> Antiguo ingreso<img src="imagenes/alumnoA.png" width="70" height="70"> </h4>
+                  <h4 class="modal-title"> Antiguo ingreso<img src="../imagenes/alumnoA.png" width="70" height="70"> </h4>
               </div>
 
               <div class="modal-body">

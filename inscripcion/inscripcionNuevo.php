@@ -94,5 +94,25 @@ include_once '../plantilla/menu_navegacion.php';
         <!--ojo -->
 
 <?php
+
+if (isset($_REQUEST['pase'])) {
+    include_once '../conexion/php_conexion.php';
+    $nombre = $_POST["nombreA"];
+    $apellido = $_POST["apellidosA"];
+    $gen = $_POST["Genero"];
+    $fecha = $_POST["fecha"];
+    $nie = $_POST["nie"];
+    $nac = $_POST["na"];
+    $dir = $_POST["direccion"];
+    $distancia = $_POST["distanciaC"];
+    $depa = $_POST["depto"];
+    $muni = $_POST["municipio"];
+    $telefono = $_POST["tel"];
+
+     mysql_query("INSERT INTO alumno( nom_alumno,ape_alumno,gen_alumno,f_nac_alum,nie,nac_alum,dir_alum,distancia,depto_alum,mun_alum,tel) VALUES ('$nombre','$apellido','$gen','$fecha','$nie','$nac','$dir','$distancia','$depa','$muni','$telefono')");
+   
+
+}
+
 include_once '../plantilla/fin_plantilla.php';
 ?>

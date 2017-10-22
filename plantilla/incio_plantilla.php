@@ -25,8 +25,11 @@
         
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <script type="text/javascript" src="../js/jquery.min.js"></script>
-        <script type="text/javascript" src="../js/jquery.validate.js"></script>
-        <script src="../js/reglas_validacion.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<!--<script src="../js/jquery.js"></script> -->
+
+<script src="../js/funciones.js"></script>
+<script src="../js/reglas_validacion.js"></script>
         
               
                
