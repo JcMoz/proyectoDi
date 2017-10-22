@@ -1,6 +1,11 @@
 <?php
 $conexion=mysql_connect('localhost','root','');
 mysql_select_db('basecentro',$conexion);
+$s='$';
+function limpiar($tags){
+    $tags= strip_tags($tags);
+    return $tags;
+}
 //session_start();
 
 //$conexion = mysql_connect("localhost", "root", "", "basecentro");
@@ -11,3 +16,4 @@ mysql_select_db('basecentro',$conexion);
 //} else {
 //    echo"buena conexion";
 //}
+?>
