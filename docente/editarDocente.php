@@ -1,7 +1,7 @@
 <!--******************************Dialog**************************-->  
 <form name="form1" method="post" action="">
     
-    <input type="hidden" name="idDeActualizacion" id="idDeActualizacion">
+    <input type="hidden" name="idDeActualizacion" id="idDeActualizacion" value="00000">
 
     <div class="modal fade" id="actualizarDocente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog"
@@ -49,22 +49,21 @@
 
 <?php
 
-echo $_REQUEST['idDeActualizacion'];
-//if (!empty($_REQUEST['nombreRecuperado'])) {
-//    echo 'por aqui pasa';
-//    
-//    $nombreW = $_REQUEST['nombreRecuperado'];
-//    $apellidoW = $_REQUEST['apellidoRecuperado'];
-//    $idActualizacion = $_REQUEST['idDeActualizacion'];
-//    
+if (!empty($_REQUEST['nombreRecuperado'])) {
+    echo 'por aqui pasa';
+    
+    $nombreW = $_REQUEST['nombreRecuperado'];
+    $apellidoW = $_REQUEST['apellidoRecuperado'];
+    $idActualizacion = $_REQUEST['idDeActualizacion'];
+    
 //    echo $nombreW;
 //    echo $apellidoW;
 //    echo "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW' WHERE id_doc='$idActualizacion'";
-//    
-//    
-//       mysqli_query($conexion , "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW' WHERE id_doc='$idActualizacion'");
-//    
-//}
+    
+    
+       mysqli_query($conexion , "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW' WHERE id_doc='$idActualizacion'");
+       echo '<script>location.href="buscarDocente.php";</script>';
+}
 
 //if (!empty($_POST['nombre'])) {
 //    $nombre = limpiar($_POST['nombre']);
