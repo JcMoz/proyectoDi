@@ -52,10 +52,11 @@ include_once '../conexion/php_conexion.php';
                         while ($row = mysqli_fetch_array($pame)) {
                             $nombreX =$row['nom_doc'];
                             $apellidoX = $row['ape_doc'];
+                            $pass = $row['id_doc'];
                             ?>
                             <tr>
                                 <td><!--boton de modificar-->
-                                    <a href="#" data-toggle="modal" data-target="#actualizarDocente" onclick="Editar_docente('<?php echo $nombreX; ?>','<?php echo $apellidoX; ?>')" >Editar</a>
+                                    <a href="#" data-toggle="modal" data-target="#actualizarDocente" onclick="Editar_docente('<?php echo $nombreX; ?>','<?php echo $apellidoX; ?>','<?php echo $pass;?>')" >Editar</a>
                                 </td>
                                 <td><?php echo $row['nom_doc']; ?></td>
                                 <td><?php echo $row['ape_doc']; ?></td>
@@ -74,14 +75,17 @@ include_once '../conexion/php_conexion.php';
 </div><!--Fin de content wrapper mi codigo-->
 
 
+<!-- aqui esta el modal-->
+<?php
+include_once './editarDocente.php';
+?>
 
-
-
+<!--este es para pasar los parametros al modal-->
 <script>
-function Editar_docente(nombre,apellido){
+function Editar_docente(nombre,apellido,pass){
     $("#nombreDo").val(nombre);
     $("#apellidosDo").val(apellido);
-    
+    $("#idDeActualizacion").val(pass);
 }
 </script>
 
