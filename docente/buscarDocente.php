@@ -15,17 +15,13 @@ include_once '../conexion/php_conexion.php';
                         <img src="../imagenes/buscar.ico" width="80" height="80">
                         Expediente Docente
                     </h2>
+                    <script src="../js/jquery-1.7.2.min.js" ></script>
+                    <script src="../js/buscaresc.js"></script>
                 </div>
                 <div class="span6">
                     <form name="form1" method="post" action="">
                         <div class="input-append">
-                            <input type="text" name="buscar" class="input-xlarge" autocomplete="off" autofocus placeholder="Buscar Docentes">
-                            <button type="submit" class="btn-secondary">
-                                <strong>
-                                    <i class="icon-search"></i> Buscar
-                                </strong>
-                            </button>
-
+                            <input type="text" name="buscar" id="filtrar"  class="input-xlarge" autocomplete="off" autofocus placeholder="Buscar Docentes">
                         </div>
 
                     </form>
@@ -46,7 +42,7 @@ include_once '../conexion/php_conexion.php';
                             <th width="300">Dirección</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody  class="buscar">
                         <?php
                         $pame = mysqli_query($conexion, "SELECT * FROM docente");
                         while ($row = mysqli_fetch_array($pame)) {
@@ -68,8 +64,8 @@ include_once '../conexion/php_conexion.php';
                                 </td>
                                 <td><?php echo $row['nom_doc']; ?></td>
                                 <td><?php echo $row['ape_doc']; ?></td>
-                                <td><?php echo $row['dir_doc']; ?></td>
                                 <td><?php echo $row['tel_doc']; ?></td>
+                                <td><?php echo $row['dir_doc']; ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
