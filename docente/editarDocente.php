@@ -4,7 +4,7 @@
     <input type="hidden" name="idDeActualizacion" id="idDeActualizacion" value="00000">
 
     <div class="modal fade" id="actualizarDocente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog"
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
 
@@ -18,20 +18,20 @@
                             <INPUT class="form-group" type="text"  name="nombreRecuperado" id="nombreDo" value="">
                             <INPUT class="form-group" type="text"  name="apellidoRecuperado" id="apellidosDo" value=""><br>
 
-                            <input class="form-group" type="text" name="direccion" id="direccionDo"value=""> 
+                            <input class="form-group" type="text" name="direccionR" id="direccionDo"value=""> 
                             <br>
 
                             <div align="center">
-                                <INPUT class="form-group" type="text"  name="telefono" id="telDo">
+                                <INPUT class="form-group" type="text"  name="telefonoR" id="telDo">
                             </div>
 
-                            <input class="form-group" type="text" name="correo" id="coDo"> 
+                            <input class="form-group" type="text" name="correoR" id="coDo"> 
                             <br>
-                            <input class="form-group" type="text" name="nip" id="nip">
-                            <input class="form-group" type="text" name="nit" id="nit" >
-                            <input class="form-group" type="text" name="dui" id="dui" >
+                            <input class="form-group" type="text" name="nipR" id="nip">
+                            <input class="form-group" type="text" name="nitR" id="nit" >
+                            <input class="form-group" type="text" name="duiR" id="dui" >
                             <br>
-                            <input class="form-group" type="text" name="especialidad" id="esp">
+                            <input class="form-group" type="text" name="espR" id="esp">
 
                         </div>
                     </div>
@@ -54,6 +54,13 @@ if (!empty($_REQUEST['nombreRecuperado'])) {
     
     $nombreW = $_REQUEST['nombreRecuperado'];
     $apellidoW = $_REQUEST['apellidoRecuperado'];
+     $dirW = $_REQUEST['direccionR'];
+     $telW=$_REQUEST['telefonoR'];
+     $correoW=$_REQUEST['correoR'];
+     $nipW=$_REQUEST['nipR'];
+     $nitW=$_REQUEST['nitR'];
+     $duiW=$_REQUEST['duiR'];
+     $espW=$_REQUEST['espR'];
     $idActualizacion = $_REQUEST['idDeActualizacion'];
     
 //    echo $nombreW;
@@ -61,7 +68,7 @@ if (!empty($_REQUEST['nombreRecuperado'])) {
 //    echo "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW' WHERE id_doc='$idActualizacion'";
     
     
-       mysqli_query($conexion , "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW' WHERE id_doc='$idActualizacion'");
+       mysqli_query($conexion , "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW',dir_doc='$dirW',tel_doc='$telW',cor_doc='$correoW',nip_doc='$nipW',nit='$nitW',dui_doc='$duiW',esp_doc='$espW' WHERE id_doc='$idActualizacion'");
        echo '<script>location.href="buscarDocente.php";</script>';
 }
 

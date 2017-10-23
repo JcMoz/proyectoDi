@@ -52,11 +52,19 @@ include_once '../conexion/php_conexion.php';
                         while ($row = mysqli_fetch_array($pame)) {
                             $nombreX =$row['nom_doc'];
                             $apellidoX = $row['ape_doc'];
+                            $dirX=$row['dir_doc'];
+                            $telX=$row['tel_doc'];
+                            $correoX=$row['cor_doc'];
+                            $nipX=$row['nip_doc'];
+                            $nitX=$row['nit'];
+                            $duiX=$row['dui_doc'];
+                            $espX=$row['esp_doc'];
                             $pass = $row['id_doc'];
+                           
                             ?>
                             <tr>
                                 <td><!--boton de modificar-->
-                                    <a href="#" data-toggle="modal" data-target="#actualizarDocente" onclick="Editar_docente('<?php echo $nombreX; ?>','<?php echo $apellidoX; ?>','<?php echo $pass;?>')" >Editar</a>
+                                    <a href="#" data-toggle="modal" data-target="#actualizarDocente" onclick="Editar_docente('<?php echo $nombreX; ?>','<?php echo $apellidoX; ?>','<?php echo $dirX;?>','<?php echo $telX;?>','<?php echo $correoX;?>','<?php echo $nipX;?>','<?php echo $nitX;?>','<?php echo $nitX;?>','<?php echo $espX;?>','<?php echo $pass;?>')" >Editar</a>
                                 </td>
                                 <td><?php echo $row['nom_doc']; ?></td>
                                 <td><?php echo $row['ape_doc']; ?></td>
@@ -82,9 +90,16 @@ include_once './editarDocente.php';
 
 <!--este es para pasar los parametros al modal-->
 <script>
-function Editar_docente(nombre,apellido,pass){
+function Editar_docente(nombre,apellido,dir,tel,cor,nip,nit,dui,esp,pass){
     $("#nombreDo").val(nombre);
     $("#apellidosDo").val(apellido);
+    $("#direccionDo").val(dir);
+    $("#telDo").val(tel);
+    $("#coDo").val(cor);
+    $("#nip").val(nip);
+    $("#nit").val(nit);
+    $("#dui").val(dui);
+    $("#esp").val(esp);
     $("#idDeActualizacion").val(pass);
 }
 </script>
