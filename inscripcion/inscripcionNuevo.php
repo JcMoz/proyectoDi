@@ -18,7 +18,10 @@ include_once '../plantilla/menu_navegacion.php';
      <div class="container-fluid">
      <font face="Arial Narrow" size="5" color="#001f4d">Ficha de registro de estudiantes.
      </font>
-       
+       <!--comienza formulario-->
+   <form id="FORMULARIO_VALIDADO"  method="post" class="form-register" >
+    <input type="hidden" name="pase" id="pase"/>
+
        <div class="row">
          <div class="col-md-8">
             <div class="panel panel-default">
@@ -41,8 +44,8 @@ include_once '../plantilla/menu_navegacion.php';
                         
                    
                       &nbsp &nbsp &nbsp Nacionalidad: &nbsp<select name="na">
-    <option value="sal">Salvadoreña</option>
-    <option value="ex">Extranjero</option>
+    <option value="Salvadoreña">Salvadoreña</option>
+    <option value="Extranjera">Extranjero</option>
      </select>
      <br>
                        
@@ -60,7 +63,7 @@ include_once '../plantilla/menu_navegacion.php';
                   <br>
                      &nbsp &nbsp<INPUT class="form-group" type="text"  name="depto" placeholder=" Departamento">  &nbsp &nbsp&nbsp 
                        <input class="form-group" type="text"  placeholder="  Municipio  " name="municipio"> &nbsp 
-                      <input class="form-group" type="text" placeholder="  Teléfono   " name="telefono">
+                      <input class="form-group mask-telefono" type="text" placeholder="  Teléfono   " name="telefono">
 
             </div><!--cierre de panel body-->
             <br>
@@ -80,14 +83,15 @@ include_once '../plantilla/menu_navegacion.php';
                 <div align="center">
               <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente" onclick="location='/proyectoDi/inscripcion/inscripcionNuevo3.php'">
               <input type="submit" value="Cancelar" name="cancel" class=" btn btn-cancelar" >
-             
+             <!--termina formulario-->
             </div>    
         </div>
      </div>
    
    
         
-     </div>
+     </div> 
+   </form>
      </div>
      </div>
     
@@ -109,10 +113,15 @@ if (isset($_REQUEST['pase'])) {
     $muni = $_POST["municipio"];
     $telefono = $_POST["tel"];
 
-     mysql_query("INSERT INTO alumno( nom_alumno,ape_alumno,gen_alumno,f_nac_alum,nie,nac_alum,dir_alum,distancia,depto_alum,mun_alum,tel) VALUES ('$nombre','$apellido','$gen','$fecha','$nie','$nac','$dir','$distancia','$depa','$muni','$telefono')");
-   
+     mysqli_query($conexion,"INSERT INTO alumno( nom_alumno,ape_alumno,gen_alumno,f_nac_alum,nie,nac_alum,dir_alum,distancia,depto_alum,mun_alum,tel) VALUES ('$nombre','$apellido','$gen','$fecha','$nie','$nac','$dir','$distancia','$depa','$muni','$telefono')");
+    echo '<script>location.href="inscripcionNuevo3.php";</script>';
 
 }
 
 include_once '../plantilla/fin_plantilla.php';
 ?>
+<script type="text/javascript">
+ $('.mask-dui').mask('00000000-0');
+ $('.mask-telefono').mask('0000-0000');
+  $('.mask-nit').mask('0000-000000-000-0')
+  </script>

@@ -23,13 +23,12 @@ include_once '../plantilla/menu_navegacion.php';;
                         <br>
                         <!--comienza formulario-->
                         <form id="FORMULARIO_VALIDADO"  method="post" class="form-register" >
-                            <input type="hidden" name="pase" id="pase"/>
+                            <input type="hidden" name="tirar" id="pase"/>
 
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5">
-                                    <input type="text" readonly="readonly" id="id-do" name="id-do" style="visibility:hidden; height:5px;"/>
-                                     <input type="text" readonly="readonly" id="pro" name="pro" style="visibility:hidden; height:5px;"/>
+                                  
                                     <INPUT class="form-control" id="Idnom" name="nombreDo" type="text"  placeholder=" Nombres del docente" required="" minlength="2" pattern="[a-z]{1,15}">
                                 </div>
                                 <div class="col-md-5">
@@ -46,7 +45,7 @@ include_once '../plantilla/menu_navegacion.php';;
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-3">
-                                    <INPUT class="form-control" type="text" id="Idtel" name="telDo" placeholder="   Teléfono" size="10">
+                                    <INPUT class="form-control mask-telefono" type="text" id="Idtel" name="telDo" placeholder="   Teléfono" size="10">
                                 </div>
                                 <div class="col-md-3">
 
@@ -76,7 +75,7 @@ include_once '../plantilla/menu_navegacion.php';;
                                     <input class="form-control" type="text" placeholder="        NIP      "name="nip">
                                 </div>
                                 <div class="col-md-3">
-                                    <input class="form-control" type="text" placeholder="        NIT      "  name="nit">
+                                    <input class="form-control mask-nit" type="text" placeholder="        NIT      "  name="nit">
                                 </div>
                                 <div class="col-md-4">
                                     <input class="form-control mask-dui" type="text" placeholder="           DUI     " name="dui"> <br>
@@ -125,26 +124,28 @@ include_once '../plantilla/menu_navegacion.php';;
 
 </div><!--cierrre de content-wrapper mi codigo-->
 <?php
-if (isset($_REQUEST['pase'])) {
+if (isset($_REQUEST['tirar'])) {
     include_once '../conexion/php_conexion.php';
-    $nombre = $_POST["nom"];
-    $apellido = $_POST["apellido"];
-    $direc = $_POST["direccion"];
-    $tel = $_POST["tel"];
+    $nombre = $_POST["nombreDo"];
+    $apellido = $_POST["apellidosDo"];
+    $direc = $_POST["direccionDo"];
+    $tel = $_POST["telDo"];
     $sexo = $_POST["genero"];
     $fec = $_POST["fecha"];
-    $co = $_POST["correo"];
+    $co = $_POST["coDo"];
     $np = $_POST["nip"];
     $nt = $_POST["nit"];
     $du = $_POST["dui"];
-    $esp = $_POST["especialidad"];
+    $esp = $_POST["esp"];
 
-     mysql_query("INSERT INTO docente(nom_doc,ape_doc,dir_doc,tel_doc,gen_doc,f_nac_doc,cor_doc,nip_doc,nit,dui_doc,esp_doc) VALUES ('$nombre','$apellido','$direc','$tel','$sexo','$fec','$co','$np','$nt','$du','$esp')");
+    mysqli_query("INSERT INTO docente(nom_doc,ape_doc,dir_doc,tel_doc,gen_doc,f_nac_doc,cor_doc,nip_doc,nit,dui_doc,esp_doc) VALUES ('$nombre','$apellido','$direc','$tel','$sexo','$fec','$co','$np','$nt','$du','$esp')");
    
 }
 include_once '../plantilla/fin_plantilla.php';
 ?>
 <script type="text/javascript">
  $('.mask-dui').mask('00000000-0');
+ $('.mask-telefono').mask('0000-0000');
+  $('.mask-nit').mask('0000-000000-000-0');
  </script>
 
