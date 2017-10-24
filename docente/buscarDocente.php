@@ -1,7 +1,6 @@
 <?php
 include_once '../plantilla/incio_plantilla.php';
 include_once '../plantilla/menu_navegacion.php';
-include_once '../docente/class.php';
 include_once '../conexion/php_conexion.php';
 ?>
 <!--inicio de content wrapper mi codigo-->
@@ -20,8 +19,11 @@ include_once '../conexion/php_conexion.php';
                 </div>
                 <div class="span6">
                     <form name="form1" method="post" action="">
-                        <div class="input-append">
-                            <input type="text" name="buscar" id="filtrar"  class="input-xlarge" autocomplete="off" autofocus placeholder="Buscar Docentes">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                            <input type="text" name="buscar" id="filtrar"  class="form-control" autocomplete="off" autofocus placeholder="Buscar Docentes">
+                            </div>
                         </div>
 
                     </form>
@@ -37,7 +39,7 @@ include_once '../conexion/php_conexion.php';
                         <tr>
                             <th width="50">Acción</th>
                             <th width="200">Nombres</th>
-                            <th width="150">Apellidos</th>
+                            <th width="200">Apellidos</th>
                             <th width="150">Teléfono</th>
                             <th width="300">Dirección</th>
                         </tr>
@@ -60,7 +62,7 @@ include_once '../conexion/php_conexion.php';
                             ?>
                             <tr>
                                 <td><!--boton de modificar-->
-                                    <a href="#" data-toggle="modal" data-target="#actualizarDocente" onclick="Editar_docente('<?php echo $nombreX; ?>','<?php echo $apellidoX; ?>','<?php echo $dirX;?>','<?php echo $telX;?>','<?php echo $correoX;?>','<?php echo $nipX;?>','<?php echo $nitX;?>','<?php echo $nitX;?>','<?php echo $espX;?>','<?php echo $pass;?>')" >Editar</a>
+                                    <a href="#" data-toggle="modal" data-target="#actualizarDocente" onclick="Editar_docente('<?php echo $nombreX; ?>','<?php echo $apellidoX; ?>','<?php echo $dirX;?>','<?php echo $telX;?>','<?php echo $correoX;?>','<?php echo $nipX;?>','<?php echo $nitX;?>','<?php echo $duiX;?>','<?php echo $espX;?>','<?php echo $pass;?>')" >Editar</a>
                                 </td>
                                 <td><?php echo $row['nom_doc']; ?></td>
                                 <td><?php echo $row['ape_doc']; ?></td>

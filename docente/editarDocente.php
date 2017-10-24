@@ -1,38 +1,69 @@
 <!--******************************Dialog**************************-->  
 <form name="form1" method="post" action="">
-    
+
     <input type="hidden" name="idDeActualizacion" id="idDeActualizacion" value="00000">
 
     <div class="modal fade" id="actualizarDocente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-
+                    <h3 align="center" class="modal-title" id="myModalLabel">Modificar docente</h3> 
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3 align="center" class="modal-title" id="myModalLabel">Modificar docente</h3>
                 </div>
 
                 <div class="panel-body">
+                    <br>
                     <div class="row">
+
                         <div class="col-md-12">
-                            <INPUT class="form-group" type="text"  name="nombreRecuperado" id="nombreDo" value="">
-                            <INPUT class="form-group" type="text"  name="apellidoRecuperado" id="apellidosDo" value=""><br>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5">
 
-                            <input class="form-group" type="text" name="direccionR" id="direccionDo"value=""> 
-                            <br>
+                                    <INPUT class="form-control" type="text"  name="nombreRecuperado" id="nombreDo" value="">
+                                </div>
+                                <div class="col-md-5">
 
-                            <div align="center">
-                                <INPUT class="form-group" type="text"  name="telefonoR" id="telDo">
+                                    <INPUT class="form-control" type="text"  name="apellidoRecuperado" id="apellidosDo" value="">
+                                </div>
                             </div>
-
-                            <input class="form-group" type="text" name="correoR" id="coDo"> 
                             <br>
-                            <input class="form-group" type="text" name="nipR" id="nip">
-                            <input class="form-group" type="text" name="nitR" id="nit" >
-                            <input class="form-group" type="text" name="duiR" id="dui" >
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
+                            <input class="form-control" type="text" name="direccionR" id="direccionDo"value="">
+                            </div>
+                            </div>
                             <br>
-                            <input class="form-group" type="text" name="espR" id="esp">
-
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-3">
+                                <INPUT class="form-control" type="text"  name="telefonoR" id="telDo">
+                                </div>
+                                <div class="col-md-7">
+                                    <input class="form-control" type="text" name="correoR" id="coDo"> 
+                                </div>
+                            </div> <br>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5">
+                                    <input class="form-control" type="text" name="nitR" id="nit" >
+                                </div>
+                                 <div class="col-md-5">
+                                     <input class="form-control" type="text" name="duiR" id="dui" >
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-3">
+                                     <input class="form-control" type="text" name="nipR" id="nip">
+                                </div>
+                                <div class="col-md-7">
+                                      <input class="form-control" type="text" name="espR" id="esp">
+                                </div>
+                                </div>
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -48,28 +79,27 @@
 
 
 <?php
-
 if (!empty($_REQUEST['nombreRecuperado'])) {
     echo 'por aqui pasa';
-    
+
     $nombreW = $_REQUEST['nombreRecuperado'];
     $apellidoW = $_REQUEST['apellidoRecuperado'];
-     $dirW = $_REQUEST['direccionR'];
-     $telW=$_REQUEST['telefonoR'];
-     $correoW=$_REQUEST['correoR'];
-     $nipW=$_REQUEST['nipR'];
-     $nitW=$_REQUEST['nitR'];
-     $duiW=$_REQUEST['duiR'];
-     $espW=$_REQUEST['espR'];
+    $dirW = $_REQUEST['direccionR'];
+    $telW = $_REQUEST['telefonoR'];
+    $correoW = $_REQUEST['correoR'];
+    $nipW = $_REQUEST['nipR'];
+    $nitW = $_REQUEST['nitR'];
+    $duiW = $_REQUEST['duiR'];
+    $espW = $_REQUEST['espR'];
     $idActualizacion = $_REQUEST['idDeActualizacion'];
-    
+
 //    echo $nombreW;
 //    echo $apellidoW;
 //    echo "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW' WHERE id_doc='$idActualizacion'";
-    
-    
-       mysqli_query($conexion , "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW',dir_doc='$dirW',tel_doc='$telW',cor_doc='$correoW',nip_doc='$nipW',nit='$nitW',dui_doc='$duiW',esp_doc='$espW' WHERE id_doc='$idActualizacion'");
-       echo '<script>location.href="buscarDocente.php";</script>';
+
+
+    mysqli_query($conexion, "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW',dir_doc='$dirW',tel_doc='$telW',cor_doc='$correoW',nip_doc='$nipW',nit='$nitW',dui_doc='$duiW',esp_doc='$espW' WHERE id_doc='$idActualizacion'");
+    echo '<script>location.href="buscarDocente.php";</script>';
 }
 
 //if (!empty($_POST['nombre'])) {
