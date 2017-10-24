@@ -71,6 +71,7 @@
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras</button>
                     <button type="submit" class="btn btn-primary" >Guardar</button>
                 </div> 
+                <img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['foto_doc']);?>"/>
 
             </div>
         </div> 

@@ -38,11 +38,12 @@ include_once '../conexion/php_conexion.php';
                     <thead>
                         <tr>
                             <th width="50">Acción</th>
-                             <th width="100">Foto</th>
                             <th width="200">Nombres</th>
                             <th width="200">Apellidos</th>
                             <th width="150">Teléfono</th>
                             <th width="300">Dirección</th>
+                            <th width="100">Foto</th>
+                             <th width="50">Accion</th>
                         </tr>
                     </thead>
                     <tbody  class="buscar">
@@ -65,11 +66,13 @@ include_once '../conexion/php_conexion.php';
                                 <td><!--boton de modificar-->
                                     <a href="#" data-toggle="modal" data-target="#actualizarDocente" onclick="Editar_docente('<?php echo $nombreX; ?>','<?php echo $apellidoX; ?>','<?php echo $dirX;?>','<?php echo $telX;?>','<?php echo $correoX;?>','<?php echo $nipX;?>','<?php echo $nitX;?>','<?php echo $duiX;?>','<?php echo $espX;?>','<?php echo $pass;?>')" >Editar</a>
                                 </td>
-                                <td><img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['foto_doc']);?>"/></td>
+                                
                                 <td><?php echo $row['nom_doc']; ?></td>
                                 <td><?php echo $row['ape_doc']; ?></td>
                                 <td><?php echo $row['tel_doc']; ?></td>
                                 <td><?php echo $row['dir_doc']; ?></td>
+                                <td><img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['foto_doc']);?>"/></td>
+                                <td><a href="">Editar</a></td>
                             </tr>
                         <?php } ?>
                     </tbody>
