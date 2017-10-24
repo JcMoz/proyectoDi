@@ -138,7 +138,7 @@ if (isset($_REQUEST['tirar'])) {
     $du = $_POST["dui"];
     $esp = $_POST["esp"];
 
-    mysqli_query("INSERT INTO docente(nom_doc,ape_doc,dir_doc,tel_doc,gen_doc,f_nac_doc,cor_doc,nip_doc,nit,dui_doc,esp_doc) VALUES ('$nombre','$apellido','$direc','$tel','$sexo','$fec','$co','$np','$nt','$du','$esp')");
+    mysqli_query($conexion,"INSERT INTO docente(nom_doc,ape_doc,dir_doc,tel_doc,gen_doc,f_nac_doc,cor_doc,nip_doc,nit,dui_doc,esp_doc) VALUES ('$nombre','$apellido','$direc','$tel','$sexo','$fec','$co','$np','$nt','$du','$esp')");
    
 }
 include_once '../plantilla/fin_plantilla.php';
