@@ -62,7 +62,11 @@ include_once '../plantilla/menu_navegacion.php';
                         <div class="panel-heading" align="center">Datos de matricula</div>
                         <div class="panel-body">
                             <br>
+                            
                             <div align="center">
+                                <font face="Arial Narrow" size="4" color="#001f4d">Fecha de matricula: </font> 
+                       <input class="form-group" type="date" name="fechaM">
+                       
                                  <font face="Arial Narrow" size="4" color="#001f4d">Turmo : </font>
                             <select name="turno">
 
@@ -72,7 +76,7 @@ include_once '../plantilla/menu_navegacion.php';
 
                                     </select>
                             
-                            &nbsp &nbsp &nbsp<font face="Arial Narrow" size="4" color="#001f4d">NIvel : </font>
+                            &nbsp &nbsp &nbsp<font face="Arial Narrow" size="4" color="#001f4d">Nivel : </font>
                             <select name="nivel">
 
                                         <option >Seleccione</option>
@@ -171,10 +175,11 @@ if (isset($_REQUEST['pase'])) {
     $nivel=$_POST["nivel"];
     $seccion=$_POST["Secciones"];
     $gra=$_POST["Grado"];
+    $fM=$_POST["fechaM"];
 
 
     mysqli_query($conexion, "INSERT INTO inscripcion(ult_grado,anio_cgrado,nom_cea,cod_inst_ant,turno,nivel) VALUES ('$ultimo','$añoq','$intcurso','$codigo','$turno','$nivel')");
-    mysqli_query($conexion, "INSERT INTO inscripcion(id_seccion,id_grado,id_alumno) values('$seccion','$gra','$idAre')");
+    mysqli_query($conexion, "INSERT INTO inscripcion(id_seccion,id_grado,id_alumno,f_matricula) values('$seccion','$gra','$idAre','$fM')");
     echo '<script>location.href="inscripcionNuevo1.php";</script>';
     
 
