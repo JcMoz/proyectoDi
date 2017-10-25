@@ -72,7 +72,7 @@ include_once '../conexion/php_conexion.php';
                                 <td><?php echo $row['tel_doc']; ?></td>
                                 <td><?php echo $row['dir_doc']; ?></td>
                                 <td><img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['foto_doc']);?>"/></td>
-                                <td><a href="">Editar</a></td>
+                                <td><a href="../docente/modificarFoto.php?id=<?php echo$row['id_doc'];?>">Cambiar</a></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -89,6 +89,7 @@ include_once '../conexion/php_conexion.php';
 <!-- aqui esta el modal-->
 <?php
 include_once './editarDocente.php';
+
 ?>
 
 <!--este es para pasar los parametros al modal-->

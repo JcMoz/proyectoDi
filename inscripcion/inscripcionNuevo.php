@@ -111,7 +111,7 @@ if (isset($_REQUEST['pase'])) {
     $distancia = $_POST["distanciaC"];
     $depa = $_POST["depto"];
     $muni = $_POST["municipio"];
-    $telefono = $_POST["tel"];
+    $telefono = $_POST["telefono"];
 
      mysqli_query($conexion,"INSERT INTO alumno( nom_alumno,ape_alumno,gen_alumno,f_nac_alum,nie,nac_alum,dir_alum,distancia,depto_alum,mun_alum,tel) VALUES ('$nombre','$apellido','$gen','$fecha','$nie','$nac','$dir','$distancia','$depa','$muni','$telefono')");
     echo '<script>location.href="inscripcionNuevo3.php";</script>';

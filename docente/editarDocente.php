@@ -71,8 +71,6 @@
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras</button>
                     <button type="submit" class="btn btn-primary" >Guardar</button>
                 </div> 
-                <img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['foto_doc']);?>"/>
-
             </div>
         </div> 
     </div> 
@@ -81,8 +79,9 @@
 
 <?php
 if (!empty($_REQUEST['nombreRecuperado'])) {
-    echo 'por aqui pasa';
-
+    try {
+        
+    
     $nombreW = $_REQUEST['nombreRecuperado'];
     $apellidoW = $_REQUEST['apellidoRecuperado'];
     $dirW = $_REQUEST['direccionR'];
@@ -93,31 +92,21 @@ if (!empty($_REQUEST['nombreRecuperado'])) {
     $duiW = $_REQUEST['duiR'];
     $espW = $_REQUEST['espR'];
     $idActualizacion = $_REQUEST['idDeActualizacion'];
-
-//    echo $nombreW;
-//    echo $apellidoW;
-//    echo "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW' WHERE id_doc='$idActualizacion'";
-
-
     mysqli_query($conexion, "UPDATE docente SET nom_doc='$nombreW',ape_doc='$apellidoW',dir_doc='$dirW',tel_doc='$telW',cor_doc='$correoW',nip_doc='$nipW',nit='$nitW',dui_doc='$duiW',esp_doc='$espW' WHERE id_doc='$idActualizacion'");
-    echo '<script>location.href="buscarDocente.php";</script>';
+    echo '<script>swal({
+                    title: "Exito",
+                    text: "Informacion actualizada!",
+                    type: "success",
+                    confirmButtonText: "ok",
+                    closeOnConfirm: false
+                },
+                function () {
+                    location.href="buscarDocente.php";
+                    
+                });</script>';
+    } catch (Exception $ex) {
+         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos e intentar nuevamente", "error");</script>';
+        
+    }
 }
-
-//if (!empty($_POST['nombre'])) {
-//    $nombre = limpiar($_POST['nombre']);
-//    $apellido = limpiar($_POST['apellido']);
-//    $direccion = limpiar($_POST['direccion']);
-//    $telefono = limpiar($_POST['telefono']);
-//    $correo = limpiar($_POST['correo']);
-//    $nip = limpiar($_POST['nip']);
-//    $nit = limpiar($_POST['nit']);
-//    $dui = limpiar($_POST['dui']);
-//    $especialidad = limpiar($_POST['especialidad']);
-//
-//    if (empty($_POST['id'])) {
-//        $oDocente = new Proceso_docente('', $nombre, $apellido, $direccion, $telefono, $genero, $fecha, $correo, $nip, $nit, $dui, $especialidad);
-//        $oDocente->actualizar();
-//        echo mensajes('Docente "' . $nombre . '"Editado con exito', 'verde');
-//    }
-//}
 ?>
