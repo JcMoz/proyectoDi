@@ -28,8 +28,8 @@ include_once '../plantilla/menu_navegacion.php';
             <div class="panel-heading" align="center">Datos personales</div>
               <div class="panel-body">
               <br>
-                  <INPUT class="form-control" type="text"  name="nombreA"  placeholder=" Nombres del Alumno/a" auto placeholder="Ingrese el nombre del alumno">
-                     <INPUT class="form-control" type="text"  name="apellidosA" placeholder=" Apellidos del Alumno/a"><br>
+                  <INPUT class="form-control" type="text"  name="nombreA" autocomplete="off" autofocus  placeholder=" Nombres del Alumno/a" auto placeholder="Ingrese el nombre del alumno">
+                     <INPUT class="form-control" type="text"  name="apellidosA" autocomplete="off" autofocus placeholder=" Apellidos del Alumno/a"><br>
                       <font face="Arial Narrow" size="4" color="#001f4d">Género : </font>
                       <select name="Genero">
     <option value="Femenino">Femenino</option>
@@ -40,7 +40,7 @@ include_once '../plantilla/menu_navegacion.php';
                        <input class="form-group" type="date" name="fecha">
                        <br>
                        
-                         &nbsp &nbsp &nbsp &nbsp <input class="form-group" type="text" placeholder="           NIE     " align="center" name="nie"> &nbsp &nbsp
+                         &nbsp &nbsp &nbsp &nbsp <input class="form-group" type="text" autocomplete="off" autofocus placeholder="           NIE     " align="center" name="nie"> &nbsp &nbsp
                         
                    
                       &nbsp &nbsp &nbsp Nacionalidad: &nbsp<select name="na">
@@ -58,12 +58,12 @@ include_once '../plantilla/menu_navegacion.php';
             <div class="panel-heading" align="center">Datos de Recidencia</div>
               <div class="panel-body">
               <br>
-                  <INPUT class="form-control" type="text"  name="direccion" placeholder=" Dirección "><br>
+                  <INPUT class="form-control" type="text"  name="direccion" autocomplete="off" autofocus placeholder=" Dirección "><br>
                   <INPUT class="form-control" type="text"  name="distanciaC" placeholder="Distancia en kilómetros entre el Centro Educativo y recidencia">
                   <br>
-                     &nbsp &nbsp<INPUT class="form-group" type="text"  name="depto" placeholder=" Departamento">  &nbsp &nbsp&nbsp 
+                     &nbsp &nbsp<INPUT class="form-group" type="text"  name="depto" autocomplete="off" autofocus placeholder=" Departamento">  &nbsp &nbsp&nbsp 
                        <input class="form-group" type="text"  placeholder="  Municipio  " name="municipio"> &nbsp 
-                      <input class="form-group mask-telefono" type="text" placeholder="  Teléfono   " name="telefono">
+                      <input class="form-group mask-telefono" type="text" autocomplete="off" autofocus placeholder="  Teléfono   " name="telefono">
 
             </div><!--cierre de panel body-->
             <br>
