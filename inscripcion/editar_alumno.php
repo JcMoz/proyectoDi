@@ -31,23 +31,23 @@
      <div class="col-md-12">
         <input class="form-group" type="text"id="nomA" name="nombreA" placeholder="    Nombre Alumno/a" size="25">
         <input class="form-group" type="text" id="apeA" name="apeA" placeholder="    Apellido Alumno/a" size="25">
-          <input class="form-group" type="text" name="dirA" placeholder="    Dirección   " size="50"> <br>
+        <input class="form-group" type="text" id="diA" name="dirA" placeholder="    Dirección   " size="50"> <br>
 
-          <input class="form-group" type="text" name="disA" placeholder=" Distancia" size="10"> &nbsp &nbsp
-        <input class="form-group" type="text" name="depA" placeholder=" Departamento" size="15"> &nbsp &nbsp
-          <input class="form-group" type="text" name="muniA" placeholder=" Municipio" size="15">
+        <input class="form-group" type="text" id="disA" name="disA" placeholder=" Distancia" size="10"> &nbsp &nbsp
+        <input class="form-group" type="text" id="depAl" name="depA" placeholder=" Departamento" size="15"> &nbsp &nbsp
+        <input class="form-group" type="text" id="muA" name="muniA" placeholder=" Municipio" size="15">
     <div align="center">
        <br>
          <h4 class="modal-title">Datos del encargado.</h4>
     </div>
      <input class="form-group" type="text" id="nomEnc" name="nombE" placeholder="    Nombre Encargado/a" size="25">
-        <input class="form-group" type="text" name="apeE" placeholder="    Apellido Encargado/a" size="25"><br>
+     <input class="form-group" type="text" id="apE" name="apeE" placeholder="    Apellido Encargado/a" size="25"><br>
 
-        <input class="form-group" type="text" name="profe" placeholder=" Profesión" size="15">&nbsp &nbsp
+     <input class="form-group" type="text" id="prE"name="profe" placeholder=" Profesión" size="15">&nbsp &nbsp
 
-        <input class="form-group" type="text" name="telE" placeholder=" Teléfono" size="15">&nbsp
-        <input class="form-group" type="text" name="duiE" placeholder=" DUI" size="15"><br>
-          <input class="form-group" type="text" name="dirE" placeholder="    Dirección   " size="50"> <br>
+     <input class="form-group" type="text" id="tel" name="telE" placeholder=" Teléfono" size="15">&nbsp
+     <input class="form-group" type="text" id="dui"cname="duiE" placeholder=" DUI" size="15"><br>
+     <input class="form-group" type="text" id="pro" name="dirE" placeholder="    Dirección   " size="50"> <br>
      </div><!--fin columna-->
 
                 
