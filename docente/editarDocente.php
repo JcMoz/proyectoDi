@@ -1,4 +1,5 @@
 <!--******************************Dialog**************************-->  
+<script src="../js/jquery.mask.min.js"></script>
 <form name="form1" method="post" action="">
 
     <input type="hidden" name="idDeActualizacion" id="idDeActualizacion" value="00000">
@@ -38,7 +39,7 @@
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-3">
-                                <INPUT class="form-control" type="text"  name="telefonoR" id="telDo">
+                                <INPUT class="form-control mask-telefono" type="text"  name="telefonoR" id="telDo">
                                 </div>
                                 <div class="col-md-7">
                                     <input class="form-control" type="text" name="correoR" id="coDo"> 
@@ -47,10 +48,10 @@
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5">
-                                    <input class="form-control" type="text" name="nitR" id="nit" >
+                                    <input class="form-control mask-nit" type="text" name="nitR" id="nit" >
                                 </div>
                                  <div class="col-md-5">
-                                     <input class="form-control" type="text" name="duiR" id="dui" >
+                                     <input class="form-control mask-dui" type="text" name="duiR" id="dui" >
                                 </div>
                             </div>
                             <br>
@@ -110,3 +111,8 @@ if (!empty($_REQUEST['nombreRecuperado'])) {
     }
 }
 ?>
+<script type="text/javascript">
+    $('.mask-dui').mask('00000000-0');
+    $('.mask-telefono').mask('0000-0000');
+    $('.mask-nit').mask('0000-000000-000-0');
+</script>

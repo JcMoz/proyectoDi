@@ -10,6 +10,41 @@ include_once '../plantilla/menu_navegacion.php';
         color: white;
     }
 </style>
+<script>
+    function soloNumero(e){
+        key=e.keyCode || e.which;
+        teclado=String.fromCharCode(key);
+        numerito="0123456789";
+        especiales="8-37-38-46";
+        teclado_especial=false;
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+        if(numerito.indexOf(teclado)==-1 && !teclado_especial){
+        return false;
+    }
+        }
+
+
+        function soloLetras(e){
+        key=e.keyCode || e.which;
+        teclado=String.fromCharCode(key).toLowerCase();
+        letras=" áéíóúabcdefghijklmnñopqrstuvwxyz";
+        especiales="8-37-38-46-164";
+        teclado_especial=false;
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;break;
+            }
+        }
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+        return false;
+    }
+        }
+
+</script>
 
 <!-- /.content-wrapper mi codigo-->
 <div class="content-wrapper">
@@ -34,23 +69,23 @@ include_once '../plantilla/menu_navegacion.php';
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5">
 
-                                    <INPUT class="form-control" id="Idnom" name="nombreDo" type="text" autocomplete="off" autofocus placeholder=" Nombres del docente" required="" minlength="2" pattern="[a-z]{1,15}">
+                                    <INPUT class="form-control" id="Idnom" name="nombreDo" type="text" autocomplete="off" autofocus placeholder=" Nombres del docente" required="" minlength="2" onkeypress="return soloLetras(event)" onpaste="return false">
                                 </div>
                                 <div class="col-md-5">
-                                    <INPUT class="form-control" type="text" id="Idapellido" name="apellidosDo"autocomplete="off" autofocus  placeholder="Apellidos del docente" required="" minlength="2" ><br>
+                                    <INPUT class="form-control" type="text" id="Idapellido" name="apellidosDo"autocomplete="off" autofocus  placeholder="Apellidos del docente" required="" minlength="2" onkeypress="return soloLetras(event)" onpaste="return false"><br>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
 
-                                    <input class="form-control" type="text" id="Iddireccion" name="direccionDo" autocomplete="off" autofocus placeholder="     Dirección      "><br>
+                                    <input class="form-control" type="text" id="Iddireccion" name="direccionDo" autocomplete="off" autofocus placeholder="     Dirección      " required="" minlength="2"><br>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-3">
-                                    <INPUT class="form-control mask-telefono" type="text" id="Idtel" name="telDo" autocomplete="off" autofocus placeholder="   Teléfono" size="10">
+                                    <INPUT class="form-control mask-telefono" type="text" id="Idtel" name="telDo" autocomplete="off" autofocus placeholder="   Teléfono" size="10" required="" minlength="2">
                                 </div>
                                 <div class="col-md-3">
 
@@ -69,7 +104,7 @@ include_once '../plantilla/menu_navegacion.php';
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
-                                    <input class="form-control" type="text" name="coDo" autocomplete="off" autofocus placeholder="     Correo electrónico      "> 
+                                    <input class="form-control" type="text" name="coDo" autocomplete="off" autofocus placeholder="     Correo electrónico      " required="" minlength="2"> 
                                     <br>
 
                                 </div>
@@ -77,19 +112,19 @@ include_once '../plantilla/menu_navegacion.php';
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-3">
-                                    <input class="form-control" type="text" autocomplete="off" autofocus placeholder="        NIP      "name="nip">
+                                    <input class="form-control" type="text" autocomplete="off" autofocus placeholder="        NIP      "name="nip" required="" minlength="2">
                                 </div>
                                 <div class="col-md-3">
-                                    <input class="form-control mask-nit" type="text" autocomplete="off" autofocus placeholder="        NIT      "  name="nit">
+                                    <input class="form-control mask-nit" type="text" autocomplete="off" autofocus placeholder="        NIT      "  name="nit" required="" minlength="2">
                                 </div>
                                 <div class="col-md-4">
-                                    <input class="form-control mask-dui" type="text" autocomplete="off" autofocus placeholder="           DUI     " name="dui"> <br>
+                                    <input class="form-control mask-dui" type="text" autocomplete="off" autofocus placeholder="           DUI     " name="dui" required="" minlength="2"> <br>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
-                                    <input class="form-control" type="text" name="esp" autocomplete="off" autofocus placeholder=" Especialidad     "> 
+                                    <input class="form-control" type="text" name="esp" autocomplete="off" autofocus placeholder=" Especialidad     " required="" minlength="2"> 
                                     <br>
 
                                 </div>
@@ -98,7 +133,7 @@ include_once '../plantilla/menu_navegacion.php';
 
                             <div align="center">
                                 <input type="submit" value="Guardar" name="guardar" class="btn btn-info">
-                                <input type="submit" value="Cancelar" name="cancel" class=" btn btn-cancelar">
+                                <input type="submit" value="Cancelar" name="cancel" class=" btn btn-cancelar" onclick="location='/proyectoDi/doc/index.php'">
 
                             </div>
                             <br>
@@ -184,4 +219,140 @@ include_once '../plantilla/fin_plantilla.php';
     $('.mask-telefono').mask('0000-0000');
     $('.mask-nit').mask('0000-000000-000-0');
 </script>
+<script>
+$.validator.setDefaults({
+    submitHandler: function () {
+        document.getElementById('tirar').value="ok";    
+        document.FORMULARIO_VALIDADO.submit();
+    }
+});
+
+$(document).ready(function () {
+    $("#FORMULARIO_VALIDADO").validate({
+        rules: {
+             nombreDo: {
+                required: true,
+                minlength: 1
+
+               
+            },
+             apellidosDo: {
+                required: true,
+                minlength: 2
+            },
+            direccionDo: {
+                required: true,
+                minlength: 2
+            },
+            telDo: {
+                required: true,
+
+                minlength: 2
+            },
+            coDo: {
+                required: true,
+                minlength: 2,
+                
+            },
+            nip: {
+                required: true,
+                minlength: 2,
+                
+            },
+            nit: {
+                required: true,
+                minlength: 2,
+                
+            },
+            dui: {
+                required: true,
+                minlength: 2,
+                
+            },
+            esp: {
+                required: true,
+                minlength: 2,
+                
+            }
+            
+        },
+
+        messages: {
+             nombreDo: {
+                required: "Campo vacío",
+                minlength: ""
+                
+            },
+             apellidosDo: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            direccionDo: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            telDo: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            coDo: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            nip: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            nit: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            dui: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            esp: {
+                required: "Campo vacío",
+                minlength: ""
+            }
+        },
+        errorElement: "em",
+        errorPlacement: function (error, element) {
+            // Add the `help-block` class to the error element
+            error.addClass("help-block");
+
+            // Add `has-feedback` class to the parent div.form-group
+            // in order to add icons to inputs
+            element.parents(".col-sm-5").addClass("has-feedback");
+
+            if (element.prop("type") === "checkbox") {
+                error.insertAfter(element.parent("label"));
+            } else {
+                error.insertAfter(element);
+            }
+
+            // Add the span element, if doesn't exists, and apply the icon classes to it.
+            if (!element.next("span")[ 0 ]) {
+                $("<span class='glyphicon glyphicon-remove form-control-feedback'></span>").insertAfter(element);
+            }
+        },
+        success: function (label, element) {
+            // Add the span element, if doesn't exists, and apply the icon classes to it.
+            if (!$(element).next("span")[ 0 ]) {
+                $("<span class='glyphicon glyphicon-ok form-control-feedback'></span>").insertAfter($(element));
+            }
+        },
+        highlight: function (element, errorClass, validClass) {
+            $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+            $(element).next("span").addClass("glyphicon-remove").removeClass("glyphicon-ok");
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+            $(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
+        }
+    });
+});
+
+</script>
+
 

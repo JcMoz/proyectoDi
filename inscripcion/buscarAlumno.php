@@ -22,16 +22,14 @@ include_once '../plantilla/menu_navegacion.php';
                         <img src="../imagenes/alumnoB.png" width="90" height="90">
                         Buscar Alumno
                     </h2>
+                    <script src="../js/jquery-1.7.2.min.js" ></script>
+                    <script src="../js/buscaresc.js"></script>
                 </div>
                 <div class="span6">
                     <form name="form1" method="post" action="">
                         <div class="input-append">
-                            <input type="text" name="buscar" class="input-xlarge" autocomplete="off" autofocus placeholder="   Buscar Alumno">
-                            <button type="submit" class="btn-secondary">
-                                <strong>
-                                    <i class="icon-search"></i> Buscar
-                                </strong>
-                            </button>
+                            <input type="text" name="buscar" id="filtrar" class="input-xlarge" autocomplete="off" autofocus placeholder="   Buscar Alumno">
+                      
 
                         </div>
 
@@ -54,7 +52,7 @@ include_once '../plantilla/menu_navegacion.php';
                     <th width="200">Dirección</th>
                     </thead>
 
-                    <tbody>
+                    <tbody class="buscar">
                         <?php
                         include_once '../conexion/php_conexion.php';
                         $enca = mysqli_query($conexion, "SELECT * FROM encargado");

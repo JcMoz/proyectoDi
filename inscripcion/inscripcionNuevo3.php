@@ -14,6 +14,41 @@ include_once '../plantilla/menu_navegacion.php';
         color: white;
     }
 </style>
+<script>
+    function soloNumero(e){
+        key=e.keyCode || e.which;
+        teclado=String.fromCharCode(key);
+        numerito="0123456789";
+        especiales="8-37-38-46";
+        teclado_especial=false;
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+        if(numerito.indexOf(teclado)==-1 && !teclado_especial){
+        return false;
+    }
+        }
+
+
+        function soloLetras(e){
+        key=e.keyCode || e.which;
+        teclado=String.fromCharCode(key).toLowerCase();
+        letras=" áéíóúabcdefghijklmnñopqrstuvwxyz";
+        especiales="8-37-38-46-164";
+        teclado_especial=false;
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;break;
+            }
+        }
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+        return false;
+    }
+        }
+
+</script>
 <!-- /.content-wrapper -->
 
 <div class="content-wrapper">
@@ -48,9 +83,9 @@ include_once '../plantilla/menu_navegacion.php';
                                 </select>
                             <br>
                            
-                            &nbsp &nbsp&nbsp<INPUT class="form-group" type="text"  name="Ugrado" autocomplete="off" autofocus placeholder=" Último Grado que cursó " value=<?php echo $row['id_alumno'];?>>
-                            &nbsp &nbsp &nbsp <INPUT class="form-group" type="text"  name="añoC" autocomplete="off" autofocus placeholder="Año que lo Cursó"> &nbsp &nbsp <input class="form-group" type="text" autocomplete="off" autofocus placeholder="       Código" name="cod"> &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                            <input class="form-control" type="text" autocomplete="off" autofocus  placeholder=" Nombre del centro educativo  " name="inCurso"> 
+                            &nbsp &nbsp&nbsp<INPUT class="form-group" type="text"  name="Ugrado" autocomplete="off" autofocus placeholder=" Último Grado que cursó " required="" minlength="1">
+                            &nbsp &nbsp &nbsp <INPUT class="form-group" type="text"  name="añoC" autocomplete="off" autofocus placeholder="Año que lo Cursó" required="" minlength="2"> &nbsp &nbsp <input class="form-group" type="text" autocomplete="off" autofocus placeholder="       Código" name="cod" required="" minlength="2"> &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                            <input class="form-control" type="text" autocomplete="off" autofocus  placeholder=" Nombre del centro educativo  " name="inCurso" onkeypress="return soloLetras(event)" onpaste="return false" required="" minlength="2"> 
                             <br>
                             <div align="center">
                                 
@@ -130,7 +165,7 @@ include_once '../plantilla/menu_navegacion.php';
 
 
                             <br>
-                             <input class="form-control" type="text" autocomplete="off" autofocus  placeholder=" Docmuentos a presentar  " name="docpre"> 
+                             <input class="form-control" type="text" autocomplete="off" autofocus  placeholder=" Docmuentos a presentar  " name="docpre" onkeypress="return soloLetras(event)" onpaste="return false" required="" minlength="2"> 
                             <br>
                             <br>
 
@@ -151,9 +186,7 @@ include_once '../plantilla/menu_navegacion.php';
                         </div>
                         <br> <br> <br>
                         <div align="center">
-                            <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente" onclick="location = '/proyectoDi/inscripcion/inscripcionNuevo1.php'">
-                            <input type="submit" value="Cancelar" name="cancel" class="btn btn-cancelar">
-
+                            <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
                         </div>    
                     </div>
                 </div>
@@ -166,6 +199,7 @@ include_once '../plantilla/menu_navegacion.php';
 
 <?php
 if (isset($_REQUEST['pase'])) {
+    try {
     include_once '../conexion/php_conexion.php';
     $ultimo = $_POST["Ugrado"];
     $añoq = $_POST["añoC"];
@@ -176,14 +210,133 @@ if (isset($_REQUEST['pase'])) {
     $seccion=$_POST["Secciones"];
     $gra=$_POST["Grado"];
     $fM=$_POST["fechaM"];
+    $pre=$_POST["docpre"];
 
 
-    mysqli_query($conexion, "INSERT INTO inscripcion(ult_grado,anio_cgrado,nom_cea,cod_inst_ant,turno,nivel) VALUES ('$ultimo','$añoq','$intcurso','$codigo','$turno','$nivel')");
-    mysqli_query($conexion, "INSERT INTO inscripcion(id_seccion,id_grado,id_alumno,f_matricula) values('$seccion','$gra','$idAre','$fM')");
-    echo '<script>location.href="inscripcionNuevo1.php";</script>';
+    mysqli_query($conexion, "INSERT INTO inscripcion(ult_grado,anio_cgrado,nom_cea,cod_inst_ant,turno,nivel,id_seccion,id_grado,id_alumno,f_matricula,pres_docs) VALUES ('$ultimo','$añoq','$intcurso','$codigo','$turno','$nivel','$seccion','$gra','$idAre','$fM','$pre')");
+   // mysqli_query($conexion, "INSERT INTO inscripcion(id_seccion,id_grado,id_alumno,f_matricula) values('$seccion','$gra','$idAre','$fM')");
+   
+     echo '<script>swal({
+                    title: "Exito",
+                    text: "El registro ha sido Guardado!",
+                    type: "success",
+                    confirmButtonText: "ok",
+                    closeOnConfirm: false
+                },
+                function () {
+                    location.href="inscripcionNuevo1.php";
+                    
+                });</script>';
+    } catch (Exception $exc) {
+         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
+               
+    }
     
 
 }
 
 include_once '../plantilla/fin_plantilla.php';
 ?>
+<script type="text/javascript">
+    $('.mask-dui').mask('00000000-0');
+    $('.mask-telefono').mask('0000-0000');
+</script>
+<script>
+$.validator.setDefaults({
+    submitHandler: function () {
+        document.getElementById('pasar').value="ok";    
+        document.FORMULARIO_VALIDADO.submit();
+    }
+});
+
+$(document).ready(function () {
+    $("#FORMULARIO_VALIDADO").validate({
+        rules: {
+             Ugrado: {
+                required: true,
+                minlength: 1
+
+               
+            },
+             cod: {
+                required: true,
+                minlength: 2
+            },
+            añoC: {
+                required: true,
+                minlength: 2
+            },
+            inCurso: {
+                required: true,
+
+                minlength: 2
+            },
+            docpre: {
+                required: true,
+                minlength: 2,
+                
+            }
+            
+        },
+
+        messages: {
+             Ugrado: {
+                required: "Campo vacío",
+                minlength: ""
+                
+            },
+              cod: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            añoC: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            inCurso: {
+                required: "Campo vacío",
+                minlength: ""
+            },
+            docpre: {
+                required: "Campo vacío",
+                minlength: ""
+            }
+        },
+        errorElement: "em",
+        errorPlacement: function (error, element) {
+            // Add the `help-block` class to the error element
+            error.addClass("help-block");
+
+            // Add `has-feedback` class to the parent div.form-group
+            // in order to add icons to inputs
+            element.parents(".col-sm-5").addClass("has-feedback");
+
+            if (element.prop("type") === "checkbox") {
+                error.insertAfter(element.parent("label"));
+            } else {
+                error.insertAfter(element);
+            }
+
+            // Add the span element, if doesn't exists, and apply the icon classes to it.
+            if (!element.next("span")[ 0 ]) {
+                $("<span class='glyphicon glyphicon-remove form-control-feedback'></span>").insertAfter(element);
+            }
+        },
+        success: function (label, element) {
+            // Add the span element, if doesn't exists, and apply the icon classes to it.
+            if (!$(element).next("span")[ 0 ]) {
+                $("<span class='glyphicon glyphicon-ok form-control-feedback'></span>").insertAfter($(element));
+            }
+        },
+        highlight: function (element, errorClass, validClass) {
+            $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+            $(element).next("span").addClass("glyphicon-remove").removeClass("glyphicon-ok");
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+            $(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
+        }
+    });
+});
+
+</script>

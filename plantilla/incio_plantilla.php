@@ -29,7 +29,7 @@
 <!--<script src="../js/jquery.js"></script> -->
 
 <script src="../js/funciones.js"></script>
-<script src="../js/reglas_validacion.js"></script>
+<!--<script src="../js/reglas_validacion.js"></script>-->
         
 <link href="../css/sweetalert.css" rel="stylesheet">
 <script src="../js/sweetalert.min.js"></script>
