@@ -61,6 +61,8 @@ include_once '../plantilla/menu_navegacion.php';
                         while ($row1 = mysqli_fetch_array($enca)) {
                             $idEn=$row1['id_encargado'];
                             $nomEnca=$row1['nom_enc'];
+                            $apeX=$row1['ape_enc'];
+                            $prof=$row1['profe_enc'];
                         }
                         $pame = mysqli_query($conexion, "SELECT * FROM alumno");
                         while ($row = mysqli_fetch_array($pame)) {
@@ -74,7 +76,7 @@ include_once '../plantilla/menu_navegacion.php';
                       
                         <tr>
                             <td class="text-center"><!--boton de modificar-->
-                                <a href=""  data-toggle="modal" data-target="#modal-default" onclick="editar_alumno('<?php echo $nomY;?>','<?php echo $nomEnca;?>','<?php echo $idA;?>','<?php echo $idEn;?>')">Editar </a>
+                                <a href=""  data-toggle="modal" data-target="#modal-default" onclick="editar_alumno('<?php echo $nomY;?>','<?php echo $nomEnca;?>','<?php echo $apeY;?>','<?php echo $apeX;?>','<?php echo $dirY;?>','<?php echo $prof;?>','<?php echo $idA;?>','<?php echo $idEn;?>')">Editar </a>
                             </td>
                             <td><?php echo $row['nom_alumno'];?></td>
                             <td><?php echo $row['ape_alumno'];?></td>
@@ -99,9 +101,13 @@ include_once '../plantilla/menu_navegacion.php';
 
 </div><!--Fin de content wrapper mi codigo-->
 <script> 
-    function editar_alumno(nom,nomc,pass,pass1){
+    function editar_alumno(nom,nomc,ap,ap1,dir,profX,pass,pass1){
         $("#nomA").val(nom);
-        $("#nomEnc").val(nomc)
+        $("#nomEnc").val(nomc);
+        $("#apeA").val(ap);
+        $("#apE").val(ap1);
+         $("#diA").val(dir);
+          $("#prE").val(profX);
          $("#actu").val(pass);
          $("#actul").val(pass1);
         

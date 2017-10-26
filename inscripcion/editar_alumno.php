@@ -82,10 +82,15 @@ if (!empty($_REQUEST['nombreA'])) {
     
     $nom=$_REQUEST['nombreA'];
     $nom1=$_REQUEST['nombE'];
+    $ape=$_REQUEST['apeA'];
+    $ap1=$_REQUEST['apeE'];
+    $di=$_REQUEST['dirA'];
+    $pro=$_REQUEST['profe'];
+    
     $idA=$_REQUEST['actualizar'];
     $idE=$_REQUEST['actualizar1'];
-     mysqli_query($conexion, "UPDATE alumno SET nom_alumno='$nom' WHERE id_alumno='$idA'");
-     mysqli_query($conexion, "UPDATE encargado SET nom_enc='$nom1' WHERE id_encargado='$idE'");
+     mysqli_query($conexion, "UPDATE alumno SET nom_alumno='$nom',ape_alumno='$ape',dir_alum='$di' WHERE id_alumno='$idA'");
+     mysqli_query($conexion, "UPDATE encargado SET nom_enc='$nom1',ape_enc='$ap1',profe_enc='$pro' WHERE id_encargado='$idE'");
        echo '<script>swal({
                     title: "Exito",
                     text: "Informacion actualizada!",
