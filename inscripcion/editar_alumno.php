@@ -46,7 +46,7 @@
      <input class="form-group" type="text" id="prE"name="profe" placeholder=" Profesión" size="15">&nbsp &nbsp
 
      <input class="form-group" type="text" id="tel" name="telE" placeholder=" Teléfono" size="15">&nbsp
-     <input class="form-group" type="text" id="dui"cname="duiE" placeholder=" DUI" size="15"><br>
+     <input class="form-group" type="text" id="dui" name="duiE" placeholder=" DUI" size="15"><br>
      <input class="form-group" type="text" id="pro" name="dirE" placeholder="    Dirección   " size="50"> <br>
      </div><!--fin columna-->
 
@@ -88,10 +88,12 @@ if (!empty($_REQUEST['nombreA'])) {
     $pro=$_REQUEST['profe'];
     $dis=$_REQUEST['disA'];
     $tel=$_REQUEST['telE'];
+    $dep=$_REQUEST['depA'];
+    $duiZ=$_REQUEST['duiE'];
     $idA=$_REQUEST['actualizar'];
     $idE=$_REQUEST['actualizar1'];
-     mysqli_query($conexion, "UPDATE alumno SET nom_alumno='$nom',ape_alumno='$ape',dir_alum='$di',distancia='$dis' WHERE id_alumno='$idA'");
-     mysqli_query($conexion, "UPDATE encargado SET nom_enc='$nom1',ape_enc='$ap1',profe_enc='$pro',tel_enc='$tel' WHERE id_encargado='$idE'");
+     mysqli_query($conexion, "UPDATE alumno SET nom_alumno='$nom',ape_alumno='$ape',dir_alum='$di',distancia='$dis',depto_alum='$dep' WHERE id_alumno='$idA'");
+     mysqli_query($conexion, "UPDATE encargado SET nom_enc='$nom1',ape_enc='$ap1',profe_enc='$pro',tel_enc='$tel',dui_enc='$duiZ' WHERE id_encargado='$idE'");
        echo '<script>swal({
                     title: "Exito",
                     text: "Informacion actualizada!",
