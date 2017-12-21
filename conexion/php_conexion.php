@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect("localhost", "root", "", "basecentro");
+$conexion = mysqli_connect("localhost", "root", "", "base_centro");
 
 //$conexion=mysql_connect('localhost','root','');
 //mysql_select_db('basecentro',$conexion);

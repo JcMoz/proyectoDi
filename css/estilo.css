@@ -1,6 +1,7 @@
 .content-wrapper{
 	background-color: #d1d1e0;
 }
+
 .panel-heading{
 	background-color:#9595b7 !important;
 	color: white !important;
@@ -15,18 +16,6 @@ img.pequeña{
 .btn-dan{
     background-color: pink !important;
   }
-  
-/*  input#foto{
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
+  .container{
+      background-image:#9595b7 !important; 
   }
-  p#te{
-      text-align: center;
-      color: #6610f2;
-  }*/

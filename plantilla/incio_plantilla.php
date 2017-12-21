@@ -38,4 +38,4 @@
 
     </head>
 
-    <body class="fixed-nav sticky-footer  bg-info" id="page-top">
+    <body class="fixed-nav sticky-footer  bg-" id="page-top">

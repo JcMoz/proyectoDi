@@ -57,30 +57,7 @@
                 </ul>
             </li>
             <!--Termina Modulo de Creacion de horarios-->
-            <!--Modulo de Seguridad-->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Seguridad">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseSeguridad" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-circle"  style="color: white"></i>
-                    <span class="nav-link-text"  style="color: white">
-                        Seguridad</span>
-                </a>
-                <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseSeguridad">
-                    <li>
-                        <a href="crearCopiaSeguridad.php" style="color: white">Copia de Seguridad</a>
-                    </li>
-                    <li>
-                        <a href="registrarUsuario.php" style="color: white">Registrar Usuario</a>
-                    </li>
-                    <li>
-                        <a href="Bitácora.php"  style="color: white">Bitácora</a>
-                    </li>
-                    <li>
-                        <a href="mantenimientoUsuarios.php"  style="color: white">Mantenimiento de usuarios</a>
-                    </li>
-                </ul>
-            </li>
-
-            <!--Termina Modulo de seguridad-->
+            
             <!--Modulo de Control de Notas-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="cntrNotas">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseNotas" data-parent="#exampleAccordion">
@@ -102,56 +79,7 @@
             </li>
             <!--Termina Modulo de Control de notas-->
 
-            <!--Modulo de Expediente Docente-->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Docentes">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseDocentes" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-circle"  style="color: white"></i>
-                    <span class="nav-link-text"  style="color: white">
-                        Expediente docente</span>
-                </a>
-                <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseDocentes">
-                    <li><!--poner codigo de los que contiene el modulo de expediente docente-->
-                        <a href="../docente/ingresarDocente.php"  style="color: white">Registrar Docente</a>
-                    </li>
-                    <li>
-                        <a href="../docente/buscarDocente.php"  style="color: white">Buscar Docente</a>
-                    </li>
-                </ul>
-            </li>
-            <!--Termina Modulo de Expediente docente-->
-            <!--asignacion-->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="../asignaciones/asignacion.php">
-                    <i class="fa fa-fw fa-circle" style="color: white"></i>
-                    <span class="nav-link-text" style="color: white">Asignacion</span>
-                </a>
-            </li>
-            <!--asignacion-->
-
-            <!--Modulo de Reportes-->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Re">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseRe" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-circle"  style="color: white"></i>
-                    <span class="nav-link-text"  style="color: white">
-                        Reportes</span>
-                </a>
-                <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseRe">
-                    <li><!--poner codigo de los que contiene el modulo de Reportes-->
-                        <a href="login.html"  style="color: white">Login Page</a>
-                    </li>
-                    <li>
-                        <a href="register.html"  style="color: white">Registration Page</a>
-                    </li>
-                    <li>
-                        <a href="forgot-password.html"  style="color: white">Forgot Password Page</a>
-                    </li>
-                    <li>
-                        <a href="blank.html"  style="color: white">Blank Page</a>
-                    </li>
-                </ul>
-            </li>
-            <!--Termina Modulo de Reportes-->
-
+            
 
         </ul><!--cierre-->
         <ul class="navbar-nav sidenav-toggler">
@@ -175,3 +103,5 @@
 </div>
 </nav>
 <!-- Fin navegacion -->
+
+     

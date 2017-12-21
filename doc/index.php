@@ -1,71 +1,135 @@
 <?php
-include_once '../plantilla/incio_plantilla.php';
-include_once '../plantilla/menu_navegacion.php';
+session_start();
+include '../conexion/php_conexion.php';
+include_once '../mensajes.php';
 ?>
+<!DOCTYPE html>
+<html lang="es">
 
-<style>
-    .btn-cancelar{
-        background-color: #9e9e9e;
-        color: white;
-    }
+    <head>
 
-</style>
-<!--******************************Dialog**************************-->
-<div class="modal modal-info fade in" id="actividad_R">
-    <div class="modal-dialog">
-        <div class="modal-content">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-            <div class="modal-header">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Entrada</title>
+        <!-- Bootstrap core CSS -->
+        <!--<link href="../css/bootstrap.min.css" rel="stylesheet">-->
 
-                <h4 class="modal-title">Seleccione Cuadro de Notas </h4>
-            </div>
+        <!-- Custom fonts for this template -->
+        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-            <div class="modal-body">
-                <!-- form start -->
-                <form class="form-horizontal">
-                    <div class="box-body">
+        <!-- Plugin CSS -->
+        <link href="../css/dataTables.bootstrap4.css" rel="stylesheet">
 
-                        <div class="row" > 
+        <!-- Custom styles for this template -->
+        <link href="../css/sb-admin.css" rel="stylesheet">
+        <link href="../css/estilo.css" rel="stylesheet">
 
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.validate.js"></script>
+        <!--<script src="../js/jquery.js"></script> -->
 
-                            <div align="center" class="col-md-12">
-                                <select name="Grado">
-                                    <option value="gra">Grado</option>
-                                </select> &nbsp &nbsp &nbsp &nbsp
-                                <select name="seccion">
-                                    <option value="sec">Sección</option>
-                                </select>&nbsp &nbsp &nbsp &nbsp
-                                <select name="mate">
-                                    <option value="mat">Materia</option>
-                                </select>
+        <script src="../js/funciones.js"></script>
+        <!--<script src="../js/reglas_validacion.js"></script>-->
 
+        <link href="../css/sweetalert.css" rel="stylesheet">
+        <script src="../js/sweetalert.min.js"></script>
+        <style type="text/css">
+            body {
+                padding-top: 40px;
+                padding-bottom: 40px;
+                background-color: #f5f5f5;
+            }
 
-                            </div><!--fin columna-->
+            .form-signin {
+                max-width: 300px;
+                padding: 19px 29px 29px;
+                margin: 0 auto 20px;
+                background-color: #fff;
+                border: 1px solid #e5e5e5;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            }
+            .form-signin .form-signin-heading,
+            .form-signin .checkbox {
+                margin-bottom: 10px;
+            }
+            .form-signin input[type="text"],
+            .form-signin input[type="password"] {
+                font-size: 16px;
+                height: auto;
+                margin-bottom: 15px;
+                padding: 7px 9px;
+            }
 
+        </style>
+    </head>
 
-                        </div><!--fin row-->
+    <body class="bg-secondary">
+        <div class="container">
+           
+            <form name="form1" method="post" action="" class="form-signin">
 
-                    </div>
+                <center><img src="../imagenes/alumnoA.png" width="200" height="200"></center><br>
+                <?php
+                if (!empty($_POST['usu']) and ! empty($_POST['con'])) {
+                    $usu = $_POST['usu'];
+                    $con = $_POST['con'];
+                    $consulta = mysqli_query($conexion, "SELECT * FROM usuarios WHERE user='$usu' AND con='$con'");
+                    if ($row = mysqli_fetch_array($consulta)) {
+                        if ($row['estado'] == 'a') {
+                            $nombre = $row['user'];
+                            $nombre = explode(" ", $nombre);
+                            $nombre = $nombre[0];
+                            $_SESSION['user_name'] = $nombre;
+                            $_SESSION['tipo_user'] = $row['tipo'];
+                            $_SESSION['id_profesor'] = $row['id_doc'];
+                          
+                            echo mensajes('Bienvenido<br>' . $row['user'] . '', 'verde') . '<br>';
+                            echo '<center><img src="../imagenes/cargando2.gif" width="90" height="90"></center><br>';
+                            echo '<meta http-equiv="refresh" content="2;url=principal.php">';
+                        }
+                    }
+                } else {
+                    echo '	<input type="text" name="usu" class="form-control" placeholder="Documento" autocomplete="off" required>
+			        <input type="password" name="con" class="form-control" placeholder="Password" autocomplete="off" required>
+			        <div align="right"><button class="btn btn-large btn-primary" type="submit"><strong>Entrar</strong></button></div>';
+                }
+                ?>
 
-                </form>
-
-            </div>
-
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Atras </button>
-                <button type="button"  class="btn btn-primary"onclick="location = '/proyectoDi/notas/registrarNotas.php'" >Continuar</button>
-            </div>
+            </form>
+            
         </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="../js/jquery.easing.min.js"></script>
+        <script src="../js/Chart.min.js"></script>
+        <script src="../vendor/datatables/jquery.dataTables.js"></script>
+        <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="../js/sb-admin.min.js"></script>
+
+        <!--Validaciones-->
+        <script src="../js/jquery.mask.min.js"></script>
+
+        <script src="../js/reglas_validacion.js"></script>
+        <script src="../js/validacionesDocente.js"></script>
 
 
 
-<!--****************************fin Dialo******************************-->
-<?php
-include_once '../plantilla/fin_plantilla.php';
+    </body>
 
-?>
+</html>

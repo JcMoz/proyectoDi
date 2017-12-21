@@ -48,7 +48,7 @@ if ($_SESSION['tipo_user']=='ad') {
                         <thead class="">
                         <th class="text-center">
                             <div align="center">
-                                <font face="Arial Narrow" size="5" color="#001f4d">Mis grados</font>
+                                <font face="Arial Narrow" size="5" color="#001f4d">Mis grados a registrar actividades</font>
                                 <img src="../imagenes/lapizA.ico" width="50" height="50">
                             </div>
                         </th>
@@ -67,8 +67,8 @@ if ($_SESSION['tipo_user']=='ad') {
                                     <td class="text-center">
                                         <div aling="center">
 
-                                            <a href="../notas/materia.php?ir=<?php echo $cali;?>" class="btn"> 
-                                                <button class="btn btn-atras"> <?php echo $row['nom_grado']; ?></button>
+                                            <a href="../notas/materias_registrar.php?ir=<?php echo $cali;?>" class="btn"> 
+                                                <button class="btn btn-outline-primary"> <?php echo $row['nom_grado']; ?></button>
                                             </a>
 
                                         </div>
@@ -87,8 +87,8 @@ if ($_SESSION['tipo_user']=='ad') {
                                     <td class="text-center">
                                         <div aling="center">
 
-                                            <a href="../notas/materia.php?ir=<?php echo $cali;?>" class="btn"> 
-                                                <button class="btn btn-atras"> <?php echo $row['nom_grado']; ?></button>
+                                            <a href="../notas/materias_registrar.php?ir=<?php echo $cali;?>" class="btn"> 
+                                                <button class="btn btn-outline-primary"> <?php echo $row['nom_grado']; ?></button>
                                             </a>
 
                                         </div>
@@ -107,7 +107,7 @@ if ($_SESSION['tipo_user']=='ad') {
                         <thead class="">
                         <th class="text-center">
                             <div align="center">
-                                <font face="Arial Narrow" size="5" color="#001f4d">Mi materia turno tarde</font>
+                                <font face="Arial Narrow" size="5" color="#001f4d">Mi materia a registrar actividades</font>
                                 <img src="../imagenes/Pencil.ico" width="50" height="50">
                             </div>
                         </th>
@@ -127,7 +127,7 @@ if ($_SESSION['tipo_user']=='ad') {
                                         <div aling="center">
 
                                             <a> 
-                                                <button class="btn btn-atras"> <?php echo $row1['nombre']; ?></button>
+                                                <button class="btn btn-outline-primary"> <?php echo $row1['nombre']; ?></button>
                                             </a>
 
                                         </div>
