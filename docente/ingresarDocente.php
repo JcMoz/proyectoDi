@@ -131,7 +131,7 @@ include_once '../plantilla/menu_navegacion.php';
 
                             <div align="center">
                                 <input type="submit" value="Guardar" name="guardar" class="btn btn-info">
-                                <input type="submit" value="Cancelar" name="cancel" class=" btn btn-cancelar" onclick="location='/proyectoDi/doc/index.php'">
+                                <input type="button" value="Cancelar" name="cancel" class=" btn btn-cancelar" onclick="location='/proyectoDi/doc/principal.php'">
 
                             </div>
                             <br>

@@ -70,17 +70,19 @@ $grado = $_REQUEST["ir"];
                                  $artistica=  mysqli_query($conexion,"SELECT*FROM materias WHERE  nombre='Artistica'");
                                  while ($x_row=  mysqli_fetch_array($artistica)){
                                      $x_ar=$x_row['nombre'];
+                                     $x_id=$x_row['id_materia'];
                                  }
                             }  else {
                               $sacar = mysqli_query($conexion, "SELECT*FROM materias WHERE turno_materia=1");  
                             }
                             while ($row = mysqli_fetch_array($sacar)) {
+                                $mat=$row['id_materia'];
                                 ?>
                                 <tr>
                                     <td class="text-center">
                                         <div aling="center">
 
-                                            <a href="../notas/calificar.php?ir=<?php echo $grado; ?>" class="btn"> 
+                                            <a href="../notas/calificar.php?ir=<?php echo $grado; ?>&llego=<?php echo $mat; ?>" class="btn"> 
                                                 <button class="btn btn-atras"> <?php echo $row['nombre']; ?></button>
                                             </a>
 
@@ -96,7 +98,7 @@ $grado = $_REQUEST["ir"];
                                     <td class="text-center">
                                         <div aling="center">
 
-                                            <a href="../notas/calificar.php?ir=<?php echo $grado; ?>" class="btn"> 
+                                            <a href="../notas/calificar.php?ir=<?php echo $grado; ?>&llego=<?php echo $x_id; ?>" class="btn"> 
                                                 <button class="btn btn-atras"> <?php echo $x_ar; ?></button>
                                             </a>
 

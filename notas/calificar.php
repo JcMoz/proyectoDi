@@ -27,6 +27,7 @@ if ($_SESSION['tipo_user'] == 'ad') {
     }
 }
 $grado = $_REQUEST["ir"];
+$materia = $_GET['llego'];
 ?>
 <style >
 
@@ -73,13 +74,15 @@ $grado = $_REQUEST["ir"];
                             $alumnos = mysqli_query($conexion, "SELECT*FROM inscripcion INNER JOIN alumno on inscripcion.id_alumno=alumno.id_alumno WHERE id_grado='$grado'");
                             while ($row=  mysqli_fetch_array($alumnos)){
                                 $nombre=$row['nie'];
+                                $id=$row['id_inscripcion'];
+                                
                             ?>
 
                             <tr>
                                 <td class="text-center"><?php echo $row['nie'];?></td>
                                 <td class="text-center"><?php echo $row['nom_alumno'];?></td>
                                 <td class="text-center"><?php echo $row['ape_alumno'];?></td>
-                                <td class="text-center"><a href="">Calificar</a></td>
+                                <td class="text-center"><a href="../notas/ingresar_notas.php?ir=<?php echo $grado;?>&llego=<?php echo $materia;?>&id=<?php echo $id; ?>" class="btn">Calificar</a></td>
 
                             </tr>
                             <?php }?>
