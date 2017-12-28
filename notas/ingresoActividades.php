@@ -162,6 +162,14 @@ if (isset($_REQUEST['tirar'])) {
         } else {
             $turno = 0;
         }
+        
+        if ($pe==1) {
+            $estado="enProceso";
+         }else{
+             if ($pe==2 || $pe==3) {
+              $estado="esperando";
+                }
+         }
         if ($a_materia == $materia && $a_turno == $turno) {
             if ($a_periodo == $pe) {
                echo '<script>swal({
@@ -176,7 +184,7 @@ if (isset($_REQUEST['tirar'])) {
                     
                 });</script>';
             }  else {
-                 mysqli_query($conexion, "INSERT INTO actividades(id_asignacion_a_g,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno')");
+                 mysqli_query($conexion, "INSERT INTO actividades(id_asignacion_a_g,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado')");
                 echo '<script>swal({
                     title: "Exito",
                     text: "El registro ha sido Guardado!",

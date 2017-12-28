@@ -92,7 +92,12 @@ $materia = $_GET['llego'];
             </div><!--div row 10-->
             <div class="col-md-2"></div><!--margen de dos-->
         </div><!--fin de row-->
-    </div><!--fin container fluid-->
+        <div class="text-center">
+            <a href="../notas/cuadro_notas.php?ir=<?php echo $grado; ?>&llego=<?php echo $materia; ?>" class="btn">
+             <button class="btn btn-outline-success">Consultar Cuadro de notas</button>
+            </a>
+        </div>
+        </div><!--fin container fluid-->
 
 </div>
 
