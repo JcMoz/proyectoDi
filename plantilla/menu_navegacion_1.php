@@ -72,9 +72,6 @@
                     <li>
                         <a href="../notas/registrarNotas.php"  style="color: white">Registrar Notas</a>
                     </li>
-                    <li>
-                        <a href="../notas/modificarNotas.php"  style="color: white">Modificar Notas</a>
-                    </li>
                 </ul>
             </li>
             <!--Termina Modulo de Control de notas-->

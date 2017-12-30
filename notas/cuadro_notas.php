@@ -72,6 +72,7 @@
         $extraer_id = mysqli_query($conexion, "SELECT*FROM actividades LEFT JOIN asignacion_a_g ON actividades.id_asignacion_a_g=asignacion_a_g.id_asignacion WHERE id_docentes='$profesor' AND id_gra='$grado' AND id_materia='$materia' AND estado_a='enProceso'");
         while ($xyz = mysqli_fetch_array($extraer_id)) {
             $a_actividad = $xyz['id_asignacion'];
+            $idActividad=$xyz['id_actividad'];
             $pe = $xyz['periodo'];
             $a1 = $xyz['act_1'];
             $a2 = $xyz['act_2'];
@@ -83,9 +84,11 @@
             $a8 = $xyz['act_8'];
             $a9 = $xyz['act_9'];
         }
+        
 //*********************************************
-        ?>
+  ?>
         <div class="container">
+             <form action="" id="FORMULARIO_VALIDADO"  method="post" class="form-register" >
             <!--******************titulo-->
             <div class="text-center">
                 <font face="Arial Narrow" size="5" color="#001f4d">Cuadro de notas</font>
@@ -99,10 +102,10 @@
             <!--****************** fin titulo-->
             <div class="panel-body">
 
-
+               
                 <table class="table table-striped table-bordered" cellspacing="0" width="100%" >
                     <thead class="">
-
+                    
                     <th style="font-size:11px" class="text-center">NIE</th>
                     <th style="font-size:11px" class="text-center" >Nombres</th>
                     <th style="font-size:11px" class="text-center"><?php echo $a1; ?></th>
@@ -119,8 +122,6 @@
                     <th style="font-size:10px" class="text-center">30%</th>
                     <th style="font-size:10px"class="text-center">R</th>
                     <th style="font-size:10px" class="text-center">PF</th>
-
-
                     </thead>
 
                     <tbody>
@@ -132,6 +133,7 @@
                             ?>
 
                                 <tr>
+                                    <td hidden><input name="id_alu[]" value="<?php echo $row['id'];?>" /></td>
                                     <td style="font-size:11px" class="text-center"><?php echo $row['nie']; ?></td>
                                     <td style="font-size:11px" class="text-center"><?php echo $row['nom_alumno']; ?> <?php echo $row['ape_alumno']; ?></td> 
                                     <td style="font-size:11px" class="text-center"><?php echo $row['nota1']; ?></td>
@@ -155,12 +157,122 @@
                     </tbody>
                 </table> <!--termina tabla-->
             
+               
+        </div><!--termina panel-->
+            <?php 
+            $comprobar=  mysqli_query($conexion,"SELECT*FROM proceso");
+              
+            while ($proceso_ver = mysqli_fetch_array($comprobar)) {
+                $habilitar=$proceso_ver['habilitar'];
+                $fecha_p=$proceso_ver['fecha'];
+                $mensaje=$proceso_ver['mensaje'];
+                
+            $originalDate = $fecha_p;
+            $newDate = date("d/m/Y", strtotime($originalDate));
 
-        </div><!--termina content-wrapper-->
-        <div>
-               <input type="button" value="Procesar" name="cancel" class=" btn btn-outline-primary"/>
+            $usuario = array(
+                "fecha" => $newDate
+           );
+            $fecha_p=$newDate;
+              
+            }
+            ?>
+            
+             <input type="button" value="Cancelar" name="cancel" class=" btn btn-outline-dark" onclick="location='/proyectoDi/notas/registrarNotas.php'"/>
+             <?php 
+            if($habilitar=="activar"){
+                ?>
+             <div class="row">
+                 <div class="col-md-3"></div>
+                 <div class="col-md-6">
+              <table class="table table-bordered table table-active">
+                        <thead class="">
+
+                        <th class="text-center">
+                            <div align="center">
+                                <font face="Arial Narrow" size="5" color="#001f4d"><?php echo $mensaje;?> <?php echo $fecha_p;?></font>
+                                <img src="../imagenes/reloj2.gif" width="100" height="100"/>
+                            </div> 
+                        </th>
+                        </thead>
+
+                        <tbody>
+
+                            
+                            <tr>
+                                
+                                <td class="text-center">
+                                    <div class="row">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-3">
+                                   <input type="submit" value="Procesar" name="procesar" class=" btn btn-outline-primary" />
+                                        </div>
+                                        <div class="col-md-4"></div>
+                                        </div>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table> <!--termina tabla-->
+                    </div>
+                    </div>
+           <?php } ?>
+              </form>
         </div><!--div panel body-->
         </div><!--Container-->
+        <?php
+    if (isset($_POST['procesar'])) {
+    try {
+        
+    include_once '../conexion/php_conexion.php';
+    $aux="procesado";
+    $aux1="enProceso";
+    foreach ($_POST['id_alu'] as $ids){
+         mysqli_query($conexion, "UPDATE notas_2 SET estado_n='$aux' WHERE id='$ids'");
+    }
+    $comprobar_cambio=  mysqli_query($conexion,"SELECT*FROM actividades WHERE id_asignacion_a_g='$a_actividad' AND id_materia='$materia' AND estado_a='enProceso'");
+    if (mysqli_num_rows($comprobar_cambio) > 0) {
+       //si esta en proceso
+        mysqli_query($conexion, "UPDATE actividades SET estado_a='$aux' WHERE id_actividad='$idActividad'");
+          if($pe==1){
+         $cambio1=  mysqli_query($conexion,"SELECT*FROM actividades LEFT JOIN asignacion_a_g ON actividades.id_asignacion_a_g=asignacion_a_g.id_asignacion WHERE id_docentes='$profesor' AND id_gra='$grado' AND id_materia='$materia' AND estado_a='esperando' AND periodo=2");
+         while ($esperando1=  mysqli_fetch_array($cambio1)){
+             $x=$esperando1['id_actividad'];
+         }
+         mysqli_query($conexion,"UPDATE actividades SET estado_a='$aux1' WHERE id_actividad='$x'");
+         
+         }
+          if($pe==2){
+         $cambio1=  mysqli_query($conexion,"SELECT*FROM actividades LEFT JOIN asignacion_a_g ON actividades.id_asignacion_a_g=asignacion_a_g.id_asignacion WHERE id_docentes='$profesor' AND id_gra='$grado' AND id_materia='$materia' AND estado_a='esperando' AND periodo=3");
+         while ($esperando1=  mysqli_fetch_array($cambio1)){
+             $x=$esperando1['id_actividad'];
+         }
+         mysqli_query($conexion,"UPDATE actividades SET estado_a='$aux1' WHERE id_actividad='$x'");
+          }
+          
+     
+    echo '<script>swal({
+                    title: "Exito",
+                    text: "Proceso",
+                    type: "success",
+                    confirmButtonText: "ok",
+                    closeOnConfirm: false
+                },
+                function () {
+                    location.href="registrarNotas.php";
+                    
+                });</script>';
+    }  else {
+          //no entra aki
+    }
+   
+    } catch (Exception $exc) {
+         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos e intentar nuevamente", "error");</script>';
+               
+    }
+}
+        
+ ?>
         <!-- Bootstrap core JavaScript -->
         <script src="../js/popper.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>

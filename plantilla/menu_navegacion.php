@@ -127,6 +127,14 @@
                 </a>
             </li>
             <!--asignacion-->
+              <!--ProcesarNotas-->
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <a class="nav-link" href="../asignaciones/procesar_notas.php">
+                    <i class="fa fa-fw fa-circle" style="color: white"></i>
+                    <span class="nav-link-text" style="color: white">Procesar notas</span>
+                </a>
+            </li>
+            <!--asignacion-->
 
             <!--Modulo de Reportes-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Re">
