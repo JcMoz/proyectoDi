@@ -51,7 +51,7 @@ $materia = $_GET['llego'];
                 ?>
                 <div align="center">
                     <font face="Arial Narrow" size="5" color="#001f4d">Alumnos de <?php echo $v_grado;?> grado</font>
-                    <img src="../imagenes/materia.png" width="65" height="65">
+                    <img src="../imagenes/boletin.png" width="65" height="65">
                 </div>
                 <br/>
                 <!--Comienza tabla-->

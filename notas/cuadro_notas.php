@@ -68,7 +68,11 @@
         while ($row1 = mysqli_fetch_array($cuadro_grado)) {
             $nom_grado = $row1['nom_grado'];
         }
-//********************Extraer las actividades de este docente
+//********************Extraer las actividades de este 
+        $paMostrar=  mysqli_query($conexion,"SELECT*FROM actividades LEFT JOIN asignacion_a_g ON actividades.id_asignacion_a_g=asignacion_a_g.id_asignacion WHERE id_docentes='$profesor' AND id_gra='$grado' AND id_materia='$materia' AND estado_a='enProceso'");
+        if (mysqli_num_rows($paMostrar) > 0) {
+    
+
         $extraer_id = mysqli_query($conexion, "SELECT*FROM actividades LEFT JOIN asignacion_a_g ON actividades.id_asignacion_a_g=asignacion_a_g.id_asignacion WHERE id_docentes='$profesor' AND id_gra='$grado' AND id_materia='$materia' AND estado_a='enProceso'");
         while ($xyz = mysqli_fetch_array($extraer_id)) {
             $a_actividad = $xyz['id_asignacion'];
@@ -84,6 +88,7 @@
             $a8 = $xyz['act_8'];
             $a9 = $xyz['act_9'];
         }
+        
         
 //*********************************************
   ?>
@@ -123,7 +128,11 @@
                     <th style="font-size:10px"class="text-center">R</th>
                     <th style="font-size:10px" class="text-center">PF</th>
                     </thead>
-
+        <?php } else {?>
+                    <div class="text-center">
+                        <font face="Arial Narrow" size="5" color="#001f4d">No ha ingresado actividades o posiblemente no ha calificado a ningun alumno.</font>
+                     </div>
+           <?php }?><br/>
                     <tbody>
                         <?php
                         
@@ -177,8 +186,10 @@
               
             }
             ?>
-            
+        <div class="text-center">
              <input type="button" value="Cancelar" name="cancel" class=" btn btn-outline-dark" onclick="location='/proyectoDi/notas/registrarNotas.php'"/>
+             </div>
+        <br/>
              <?php 
             if($habilitar=="activar"){
                 ?>
@@ -205,8 +216,10 @@
                                     <div class="row">
                                         <div class="col-md-4"></div>
                                         <div class="col-md-3">
+                                            <div class="text-center">
                                    <input type="submit" value="Procesar" name="procesar" class=" btn btn-outline-primary" />
                                         </div>
+                                            </div>
                                         <div class="col-md-4"></div>
                                         </div>
                                 </td>
