@@ -145,10 +145,10 @@
                 </a>
                 <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseRe">
                     <li><!--poner codigo de los que contiene el modulo de Reportes-->
-                        <a href="login.html"  style="color: white">Login Page</a>
+                        <a href="../reportes/inscripcion_principal.php"  style="color: white">Inscripción</a>
                     </li>
                     <li>
-                        <a href="register.html"  style="color: white">Registration Page</a>
+                        <a href="../reportes/notasB_principal.php"  style="color: white">Boletas de notas</a>
                     </li>
                     <li>
                         <a href="forgot-password.html"  style="color: white">Forgot Password Page</a>

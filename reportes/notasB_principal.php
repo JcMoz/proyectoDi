@@ -26,7 +26,6 @@ if ($_SESSION['tipo_user'] == 'ad') {
         include_once '../plantilla/menu_navegacion_1.php';
     }
 }
-$materiaRe = $_REQUEST["ir"];
 ?>
 <style >
 
@@ -44,18 +43,11 @@ $materiaRe = $_REQUEST["ir"];
             <div class="col-md-8">
                 <!--Comienza tabla-->
                 <div class="panel-body">
-                    <?php
-                    $s_mat = mysqli_query($conexion, "SELECT*FROM materias WHERE id_materia='$materiaRe'");
-                    while ($ver = mysqli_fetch_array($s_mat)) {
-                        $v_materia = $ver['nombre'];
-                    }
-                    ?>
-
                     <table class="table table-bordered table table-active">
                         <thead class="">
                         <th class="text-center">
                             <div align="center">
-                                <font face="Arial Narrow" size="5" color="#001f4d">Grados de la asignatura:<?php echo $v_materia;?></font>
+                                <font face="Arial Narrow" size="5" color="#001f4d">Reporte de boletas de notas por grado</font>
                                 <img src="../imagenes/gradu.png" width="65" height="65">
                             </div>
                         </th>
@@ -66,7 +58,7 @@ $materiaRe = $_REQUEST["ir"];
 
                             <?php
                          
-                              $sacar = mysqli_query($conexion, "SELECT*FROM grado WHERE turno_grado=11 OR turno_grado=0");  
+                              $sacar = mysqli_query($conexion, "SELECT*FROM grado");  
                             
                             while ($row = mysqli_fetch_array($sacar)) {
                                 $graVer=$row['id_grado'];
@@ -75,8 +67,8 @@ $materiaRe = $_REQUEST["ir"];
                                     <td class="text-center">
                                         <div aling="center">
 
-                                            <a href="../notas/calificar.php?ir=<?php echo $graVer; ?>&llego=<?php echo $materiaRe; ?>" class="btn"> 
-                                                <button class="btn btn-atras"> <?php echo $row['nom_grado']; ?></button>
+                                            <a href="../reportes/notasB_alumno.php?ir=<?php echo $graVer; ?>" class="btn"> 
+                                                <button class="btn btn-outline-warning"> <?php echo $row['nom_grado']; ?></button>
                                             </a>
 
                                         </div>
@@ -100,3 +92,4 @@ $materiaRe = $_REQUEST["ir"];
 <?php
 include_once '../plantilla/fin_plantilla.php';
 ?>
+
