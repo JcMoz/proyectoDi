@@ -29,11 +29,11 @@ if ($_SESSION['tipo_user'] == 'ad') {
 $grado = $_GET['ir'];
 $materia = $_GET['llego'];
 $alumno = $_GET['id'];
-
-//********************Extraer id de asiganacion de grado c...
+if($grado==1|| $grado==2|| $grado==3|| $grado==4){
+//********************Extraer id de asiganacion de grado c 1-4...
 $extraer_id = mysqli_query($conexion, "SELECT*FROM actividades LEFT JOIN asignacion_a_g ON actividades.id_asignacion_a_g=asignacion_a_g.id_asignacion WHERE id_docentes='$profesor' AND id_gra='$grado' AND id_materia='$materia' AND estado_a='enProceso'");
 while ($xyz = mysqli_fetch_array($extraer_id)) {
-    $a_actividad = $xyz['id_asignacion'];
+    //$a_actividad = $xyz['id_asignacion'];
     $pe=$xyz['periodo'];
     $a1=$xyz['act_1'];
     $a2=$xyz['act_2'];
@@ -44,6 +44,25 @@ while ($xyz = mysqli_fetch_array($extraer_id)) {
     $a7=$xyz['act_7'];
     $a8=$xyz['act_8'];
     $a9=$xyz['act_9'];
+}//cierre de while
+}else{
+    //********************Extraer id de asiganacion de grado c 1-4...
+$extraer_id = mysqli_query($conexion, "SELECT *FROM actividades_materia a, asignacion_m m WHERE a.id_asignacion_m=m.id_asig_m AND a.id_materia='$materia'"
+        . " AND m.id_docente='$profesor' AND a.id_grado='$grado' AND a.estado_a='enProceso'");
+while ($xyz = mysqli_fetch_array($extraer_id)) {
+    //$a_actividad = $xyz['id_asignacion'];
+    $pe=$xyz['periodo'];
+    $a1=$xyz['act_1'];
+    $a2=$xyz['act_2'];
+    $a3=$xyz['act_3'];
+    $a4=$xyz['act_4'];
+    $a5=$xyz['act_5'];
+    $a6=$xyz['act_6'];
+    $a7=$xyz['act_7'];
+    $a8=$xyz['act_8'];
+    $a9=$xyz['act_9'];
+    
+}
 }
 //*********************************************
 //****************       

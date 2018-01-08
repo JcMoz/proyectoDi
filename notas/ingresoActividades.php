@@ -41,36 +41,73 @@ $materia = $_GET['llego'];
     <!--Comienza container fluid-->
     <form action="" id="FORMULARIO_VALIDADO"  method="post" class="form-register" enctype="multipart/form-data" >
         <div class="container-fluid">
-<?php
+            <?php
 //para extraer el nombre de la materia
-$sacar = mysqli_query($conexion, "SELECT*FROM materias WHERE id_materia='$materia'");
-while ($mi_materia = mysqli_fetch_array($sacar)) {
-    $nom_m = $mi_materia['nombre'];
-}
+            $sacar = mysqli_query($conexion, "SELECT*FROM materias WHERE id_materia='$materia'");
+            while ($mi_materia = mysqli_fetch_array($sacar)) {
+                $nom_m = $mi_materia['nombre'];
+            }
 //fin de codigo para extraer la materia
 //******para extraer el grado*****
-$extraer = mysqli_query($conexion, "SELECT*FROM grado WHERE id_grado='$grado'");
-while ($m_grado = mysqli_fetch_array($extraer)) {
-    $nom_g = $m_grado['nom_grado'];
-}
+            $extraer = mysqli_query($conexion, "SELECT*FROM grado WHERE id_grado='$grado'");
+            while ($m_grado = mysqli_fetch_array($extraer)) {
+                $nom_g = $m_grado['nom_grado'];
+            }
 //******fin de extraccion de grado
 //******para extraer el id de la asiganacion_a_g
-$id_a_g = mysqli_query($conexion, "SELECT*FROM asignacion_a_g INNER JOIN grado on asignacion_a_g.id_asignacion=grado.id_grado WHERE id_docentes='$profesor' AND id_grado='$grado'");
-while ($id_sacar = mysqli_fetch_array($id_a_g)) {
-    $mi_id = $id_sacar['id_asignacion'];
-}
+//este if es para ingresar las actividades por materia por la asignacionn de materias 
+//que un docente da una materia para cada grado y artistica para 5 y 6
+            if ($grado == 1 || $grado == 2 || $grado == 3 || $grado == 4) {
+                $id_a_g = mysqli_query($conexion, "SELECT*FROM asignacion_a_g INNER JOIN grado on asignacion_a_g.id_asignacion=grado.id_grado WHERE id_docentes='$profesor' AND id_grado='$grado'");
+                while ($id_sacar = mysqli_fetch_array($id_a_g)) {
+                    $mi_id = $id_sacar['id_asignacion'];
+                }
 //*****fin de extraer el id de la asignacion querido amigo cuando veas este codigo no te asustes, solo Dios sabe
 //**** como funciona XD
 ///**********para sacar las catividades y validar que ya estan ingresadas
-  $verificar = mysqli_query($conexion, "SELECT*FROM actividades WHERE id_asignacion_a_g='$mi_id'");
-        while ($a_verificar = mysqli_fetch_array($verificar)) {
-            $a_periodo = $a_verificar['periodo'];
-            $a_materia = $a_verificar['id_materia'];
-            $a_turno = $a_verificar['turno_a'];
-           
-        }
-        //*************fin de extraer datos
-?>
+                $verificar = mysqli_query($conexion, "SELECT*FROM actividades WHERE id_asignacion_a_g='$mi_id'");
+                while ($a_verificar = mysqli_fetch_array($verificar)) {
+                    $a_periodo = $a_verificar['periodo'];
+                    $a_materia = $a_verificar['id_materia'];
+                    $a_turno = $a_verificar['turno_a'];
+                }
+            } else {
+                //***********para ingresar actividades de artistica*****************************
+                if ($grado == 5 || $grado == 6 && $nom_m=='Artistica') {
+                    $id_m = mysqli_query($conexion, "SELECT*FROM asignacion_m WHERE id_docente='$profesor'");
+                    while ($id_sacar = mysqli_fetch_array($id_m)) {
+                        $mi_id = $id_sacar['id_asig_m'];
+                    }
+//*****fin de extraer el id de la asignacion querido amigo cuando veas este codigo no te asustes, solo Dios sabe
+//**** como funciona XD
+///**********para sacar las catividades y validar que ya estan ingresadas
+                    $verificar = mysqli_query($conexion, "SELECT*FROM actividades_materia WHERE id_asignacion_m='$mi_id'");
+                    while ($a_verificar = mysqli_fetch_array($verificar)) {
+                        $a_periodo = $a_verificar['periodo'];
+                        $a_grado = $a_verificar['id_grado'];
+                        $a_turno = $a_verificar['turno_a'];
+                        $a_materia=$a_verificar['id_materia'];
+                    }
+                } else {
+                    //***********para ingresar actividades de artistica*****************************            
+                    $id_m = mysqli_query($conexion, "SELECT*FROM asignacion_m WHERE id_docente='$profesor' AND id_materia='$materia'");
+                    while ($id_sacar = mysqli_fetch_array($id_m)) {
+                        $mi_id = $id_sacar['id_asig_m'];
+                    }
+//*****fin de extraer el id de la asignacion querido amigo cuando veas este codigo no te asustes, solo Dios sabe
+//**** como funciona XD
+///**********para sacar las catividades y validar que ya estan ingresadas
+                    $verificar = mysqli_query($conexion, "SELECT*FROM actividades_materia WHERE id_asignacion_m='$mi_id'");
+                    while ($a_verificar = mysqli_fetch_array($verificar)) {
+                        $a_periodo = $a_verificar['periodo'];
+                        $a_grado = $a_verificar['id_grado'];
+                        $a_turno = $a_verificar['turno_a'];
+                        $a_materia=$a_verificar['id_materia'];
+                    }
+                }
+            }
+            //*************fin de extraer datos
+            ?>
             <div align="center">
                 <font face="Arial Narrow" size="5" color="#001f4d">Ingresar actividades</font>
                 <img src="../imagenes/pencil.png" width="50" height="50"><br/>
@@ -162,17 +199,19 @@ if (isset($_REQUEST['tirar'])) {
         } else {
             $turno = 0;
         }
-        
-        if ($pe==1) {
-            $estado="enProceso";
-         }else{
-             if ($pe==2 || $pe==3) {
-              $estado="esperando";
-                }
-         }
+
+        if ($pe == 1) {
+            $estado = "enProceso";
+        } else {
+            if ($pe == 2 || $pe == 3) {
+                $estado = "esperando";
+            }
+        }
+         if ($grado == 1 || $grado == 2 || $grado == 3 || $grado == 4) {
+        ///validar para los grados 1-4 actividades
         if ($a_materia == $materia && $a_turno == $turno) {
-            if ($a_periodo == $pe) {
-               echo '<script>swal({
+           if ($a_periodo == $pe) {
+                echo '<script>swal({
                     title: "Actividades para este periodo ya fueron registradas",
                     text: "Registre actividades para el siguiente periodo",
                     type: "success",
@@ -183,8 +222,8 @@ if (isset($_REQUEST['tirar'])) {
                     location.href="grados_registrar.php";
                     
                 });</script>';
-            }  else {
-                 mysqli_query($conexion, "INSERT INTO actividades(id_asignacion_a_g,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado')");
+            } else {
+                mysqli_query($conexion, "INSERT INTO actividades(id_asignacion_a_g,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado')");
                 echo '<script>swal({
                     title: "Exito",
                     text: "El registro ha sido Guardado!",
@@ -197,9 +236,9 @@ if (isset($_REQUEST['tirar'])) {
                     
                 });</script>';
             }
-        }  else {
-                mysqli_query($conexion, "INSERT INTO actividades(id_asignacion_a_g,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno')");
-                echo '<script>swal({
+        } else {
+            mysqli_query($conexion, "INSERT INTO actividades(id_asignacion_a_g,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado')");
+            echo '<script>swal({
                     title: "Exito",
                     text: "El registro ha sido Guardado!",
                     type: "success",
@@ -211,11 +250,55 @@ if (isset($_REQUEST['tirar'])) {
                     
                 });</script>';
         }
+     } else {
+         //para ingresar las actividades por materia.
+          if ($a_grado == $grado && $a_turno == $turno) {
+           if ($a_periodo == $pe) {
+                echo '<script>swal({
+                    title: "Actividades para este periodo ya fueron registradas",
+                    text: "Registre actividades para el siguiente periodo",
+                    type: "success",
+                    confirmButtonText: "ok",
+                    closeOnConfirm: false
+                },
+                function () {
+                    location.href="grados_registrar.php";
+                    
+                });</script>';
+            } else {
+                mysqli_query($conexion, "INSERT INTO actividades_materia(id_asignacion_m,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a,id_grado) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado','$grado')");
+                echo '<script>swal({
+                    title: "Exito",
+                    text: "El registro ha sido Guardado!",
+                    type: "success",
+                    confirmButtonText: "ok",
+                    closeOnConfirm: false
+                },
+                function () {
+                    location.href="grados_registrar.php";
+                    
+                });</script>';
+            }
+        } else {
+            mysqli_query($conexion, "INSERT INTO actividades_materia(id_asignacion_m,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a,id_grado) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado','$grado')");
+            echo '<script>swal({
+                    title: "Exito",
+                    text: "El registro ha sido Guardado!",
+                    type: "success",
+                    confirmButtonText: "ok",
+                    closeOnConfirm: false
+                },
+                function () {
+                    location.href="grados_registrar.php";
+                    
+                });</script>';
+        }
+         
+     }
     } catch (Exception $exc) {
         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos e intentar nuevamente", "error");</script>';
     }
 }
-
 ?>
 <script>
     $.validator.setDefaults({

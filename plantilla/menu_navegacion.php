@@ -151,7 +151,7 @@
                         <a href="../reportes/notasB_principal.php"  style="color: white">Boletas de notas</a>
                     </li>
                     <li>
-                        <a href="forgot-password.html"  style="color: white">Forgot Password Page</a>
+                        <a href="../reportes/cuadro_principal.php"  style="color: white">Cuadros de notas</a>
                     </li>
                     <li>
                         <a href="blank.html"  style="color: white">Blank Page</a>

@@ -120,13 +120,14 @@ if ($_SESSION['tipo_user']=='ad') {
                             <?php
                             $materia = mysqli_query($conexion, "SELECT*FROM asignacion_m LEFT JOIN materias on asignacion_m.id_materia=materias.id_materia WHERE id_docente='$profesor'");
                             while ($row1 = mysqli_fetch_array($materia)) {
+                                $registrar=$row1['id_materia'];
                                 ?>
 
                                 <tr>
                                     <td class="text-center">
                                         <div aling="center">
 
-                                            <a> 
+                                            <a href="../notas/act_materias.php?ir=<?php echo $registrar;?>" class="btn"> 
                                                 <button class="btn btn-outline-primary"> <?php echo $row1['nombre']; ?></button>
                                             </a>
 
