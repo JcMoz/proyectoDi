@@ -67,7 +67,8 @@ while ($xyz = mysqli_fetch_array($extraer_id)) {
 //*********************************************
 //****************       
 $verificar_insert = mysqli_query($conexion, "SELECT*FROM notas_2 WHERE id_inscripcion='$alumno' AND id_materia='$materia' AND id_grado='$grado' AND estado_n='enProceso'");
-if (mysqli_num_rows($verificar_insert) > 0) {    
+if (mysqli_num_rows($verificar_insert) > 0) { 
+    
 } else {
    include_once '../conexion/php_conexion.php';
    $estado_n="enProceso";

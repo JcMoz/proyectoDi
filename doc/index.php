@@ -78,7 +78,7 @@ include_once '../mensajes.php';
            
             <form name="form1" method="post" action="" class="form-signin">
 
-                <center><img src="../imagenes/alumnoA.png" width="200" height="200"></center><br>
+                <center><img src="../imagenes/cc.jpg" width="200" height="200"></center><br>
                 <?php
                 if (!empty($_POST['usu']) and ! empty($_POST['con'])) {
                     $usu = $_POST['usu'];

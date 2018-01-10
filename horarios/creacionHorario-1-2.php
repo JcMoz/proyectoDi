@@ -1,6 +1,31 @@
 <?php
+session_start();
+include_once '../conexion/php_conexion.php';
 include_once '../plantilla/incio_plantilla.php';
-include_once '../plantilla/menu_navegacion.php';
+try {
+    if ($_SESSION['tipo_user'] == 'ad' or $_SESSION['tipo_user'] == 'p') {
+        $profesor = $_SESSION['id_profesor'];
+        $sacar = mysqli_query($conexion, "SELECT*FROM docente WHERE id_doc='$profesor'");
+
+        while ($row = mysqli_fetch_array($sacar)) {
+            $nombre = $row['nom_doc'];
+            $ape = $row['ape_doc'];
+        }
+    }
+} catch (Exception $exc) {
+    echo '<script>swal("EROR", "Favor revisar los datos e intentar nuevamente", "error");</script>';
+}
+?>
+<?php
+//body
+include_once '../plantilla/incio_plantilla.php';
+if ($_SESSION['tipo_user'] == 'ad') {
+    include_once '../plantilla/menu_navegacion.php';
+} else {
+    if ($_SESSION['tipo_user'] == 'p') {
+        include_once '../plantilla/menu_navegacion_1.php';
+    }
+}
 ?>
 
 <style>
@@ -40,16 +65,19 @@ include_once '../plantilla/menu_navegacion.php';
 
                    <!--hora-->
                     <tr>
-                    <td class="text-center">7:15-8:00am                        
+                    <td class="text-center"><INPUT class="form-control-label" size="10" name="hora1" value="7:15-8:00am" type="text" disabled="false" >                        
                     </td>
                     <td class="text-center">
-                         <select name="materia">
+                        <select name="materia1" id="ma1" class="form-control">
                          <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						</select>
+                         <?php
+                         $materia=  mysqli_query($conexion,"SELECT*FROM materias WHERE turno_materia=1");
+                         while ($row= mysqli_fetch_array($materia)){
+                             echo '<option value="'.$row['nombre'].'">'.$row['nombre'].'</option>';
+                         }
+                         ?>
+						    
+		       </select>
                     </td>
                     <td class="text-center">
                          <select name="materia">
@@ -90,7 +118,7 @@ include_once '../plantilla/menu_navegacion.php';
                     </tr>
                     
                     <tr>
-                    <td class="text-center">8:00-8:45am                      
+                    <td class="text-center"><INPUT class="form-control-label" size="10" name="hora2" value="8:00-8:45am" type="text" disabled="false" >                      
                     </td>
                    <td class="text-center">
                          <select name="materia">
@@ -139,7 +167,7 @@ include_once '../plantilla/menu_navegacion.php';
                     </td>
                     </tr>
                     <tr>
-                    <td class="text-center"> 9:05-9:50am                     
+                    <td class="text-center"><INPUT class="form-control-label" size="10" name="hora3" value="9:05-9:50am" type="text" disabled="false" >                      
                     </td>
                     <td class="text-center">
                          <select name="materia">
@@ -189,7 +217,7 @@ include_once '../plantilla/menu_navegacion.php';
                     </tr>
                     
                      <tr>
-                    <td class="text-center"> 9:50-10:35am                   
+                    <td class="text-center"><INPUT class="form-control-label" size="10" name="hora4" value="9:50-10:35am" type="text" disabled="false" >                    
                     </td>
                     <td class="text-center">
                          <select name="materia">
@@ -238,7 +266,7 @@ include_once '../plantilla/menu_navegacion.php';
                     </td>
                     </tr>
                     <tr>
-                        <td class="text-center"><INPUT class="form-control-label" size="10" name="hora1" value="10:55-11:00am" type="text" disabled="false" >               
+                        <td class="text-center"><INPUT class="form-control-label" size="10" name="hora5" value="10:55-11:00am" type="text" disabled="false" >               
                     </td>
                     <td class="text-center">
                          <select name="materia">
@@ -287,221 +315,8 @@ include_once '../plantilla/menu_navegacion.php';
                     </td>
                     </tr>
                     <!--fin hora-->  
-                                                
-                        <td class="text-center">
-                            
-                        </td>
-                          <td class="text-center">
-                            
-                        </td>
-                    </tr>
-
+                       
                 </tbody>
-                <!---****************segunda fila*****************************-->
-                 <tbody>
-
-                    <tr>
-                    <td class="text-center">7:15-8:00am<br>
-                                            8:00-8:45am<br>
-                                            9:05-9:50am<br>
-                                            9:50-10:35am<br>
-                                            10:55-11:00am
-                    </td>
-                        <td class="text-center">
-                         <select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ci">Ciencia</option>
-						     <option value="so">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						    <option value="ci">Ciencia</option>
-						    <option value="so">Sociales</option>
-						    
-						</select>
-						<br>
-						</td>
-                        <td class="text-center"><select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ci">Ciencia</option>
-						     <option value="so">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						    <option value="ci">Ciencia</option>
-						    <option value="so">Sociales</option>
-						    
-						</select>
-						<br></td>
-                        <td class="text-center"><select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ci">Ciencia</option>
-						     <option value="so">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						    <option value="ci">Ciencia</option>
-						    <option value="so">Sociales</option>
-						    
-						</select>
-						<br></td>
-                        <td class="text-center"><select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ci">Ciencia</option>
-						     <option value="so">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						    <option value="ci">Ciencia</option>
-						    <option value="so">Sociales</option>
-						    
-						</select>
-						<br></td>
-                        <td class="text-center"><select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ma">Ciencia</option>
-						     <option value="ma">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						     <option value="ci">Ciencia</option>
-						     <option value="so">Sociales</option>
-						    
-						</select>
-						<br>
-						<select name="materia">
-                         <option value="len">Materia</option>
-						    <option value="len">Lenguaje</option>
-						    <option value="ma">Matemática</option>
-						    <option value="ci">Ciencia</option>
-						    <option value="so">Sociales</option>
-						    
-						</select>
-						<br></td>
-                        
-                                                
-                        <td class="text-center">
-                            
-                        </td>
-                         <td class="text-center">
-                            
-                        </td>
-                    </tr>
-
-                </tbody>
-                <!---*********************fin de fila***********************************************-->
-
                  
             </table>
         </div>
