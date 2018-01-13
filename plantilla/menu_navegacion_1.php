@@ -40,16 +40,10 @@
                         <a href="../horarios/ingreso_G_S_A.php" style="color: white">Ingresar Grados, Aulas, Materias</a>
                     </li>
                     <li>
-                        <a href="../horarios/creacionHorario-1-2.php" style="color: white">Grados 1-2</a>
+                        <a href="../horarios/creacionHorario-1-4.php" style="color: white">Grados 1-4</a>
                     </li>
                     <li>
-                        <a href="../horarios/modificacionHorario-1-2.php" style="color: white">Modificación Grados 1-2</a>
-                    </li>
-                    <li>
-                        <a href="../horarios/creacionHorario-3-4.php"  style="color: white">Grados 3-4</a>
-                    </li>
-                    <li>
-                        <a href="../horarios/modificacionHorario-3-4.php"  style="color: white">Modificación Grados 3-4</a>
+                        <a href="../horarios/modificacionHorario-1-4.php"  style="color: white">Modificación Grados 1-4</a>
                     </li>
                     <li>
                         <a href="../horarios/horario-6-9.php"  style="color: white">Horario 5-9 Grado</a>

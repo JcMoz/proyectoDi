@@ -40,16 +40,10 @@
                         <a href="../horarios/ingreso_G_S_A.php" style="color: white">Ingresar Grados, Aulas, Materias</a>
                     </li>
                     <li>
-                        <a href="../horarios/creacionHorario-1-2.php" style="color: white">Grados 1-2</a>
+                        <a href="../horarios/creacionHorario-1-4.php" style="color: white">Grados 1-4</a>
                     </li>
                     <li>
-                        <a href="../horarios/modificacionHorario-1-2.php" style="color: white">Modificación Grados 1-2</a>
-                    </li>
-                    <li>
-                        <a href="../horarios/creacionHorario-3-4.php"  style="color: white">Grados 3-4</a>
-                    </li>
-                    <li>
-                        <a href="../horarios/modificacionHorario-3-4.php"  style="color: white">Modificación Grados 3-4</a>
+                        <a href="../horarios/modificacionHorario-1-4.php"  style="color: white">Modificación Grados 1-4</a>
                     </li>
                     <li>
                         <a href="../horarios/horario-6-9.php"  style="color: white">Horario 5-9 Grado</a>
@@ -69,7 +63,7 @@
                         <a href="crearCopiaSeguridad.php" style="color: white">Copia de Seguridad</a>
                     </li>
                     <li>
-                        <a href="registrarUsuario.php" style="color: white">Registrar Usuario</a>
+                        <a href="../seguridad/registroUsuario.php" style="color: white">Registrar Usuario</a>
                     </li>
                     <li>
                         <a href="Bitácora.php"  style="color: white">Bitácora</a>
@@ -120,13 +114,24 @@
             </li>
             <!--Termina Modulo de Expediente docente-->
             <!--asignacion-->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="../asignaciones/asignacion.php">
+            <!--Modulo de asignacion-->
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Asig">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAsig" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-circle" style="color: white"></i>
-                    <span class="nav-link-text" style="color: white">Asignacion</span>
+                    <span class="nav-link-text" style="color: white">
+                        Asignación</span>
                 </a>
+                <ul class="sidenav-second-level collapse bg-secondary " id="collapseAsig">
+                    <li>
+                        <a href="../asignaciones/asignacion.php" style="color: white">Asignación grados</a>
+                    </li>
+                    <li>
+                        <a href="../asignaciones/asignacionMaterias.php" style="color: white">Asignación materias</a>
+                    </li>
+                </ul> 
             </li>
-            <!--asignacion-->
+            <!--Termina Modulo de asignacion-->
+            <!-- termina asignacion-->
               <!--ProcesarNotas-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                 <a class="nav-link" href="../asignaciones/procesar_notas.php">
@@ -134,7 +139,7 @@
                     <span class="nav-link-text" style="color: white">Procesar notas</span>
                 </a>
             </li>
-            <!--asignacion-->
+            <!--termina procesar notas-->
 
             <!--Modulo de Reportes-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Re">
@@ -154,7 +159,10 @@
                         <a href="../reportes/cuadro_principal.php"  style="color: white">Cuadros de notas</a>
                     </li>
                     <li>
-                        <a href="blank.html"  style="color: white">Blank Page</a>
+                        <a href="../reportes/horario_principal.php"  style="color: white">Horarios</a>
+                    </li>
+                    <li>
+                        <a href="../reportes/estadisticas_principal.php"  style="color: white">Estadisticas</a>
                     </li>
                 </ul>
             </li>

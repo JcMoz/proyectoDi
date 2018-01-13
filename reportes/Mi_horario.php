@@ -20,7 +20,7 @@ class PDF extends FPDF {
         $this->SetTextColor(0);
         $this->SetDrawColor(231, 169, 249);
         $this->SetLineWidth(1.5);
-        $this->Cell(104, 6, 'LISTADO DE ALUMNOS', 0, 0, 'C');
+        $this->Cell(104, 6, 'MI HORARIO', 0, 0, 'C');
  
         $this->SetDrawColor(0, 80, 180);
         $this->SetFillColor(230, 230, 0);
@@ -28,7 +28,7 @@ class PDF extends FPDF {
         // Ancho del borde (1 mm)
         $this->SetLineWidth(1);
         #Establecemos los márgenes izquierda, arriba y derecha: 
-        $this->SetMargins(30, 25, 30);
+        $this->SetMargins(20, 25, 30);
 
 #Establecemos el margen inferior: 
         $this->SetAutoPageBreak(true, 25);
@@ -48,7 +48,7 @@ class PDF extends FPDF {
 
 //****************************fin de la plantilla encabezado.******************
 $gradoRe = $_GET['ir'];
-$reporte_grado = mysqli_query($conexion, " SELECT  @rownum:=@rownum+1 AS rownum,alumno.*, nom_alumno,ape_alumno,nie FROM (SELECT @rownum:=0) r, alumno INNER JOIN inscripcion ON alumno.id_alumno=inscripcion.id_inscripcion WHERE id_grado='$gradoRe' ORDER BY ape_alumno ASC");
+$reporte_horario = mysqli_query($conexion, "SELECT*FROM horarios WHERE id_grado='$gradoRe'");
 
 $pdf = new PDF();
 $pdf->AliasNbPages();
@@ -67,21 +67,27 @@ $pdf->AddPage();
 $pdf->SetFillColor(231, 169, 249);
 $pdf->SetFont('Arial', 'B', 12);
 
-$pdf->Cell(10, 6, 'N', 1, 0, 'C', 1);
-$pdf->Cell(20, 6, 'NIE', 1, 0, 'C', 1);
-$pdf->Cell(70, 6, 'APELLIDO', 1, 0, 'C', 1);
-$pdf->Cell(70, 6, 'NOMBRE', 1, 1, 'C', 1);
+$pdf->Cell(30, 6, 'HORA', 1, 0, 'C', 1);
+$pdf->Cell(30, 6, 'LUNES', 1, 0, 'C', 1);
+$pdf->Cell(30, 6, 'MARTES', 1, 0, 'C', 1);
+$pdf->Cell(30, 6, 'MIERCOLES', 1, 0, 'C', 1);
+$pdf->Cell(30, 6, 'JUEVES', 1, 0, 'C', 1);
+$pdf->Cell(30, 6, 'VIERNES', 1, 1, 'C', 1);
 
 $pdf->SetFont('Arial', '', 10);
 
 
-while ($row = $reporte_grado->fetch_assoc()) {
-    $pdf->Cell(10, 6,utf8_decode($row['rownum']), 1, 0, 'C');
-    $pdf->Cell(20, 6, utf8_decode($row['nie']), 1, 0, 'C');
-    $pdf->Cell(70, 6, $row['ape_alumno'], 1, 0, 'C');
-    $pdf->Cell(70, 6, utf8_decode($row['nom_alumno']), 1, 1, 'C');
-    ;
+while ($row = $reporte_horario->fetch_assoc()) {
+    $pdf->Cell(30, 6,utf8_decode($row['hora']), 1, 0, 'C');
+    $pdf->Cell(30, 6, utf8_decode($row['lunes']), 1, 0, 'C');
+    $pdf->Cell(30, 6, utf8_decode($row['martes']), 1, 0, 'C');
+    $pdf->Cell(30, 6, utf8_decode($row['miercoles']), 1, 0, 'C');
+    $pdf->Cell(30, 6, utf8_decode($row['jueves']), 1, 0, 'C');
+    $pdf->Cell(30, 6, utf8_decode($row['viernes']), 1, 1, 'C');
 }
+
 
 $pdf->Output();
 ?>
+
+
