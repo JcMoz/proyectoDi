@@ -38,6 +38,10 @@ if ($_SESSION['tipo_user'] == 'ad') {
 
 <!--inicio de content wrapper mi codigo-->
 <div class="content-wrapper">
+    <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalayudaCreacionHorario" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+        <?php include_once '../ayuda/ayudaCreacionHorario.php'; ?>
+    </div>
     <div class="container-fluid"> <!--Comienza container Fluid-->
         <!--titulo-->
         <div align="center">
@@ -471,7 +475,16 @@ if (isset($_REQUEST['tirar'])) {
         $materia25 = $_POST["materia25"];
         $hora5 = $_POST["hora5"];
         mysqli_query($conexion, "INSERT INTO horarios(lunes,martes,miercoles,jueves,viernes,hora,id_grado,id_docente) VALUES ('$materia21','$materia22','$materia23','$materia24','$materia25','10:55-11:45 am','$idGrado','$profesor')");
-        
+        //bitacora
+    $verUsu=  mysqli_query($conexion,"SELECT*FROM usuarios WHERE id_doc='$profesor'");
+    while ($row=  mysqli_fetch_array($verUsu)){
+        $usuario=$row['id_usuario'];
+    }
+    ini_set('date.timezone', 'America/El_Salvador');
+    $hora = date("Y/m/d ") . date("h-i-s");
+    $actividad="Ingreso su horario de ".$grado;
+    mysqli_query($conexion,"INSERT INTO bitacora(id_usuario,actividad,fecha) VALUES('$usuario','$actividad','$hora')");
+   //fin bitacora
         echo '<script>swal({
                     title: "Exito",
                     text: "El registro ha sido Guardado!",

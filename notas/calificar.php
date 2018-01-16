@@ -37,6 +37,10 @@ $materia = $_GET['llego'];
     }
 </style>
 <div class="content-wrapper">
+    <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalayudaCalificar" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+        <?php include_once '../ayuda/ayudaCalificar.php'; ?>
+    </div>
     <!--Comienza container fluid-->
     <div class="container-fluid">
         <br/><br/>

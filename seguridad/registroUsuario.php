@@ -1,10 +1,33 @@
 <?php
-include '../conexion/php_conexion.php';
+session_start();
+include_once '../conexion/php_conexion.php';
 include_once '../plantilla/incio_plantilla.php';
-include_once '../plantilla/menu_navegacion_1.php';
+try {
+    if ($_SESSION['tipo_user'] == 'ad' or $_SESSION['tipo_user'] == 'p') {
+        $profesor = $_SESSION['id_profesor'];
+        $sacar = mysqli_query($conexion, "SELECT*FROM docente WHERE id_doc='$profesor'");
+
+        while ($row = mysqli_fetch_array($sacar)) {
+            $nombre = $row['nom_doc'];
+            $ape = $row['ape_doc'];
+        }
+    }
+} catch (Exception $exc) {
+    echo '<script>swal("EROR", "Favor revisar los datos e intentar nuevamente", "error");</script>';
+}
+?>
+<?php
+//body
+include_once '../plantilla/incio_plantilla.php';
+if ($_SESSION['tipo_user'] == 'ad') {
+    include_once '../plantilla/menu_navegacion.php';
+} else {
+    if ($_SESSION['tipo_user'] == 'p') {
+        include_once '../plantilla/menu_navegacion_1.php';
+    }
+}
 
 ?>
-
 
 <div class="content-wrapper">
 
@@ -56,8 +79,8 @@ include_once '../plantilla/menu_navegacion_1.php';
                                 <label>Estado del Usuario</label>
                                 <select name="estado" id="maa1" class="form-control" required="Seleccione">
                                     <option value="0">Estados</option>
-                                    <option value="a">Activo</option>
-                                     <option value="d">Desactivado</option>
+                                    <option value='a'>Activo</option>
+                                     <option value='d'>Desactivado</option>
 
                                 </select>
                             </div>
@@ -72,13 +95,19 @@ include_once '../plantilla/menu_navegacion_1.php';
                             </div>
                             <div class="form-group">
                                 <label>Seleccione docente</label>
-                                <select name="seleccionar" id="maa1" class="form-control" required="Seleccione">
+                                <select name="selec" id="maa1" class="form-control" required="Seleccione">
                                     <option value="pri">Docentes disponibles</option>
                                     <?php
                                     $materia = mysqli_query($conexion, "SELECT * FROM docente");
                                     while ($row = mysqli_fetch_array($materia)) {
-                                        echo '<option value="' . $row['$id_doc'] . '">' .$row['nom_doc'] . ' '.$row['ape_doc']. '</option>';
+                                        //$idRe=$row['id_alumno'];
+                                    echo '<option value='."$row[id_doc]".'>Alumno/a: '.$row['1'].'&nbsp&nbsp'.$row['2'].'</option>';
+                                   // echo '<option value=' . $row['$id_doc'] . '>' .$row['nom_doc'] . ' '.$row['ape_doc']. '</option>';
+                                    
                                     }
+//                                    while ($row = mysqli_fetch_array($materia)) {
+//                                        echo '<option value="' . $row['$id_doc'] . '">' .$row['nom_doc'] . ' '.$row['ape_doc']. '</option>';
+//                                    }
                                     ?>
 
                                 </select>
@@ -111,12 +140,12 @@ if (isset($_REQUEST['tirar'])) {
         //insertar una linea 1 del horario
         
         $nom = $_POST["nombre"];
-        $clave = $_POST["clave1"];
-        $pro = $_POST["seleccionar"];
+        $clave =  password_hash($_POST["clave1"], PASSWORD_DEFAULT) ;
         $tipo = $_POST["tipo"];
         $estadoU = $_POST["estado"];
+         $pro = $_POST["selec"];
         include_once '../conexion/php_conexion.php'; 
-        mysqli_query($conexion, "INSERT INTO usuarios(user,con,estado,tipo,id_doc) VALUES ('$nom','$clave','$pro','$tipo','$estadoU')");
+        mysqli_query($conexion, "INSERT INTO usuarios(user,con,estado,tipo,id_doc) VALUES ('$nom','$clave','$estadoU','$tipo','$pro')");
         
        
         echo '<script>swal({

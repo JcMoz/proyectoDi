@@ -46,6 +46,10 @@ include_once '../plantilla/menu_navegacion.php';
 
 <!-- /.content-wrapper mi codigo-->
 <div class="content-wrapper">
+    <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalayudaIngresarDocente" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+        <?php include_once '../ayuda/ayudaIngresarDocente.php'; ?>
+    </div>
 
     <div class="container-fluid"> <!--Comienza container Fluid-->
 

@@ -1,6 +1,32 @@
 <?php
+session_start();
+include_once '../conexion/php_conexion.php';
 include_once '../plantilla/incio_plantilla.php';
-include_once '../plantilla/menu_navegacion.php';
+try {
+    if ($_SESSION['tipo_user'] == 'ad' or $_SESSION['tipo_user'] == 'p') {
+        $profesor = $_SESSION['id_profesor'];
+        $sacar = mysqli_query($conexion, "SELECT*FROM docente WHERE id_doc='$profesor'");
+
+        while ($row = mysqli_fetch_array($sacar)) {
+            $nombre = $row['nom_doc'];
+            $ape = $row['ape_doc'];
+        }
+    }
+} catch (Exception $exc) {
+    echo '<script>swal("EROR", "Favor revisar los datos e intentar nuevamente", "error");</script>';
+}
+?>
+<?php
+//body
+include_once '../plantilla/incio_plantilla.php';
+if ($_SESSION['tipo_user'] == 'ad') {
+    include_once '../plantilla/menu_navegacion.php';
+} else {
+    if ($_SESSION['tipo_user'] == 'p') {
+        include_once '../plantilla/menu_navegacion_1.php';
+    }
+}
+
 ?>
 <style >
 
@@ -52,6 +78,10 @@ include_once '../plantilla/menu_navegacion.php';
 <!-- /.content-wrapper -->
 
 <div class="content-wrapper">
+    <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalayudaIngreso3" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+        <?php include_once '../ayuda/ayudaIngreso3.php'; ?>
+    </div>
     <div class="container-fluid">
         <font face="Arial Narrow" size="5" color="#001f4d">Ficha de registro de estudiantes.
         </font>
@@ -186,7 +216,7 @@ include_once '../plantilla/menu_navegacion.php';
                         </div>
                         <br> <br> <br>
                         <div align="center">
-                            <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
+                            <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente" onclick="location='/proyectoDi/inscripcion/inscripcionNuevo1.php'">
                         </div>    
                     </div>
                 </div>
@@ -198,46 +228,46 @@ include_once '../plantilla/menu_navegacion.php';
 <!--Cierre Mi codigo -->
 
 <?php
-if (isset($_REQUEST['pase'])) {
-    try {
-    include_once '../conexion/php_conexion.php';
-    $ultimo = $_POST["Ugrado"];
-    $añoq = $_POST["añoC"];
-    $intcurso = $_POST["inCurso"];
-    $codigo = $_POST["cod"];
-    $turno = $_POST["turno"];
-    $nivel=$_POST["nivel"];
-    $seccion=$_POST["Secciones"];
-    $gra=$_POST["Grado"];
-    $fM=$_POST["fechaM"];
-    $pre=$_POST["docpre"];
-
-
-    mysqli_query($conexion, "INSERT INTO inscripcion(ult_grado,anio_cgrado,nom_cea,cod_inst_ant,turno,nivel,id_seccion,id_grado,id_alumno,f_matricula,pres_docs) VALUES ('$ultimo','$añoq','$intcurso','$codigo','$turno','$nivel','$seccion','$gra','$idAre','$fM','$pre')");
-   // mysqli_query($conexion, "INSERT INTO inscripcion(id_seccion,id_grado,id_alumno,f_matricula) values('$seccion','$gra','$idAre','$fM')");
-   
-     echo '<script>swal({
-                    title: "Exito",
-                    text: "El registro ha sido Guardado!",
-                    type: "success",
-                    confirmButtonText: "ok",
-                    closeOnConfirm: false
-                },
-                function () {
-                    location.href="inscripcionNuevo1.php";
-                    
-                });</script>';
-    } catch (Exception $exc) {
-         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
-               
-    }
-    
-
-}
+//if (isset($_REQUEST['pase'])) {
+//    try {
+//    include_once '../conexion/php_conexion.php';
+//    $ultimo = $_POST["Ugrado"];
+//    $añoq = $_POST["añoC"];
+//    $intcurso = $_POST["inCurso"];
+//    $codigo = $_POST["cod"];
+//    $turno = $_POST["turno"];
+//    $nivel=$_POST["nivel"];
+//    $seccion=$_POST["Secciones"];
+//    $gra=$_POST["Grado"];
+//    $fM=$_POST["fechaM"];
+//    $pre=$_POST["docpre"];
+//
+//
+//    mysqli_query($conexion, "INSERT INTO inscripcion(ult_grado,anio_cgrado,nom_cea,cod_inst_ant,turno,nivel,id_seccion,id_grado,id_alumno,f_matricula,pres_docs) VALUES ('$ultimo','$añoq','$intcurso','$codigo','$turno','$nivel','$seccion','$gra','$idAre','$fM','$pre')");
+//   // mysqli_query($conexion, "INSERT INTO inscripcion(id_seccion,id_grado,id_alumno,f_matricula) values('$seccion','$gra','$idAre','$fM')");
+//   
+//     echo '<script>swal({
+//                    title: "Exito",
+//                    text: "El registro ha sido Guardado!",
+//                    type: "success",
+//                    confirmButtonText: "ok",
+//                    closeOnConfirm: false
+//                },
+//                function () {
+//                    location.href="inscripcionNuevo1.php";
+//                    
+//                });</script>';
+//    } catch (Exception $exc) {
+//         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
+//               
+//    }
+//    
+//
+//}
 
 include_once '../plantilla/fin_plantilla.php';
 ?>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $('.mask-dui').mask('00000000-0');
     $('.mask-telefono').mask('0000-0000');
 </script>
@@ -339,4 +369,4 @@ $(document).ready(function () {
     });
 });
 
-</script>
+</script>-->

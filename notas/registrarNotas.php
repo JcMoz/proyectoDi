@@ -36,6 +36,10 @@ if ($_SESSION['tipo_user']=='ad') {
     }
 </style>
 <div class="content-wrapper">
+     <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalayudaNotas1" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+        <?php include_once '../ayuda/ayudaNotas1.php'; ?>
+    </div>
     <!--Comienza container fluid-->
     <div class="container-fluid">
         <br/><br/>
@@ -58,7 +62,7 @@ if ($_SESSION['tipo_user']=='ad') {
                         <tbody>
 
                             <?php
-                            $sacar = mysqli_query($conexion, "SELECT*FROM asignacion_a_g INNER JOIN grado on asignacion_a_g.id_asignacion=grado.id_grado WHERE id_docentes='$profesor' AND turno_grado=1");
+                            $sacar = mysqli_query($conexion, "SELECT*FROM asignacion_a_g INNER JOIN grado on asignacion_a_g.id_gra=grado.id_grado WHERE id_docentes='$profesor' AND turno_grado=1");
                             while ($row = mysqli_fetch_array($sacar)) {
                                 $cali = $row['id_gra'];
                                 $turno = $row['turno_grado'];

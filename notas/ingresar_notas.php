@@ -112,6 +112,10 @@ while ($ver_notas=  mysqli_fetch_array($notas)){
 </style>
 <!--comienza mi codigo-->
 <div class="content-wrapper">
+     <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalayudaINotasAlumno" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+        <?php include_once '../ayuda/ayudaINotasAlumno.php'; ?>
+    </div>
     <!--Comienza container fluid-->
     <form action="" id="FORMULARIO_VALIDADO"  method="post" class="form-register" >
         <div class="container-fluid">
@@ -234,6 +238,20 @@ if (isset($_REQUEST['tirar'])) {
     $not3 = $_REQUEST['nota3'];
     $por35=  round((($not1+$not2+$not3)/3)*0.35,2);
     mysqli_query($conexion, "UPDATE notas_2 SET nota1='$not1',nota2='$not2',nota3='$not3', por35='$por35' WHERE id='$id_update'");
+    //bitacora
+    $verUsu=  mysqli_query($conexion,"SELECT*FROM usuarios WHERE id_doc='$profesor'");
+    while ($row=  mysqli_fetch_array($verUsu)){
+        $usuario=$row['id_usuario'];
+    }
+    $vergra=  mysqli_query($conexion,"SELECT*FROM grado WHERE id_grado='$grado'");
+    while ($row=  mysqli_fetch_array($vergra)){
+        $nom=$row['nom_grado'];
+    }
+    ini_set('date.timezone', 'America/El_Salvador');
+    $hora = date("Y/m/d ") . date("h-i-s");
+    $actividad="Registro notas de:".$nom_alumno.' '.$ape.' '."Grado :".$nom;
+    mysqli_query($conexion,"INSERT INTO bitacora(id_usuario,actividad,fecha) VALUES('$usuario','$actividad','$hora')");
+   //fin bitacora
     echo '<script>swal({
                     title: "Exito",
                     text: "Calificaciones almacenadas",

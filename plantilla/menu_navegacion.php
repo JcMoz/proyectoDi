@@ -60,13 +60,13 @@
                 </a>
                 <ul class="sidenav-second-level collapse collapse bg-secondary " id="collapseSeguridad">
                     <li>
-                        <a href="crearCopiaSeguridad.php" style="color: white">Copia de Seguridad</a>
+                        <a href="../seguridad/crearCopiaSeguridad.php" style="color: white">Copia de Seguridad</a>
                     </li>
                     <li>
                         <a href="../seguridad/registroUsuario.php" style="color: white">Registrar Usuario</a>
                     </li>
                     <li>
-                        <a href="Bitácora.php"  style="color: white">Bitácora</a>
+                        <a href="../seguridad/bitacora.php"  style="color: white">Bitácora</a>
                     </li>
                     <li>
                         <a href="mantenimientoUsuarios.php"  style="color: white">Mantenimiento de usuarios</a>
@@ -140,6 +140,14 @@
                 </a>
             </li>
             <!--termina procesar notas-->
+            <!--CIERRE-->
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <a class="nav-link" href="../cierre/cierre_principal.php">
+                    <i class="fa fa-fw fa-circle" style="color: white"></i>
+                    <span class="nav-link-text" style="color: white">Cierre de año</span>
+                </a>
+            </li>
+            <!--CIERRE-->
 
             <!--Modulo de Reportes-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Re">

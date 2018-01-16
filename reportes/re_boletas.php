@@ -977,6 +977,6 @@ $pdf->Cell(10, 6, 'R', 1, 0, 'C', 1);
 $pdf->Cell(30, 6, 'REGULAR', 1, 1, 'C', 1);
 $pdf->Ln(10);
 $pdf->Cell(40, 10, 'OBSERVACIONES:', 0, 0, 'C');
-mysqli_query($conexion,"DELETE FROM boleta1_6 ");
+//mysqli_query($conexion,"DELETE FROM boleta1_6 ");
 $pdf->Output();
 ?>

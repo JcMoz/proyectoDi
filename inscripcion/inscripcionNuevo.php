@@ -1,6 +1,31 @@
 <?php
+session_start();
+include_once '../conexion/php_conexion.php';
 include_once '../plantilla/incio_plantilla.php';
-include_once '../plantilla/menu_navegacion.php';
+try {
+    if ($_SESSION['tipo_user'] == 'ad' or $_SESSION['tipo_user'] == 'p') {
+        $profesor = $_SESSION['id_profesor'];
+        $sacar = mysqli_query($conexion, "SELECT*FROM docente WHERE id_doc='$profesor'");
+
+        while ($row = mysqli_fetch_array($sacar)) {
+            $nombre = $row['nom_doc'];
+            $ape = $row['ape_doc'];
+        }
+    }
+} catch (Exception $exc) {
+    echo '<script>swal("EROR", "Favor revisar los datos e intentar nuevamente", "error");</script>';
+}
+?>
+<?php
+//body
+include_once '../plantilla/incio_plantilla.php';
+if ($_SESSION['tipo_user'] == 'ad') {
+    include_once '../plantilla/menu_navegacion.php';
+} else {
+    if ($_SESSION['tipo_user'] == 'p') {
+        include_once '../plantilla/menu_navegacion_1.php';
+    }
+}
 
 ?>
 <style >
@@ -50,6 +75,10 @@ include_once '../plantilla/menu_navegacion.php';
 </script>
     <!-- /.content-wrapper -->
      <div class="content-wrapper">
+         <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalayudaIngreso" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+       <?php include_once '../ayuda/ayudaIngreso.php'; ?>
+    </div>
      <div class="container-fluid">
      <font face="Arial Narrow" size="5" color="#001f4d">Ficha de registro de estudiantes.
      </font>
@@ -67,8 +96,8 @@ include_once '../plantilla/menu_navegacion.php';
                      <INPUT class="form-control" type="text"  name="apellidosA" autocomplete="off" autofocus placeholder=" Apellidos del Alumno/a" onkeypress="return soloLetras(event)" onpaste="return false" required="" minlength="2"><br>
                       <font face="Arial Narrow" size="4" color="#001f4d">Género : </font>
                       <select name="Genero">
-    <option value="Femenino">Femenino</option>
-    <option value="Masculino">Masculino</option>
+    <option value="F">Femenino</option>
+    <option value="M">Masculino</option>
     
 </select>
                        &nbsp &nbsp &nbsp &nbsp<font face="Arial Narrow" size="4" color="#001f4d">Fecha de nacimiento : </font> 
@@ -116,7 +145,7 @@ include_once '../plantilla/menu_navegacion.php';
 
                 <br> <br> <br>
                 <div align="center">
-              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
+              <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente" onclick="location='/proyectoDi/inscripcion/inscripcionNuevo3.php'">
               <input type="button" value="Cancelar" name="cancel" class=" btn btn-cancelar" onclick="location='/proyectoDi/doc/index.php'" >
              <!--termina formulario-->
             </div>    
@@ -134,49 +163,49 @@ include_once '../plantilla/menu_navegacion.php';
 
 <?php
 
-if (isset($_REQUEST['pase'])) {
-    try{
-    include_once '../conexion/php_conexion.php';
-    $nombre = $_POST["nombreA"];
-    $apellido = $_POST["apellidosA"];
-    $gen = $_POST["Genero"];
-    $fecha = $_POST["fecha"];
-    $nie = $_POST["nie"];
-    $nac = $_POST["na"];
-    $dir = $_POST["direccion"];
-    $distancia = $_POST["distanciaC"];
-    $depa = $_POST["depto"];
-    $muni = $_POST["municipio"];
-    $telefono = $_POST["telefono"];
-
-     mysqli_query($conexion,"INSERT INTO alumno( nom_alumno,ape_alumno,gen_alumno,f_nac_alum,nie,nac_alum,dir_alum,distancia,depto_alum,mun_alum,tel) VALUES ('$nombre','$apellido','$gen','$fecha','$nie','$nac','$dir','$distancia','$depa','$muni','$telefono')");
-    
-     echo '<script>swal({
-                    title: "Exito",
-                    text: "El registro ha sido Guardado!",
-                    type: "success",
-                    confirmButtonText: "ok",
-                    closeOnConfirm: false
-                },
-                function () {
-                    location.href="inscripcionNuevo3.php";
-                    
-                });</script>';
-    } catch (Exception $exc) {
-         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
-               
-    }
-
-}
+//if (isset($_REQUEST['pase'])) {
+//    try{
+//    include_once '../conexion/php_conexion.php';
+//    $nombre = $_POST["nombreA"];
+//    $apellido = $_POST["apellidosA"];
+//    $gen = $_POST["Genero"];
+//    $fecha = $_POST["fecha"];
+//    $nie = $_POST["nie"];
+//    $nac = $_POST["na"];
+//    $dir = $_POST["direccion"];
+//    $distancia = $_POST["distanciaC"];
+//    $depa = $_POST["depto"];
+//    $muni = $_POST["municipio"];
+//    $telefono = $_POST["telefono"];
+//
+//     mysqli_query($conexion,"INSERT INTO alumno( nom_alumno,ape_alumno,gen_alumno,f_nac_alum,nie,nac_alum,dir_alum,distancia,depto_alum,mun_alum,tel) VALUES ('$nombre','$apellido','$gen','$fecha','$nie','$nac','$dir','$distancia','$depa','$muni','$telefono')");
+//    
+//     echo '<script>swal({
+//                    title: "Exito",
+//                    text: "El registro ha sido Guardado!",
+//                    type: "success",
+//                    confirmButtonText: "ok",
+//                    closeOnConfirm: false
+//                },
+//                function () {
+//                    location.href="inscripcionNuevo3.php";
+//                    
+//                });</script>';
+//    } catch (Exception $exc) {
+//         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
+//               
+//    }
+//
+//}
 
 include_once '../plantilla/fin_plantilla.php';
 ?>
-<script type="text/javascript">
+<!--<script type="text/javascript">
  $('.mask-dui').mask('00000000-0');
  $('.mask-telefono').mask('0000-0000');
   $('.mask-nit').mask('0000-000000-000-0')
-  </script>
- <script>
+  </script>-->
+<!-- <script>
 $.validator.setDefaults({
     submitHandler: function () {
         document.getElementById('pase').value="ok";    
@@ -303,4 +332,4 @@ $(document).ready(function () {
     });
 });
 
-</script>
+</script>-->

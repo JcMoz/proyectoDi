@@ -1,6 +1,32 @@
 <?php
+session_start();
+include_once '../conexion/php_conexion.php';
 include_once '../plantilla/incio_plantilla.php';
-include_once '../plantilla/menu_navegacion.php';
+try {
+    if ($_SESSION['tipo_user'] == 'ad' or $_SESSION['tipo_user'] == 'p') {
+        $profesor = $_SESSION['id_profesor'];
+        $sacar = mysqli_query($conexion, "SELECT*FROM docente WHERE id_doc='$profesor'");
+
+        while ($row = mysqli_fetch_array($sacar)) {
+            $nombre = $row['nom_doc'];
+            $ape = $row['ape_doc'];
+        }
+    }
+} catch (Exception $exc) {
+    echo '<script>swal("EROR", "Favor revisar los datos e intentar nuevamente", "error");</script>';
+}
+?>
+<?php
+//body
+include_once '../plantilla/incio_plantilla.php';
+if ($_SESSION['tipo_user'] == 'ad') {
+    include_once '../plantilla/menu_navegacion.php';
+} else {
+    if ($_SESSION['tipo_user'] == 'p') {
+        include_once '../plantilla/menu_navegacion_1.php';
+    }
+}
+
 ?>
 <style >
 
@@ -46,6 +72,10 @@ include_once '../plantilla/menu_navegacion.php';
 </script>
     <!-- /.content-wrapper Mi codigo -->
         <div class="content-wrapper">
+            <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalayudaIngreso1" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+        <?php include_once '../ayuda/ayudaIngreso1.php'; ?>
+    </div>
      <div class="container-fluid">
      <font face="Arial Narrow" size="5" color="#001f4d">Ficha de registro de estudiantes.
      </font>
@@ -123,7 +153,7 @@ include_once '../plantilla/menu_navegacion.php';
                 <br>
                 <br>
             <div align="center">
-              <input type="submit" value="Guardar" name="Guardar" class="btn btn-primary">
+              <input type="submit" value="Guardar" name="Guardar" class="btn btn-primary" onclick="location='/proyectoDi/inscripcion/inscripcionNuevo'">
              
             </div>
         </div>
@@ -136,55 +166,55 @@ include_once '../plantilla/menu_navegacion.php';
         <!--cierre Mi codigo -->
 
 <?php
-if (isset($_REQUEST['pasar'])) {
-    try{
-    include_once '../conexion/php_conexion.php';
-    $nomp = $_POST["nomP"];
-    $apelli = $_POST["apelliP"];
-    $profesion = $_POST["profesionP"];
-    $tel = $_POST["telP"];
-    $dui=$_POST["duiP"];
-    $dir=$_POST["diP"];
-    mysqli_query($conexion,"INSERT INTO padre(nom_pad,ape_pad,profe_pad,tel_pad,dui_pad,dir_trab_pad,id_alumno) values('$nomp','$apelli','$profesion','$tel','$dui','$dir','$idRe')");
-    
-    $nompM = $_POST["nomM"];
-    $apelliM = $_POST["apelliM"];
-    $profesionM = $_POST["profesionM"];
-    $telM = $_POST["telM"];
-    $duiM=$_POST["duiM"];
-    $dM=$_POST["dirM"];
-    
-    mysqli_query($conexion,"INSERT INTO madre(nom_mad,ape_mad,profe_mad,tel_mad,dui_mad,dir_mad,id_alumno) VALUES ('$nompM','$apelliM','$profesionM','$telM','$duiM','$dM','$idRe')");
-    
-     $nompE = $_POST["nomE"];
-    $apelliE = $_POST["apelliE"];
-    $profesionE = $_POST["profesionE"];
-    $telE = $_POST["telE"];
-    $duiE=$_POST["duiE"];
-    $dieE=$_POST["direE"];
-     
-    mysqli_query($conexion,"INSERT INTO encargado(nom_enc,ape_enc,profe_enc,tel_enc,dui_enc,dir_trab_enc,id_alumno) VALUES ('$nompE','$apelliE','$profesionE','$telE','$duiE','$dieE','$idRe')");
-   
-     echo '<script>swal({
-                    title: "Exito",
-                    text: "El registro ha sido Guardado!",
-                    type: "success",
-                    confirmButtonText: "ok",
-                    closeOnConfirm: false
-                },
-                function () {
-                    location.href="inscripcionNuevo.php";
-                    
-                });</script>';
-    } catch (Exception $exc) {
-         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
-               
-    }
-
-}
+//if (isset($_REQUEST['pasar'])) {
+//    try{
+//    include_once '../conexion/php_conexion.php';
+//    $nomp = $_POST["nomP"];
+//    $apelli = $_POST["apelliP"];
+//    $profesion = $_POST["profesionP"];
+//    $tel = $_POST["telP"];
+//    $dui=$_POST["duiP"];
+//    $dir=$_POST["diP"];
+//    mysqli_query($conexion,"INSERT INTO padre(nom_pad,ape_pad,profe_pad,tel_pad,dui_pad,dir_trab_pad,id_alumno) values('$nomp','$apelli','$profesion','$tel','$dui','$dir','$idRe')");
+//    
+//    $nompM = $_POST["nomM"];
+//    $apelliM = $_POST["apelliM"];
+//    $profesionM = $_POST["profesionM"];
+//    $telM = $_POST["telM"];
+//    $duiM=$_POST["duiM"];
+//    $dM=$_POST["dirM"];
+//    
+//    mysqli_query($conexion,"INSERT INTO madre(nom_mad,ape_mad,profe_mad,tel_mad,dui_mad,dir_mad,id_alumno) VALUES ('$nompM','$apelliM','$profesionM','$telM','$duiM','$dM','$idRe')");
+//    
+//     $nompE = $_POST["nomE"];
+//    $apelliE = $_POST["apelliE"];
+//    $profesionE = $_POST["profesionE"];
+//    $telE = $_POST["telE"];
+//    $duiE=$_POST["duiE"];
+//    $dieE=$_POST["direE"];
+//     
+//    mysqli_query($conexion,"INSERT INTO encargado(nom_enc,ape_enc,profe_enc,tel_enc,dui_enc,dir_trab_enc,id_alumno) VALUES ('$nompE','$apelliE','$profesionE','$telE','$duiE','$dieE','$idRe')");
+//   
+//     echo '<script>swal({
+//                    title: "Exito",
+//                    text: "El registro ha sido Guardado!",
+//                    type: "success",
+//                    confirmButtonText: "ok",
+//                    closeOnConfirm: false
+//                },
+//                function () {
+//                    location.href="inscripcionNuevo.php";
+//                    
+//                });</script>';
+//    } catch (Exception $exc) {
+//         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
+//               
+//    }
+//
+//}
 include_once '../plantilla/fin_plantilla.php';
 ?>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $('.mask-dui').mask('00000000-0');
     $('.mask-telefono').mask('0000-0000');
 </script>
@@ -362,4 +392,4 @@ $(document).ready(function () {
     });
 });
 
-</script>
+</script>-->

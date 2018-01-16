@@ -38,6 +38,10 @@ $materia = $_GET['llego'];
 </style>
 <!--comienza mi codigo-->
 <div class="content-wrapper">
+     <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalIngresoAMaterias" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+        <?php include_once '../ayuda/ayudaIngresoAMaterias.php'; ?>
+    </div>
     <!--Comienza container fluid-->
     <form action="" id="FORMULARIO_VALIDADO"  method="post" class="form-register" enctype="multipart/form-data" >
         <div class="container-fluid">
@@ -58,7 +62,7 @@ $materia = $_GET['llego'];
 //este if es para ingresar las actividades por materia por la asignacionn de materias 
 //que un docente da una materia para cada grado y artistica para 5 y 6
             if ($grado == 1 || $grado == 2 || $grado == 3 || $grado == 4) {
-                $id_a_g = mysqli_query($conexion, "SELECT*FROM asignacion_a_g INNER JOIN grado on asignacion_a_g.id_asignacion=grado.id_grado WHERE id_docentes='$profesor' AND id_grado='$grado'");
+                $id_a_g = mysqli_query($conexion, "SELECT*FROM asignacion_a_g INNER JOIN grado on asignacion_a_g.id_gra=grado.id_grado WHERE id_docentes='$profesor' AND turno_grado=1");
                 while ($id_sacar = mysqli_fetch_array($id_a_g)) {
                     $mi_id = $id_sacar['id_asignacion'];
                 }
@@ -115,7 +119,7 @@ $materia = $_GET['llego'];
             </div>
             <input type="hidden" name="tirar" id="pase"/>
             <div class="pt-2" align="center">
-                <select name="periodo">
+                <select name="periodo" required="">
                     <option value=1>Primer</option>
                     <option value=2>Segundo</option>
                     <option value=3">Tercer</option>
@@ -209,8 +213,8 @@ if (isset($_REQUEST['tirar'])) {
         }
          if ($grado == 1 || $grado == 2 || $grado == 3 || $grado == 4) {
         ///validar para los grados 1-4 actividades
-        if ($a_materia == $materia && $a_turno == $turno) {
-           if ($a_periodo == $pe) {
+        $arregle=mysqli_query($conexion,"SELECT*FROM actividades WHERE id_materia='$materia' AND turno_a='$turno' AND periodo='$pe' AND id_asignacion_a_g='$mi_id'");
+        if (mysqli_num_rows($arregle)> 0) {
                 echo '<script>swal({
                     title: "Actividades para este periodo ya fueron registradas",
                     text: "Registre actividades para el siguiente periodo",
@@ -224,6 +228,20 @@ if (isset($_REQUEST['tirar'])) {
                 });</script>';
             } else {
                 mysqli_query($conexion, "INSERT INTO actividades(id_asignacion_a_g,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado')");
+                //bitacora
+    $verUsu=  mysqli_query($conexion,"SELECT*FROM usuarios WHERE id_doc='$profesor'");
+    while ($row=  mysqli_fetch_array($verUsu)){
+        $usuario=$row['id_usuario'];
+    }
+    $vergra=  mysqli_query($conexion,"SELECT*FROM grado WHERE id_grado='$grado'");
+    while ($row=  mysqli_fetch_array($vergra)){
+        $nom=$row['nom_grado'];
+    }
+    ini_set('date.timezone', 'America/El_Salvador');
+    $hora = date("Y/m/d ") . date("h-i-s");
+    $actividad="Ingreso actividades de la materia:". $nom_m.' '."Grado :".$nom;
+    mysqli_query($conexion,"INSERT INTO bitacora(id_usuario,actividad,fecha) VALUES('$usuario','$actividad','$hora')");
+   //fin bitacora
                 echo '<script>swal({
                     title: "Exito",
                     text: "El registro ha sido Guardado!",
@@ -235,25 +253,12 @@ if (isset($_REQUEST['tirar'])) {
                     location.href="grados_registrar.php";
                     
                 });</script>';
-            }
-        } else {
-            mysqli_query($conexion, "INSERT INTO actividades(id_asignacion_a_g,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado')");
-            echo '<script>swal({
-                    title: "Exito",
-                    text: "El registro ha sido Guardado!",
-                    type: "success",
-                    confirmButtonText: "ok",
-                    closeOnConfirm: false
-                },
-                function () {
-                    location.href="grados_registrar.php";
-                    
-                });</script>';
         }
-     } else {
+        }else {
          //para ingresar las actividades por materia.
-          if ($a_grado == $grado && $a_turno == $turno) {
-           if ($a_periodo == $pe) {
+          $arregle=mysqli_query($conexion,"SELECT * FROM actividades_materia WHERE id_grado='$grado' AND "
+                  . "id_materia='$materia' AND periodo='$pe' AND id_asignacion_m='$mi_id'");
+        if (mysqli_num_rows($arregle)> 0) {
                 echo '<script>swal({
                     title: "Actividades para este periodo ya fueron registradas",
                     text: "Registre actividades para el siguiente periodo",
@@ -267,6 +272,20 @@ if (isset($_REQUEST['tirar'])) {
                 });</script>';
             } else {
                 mysqli_query($conexion, "INSERT INTO actividades_materia(id_asignacion_m,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a,id_grado) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado','$grado')");
+                //bitacora
+    $verUsu=  mysqli_query($conexion,"SELECT*FROM usuarios WHERE id_doc='$profesor'");
+    while ($row=  mysqli_fetch_array($verUsu)){
+        $usuario=$row['id_usuario'];
+    }
+    $vergra=  mysqli_query($conexion,"SELECT*FROM grado WHERE id_grado='$grado'");
+    while ($row=  mysqli_fetch_array($vergra)){
+        $nom=$row['nom_grado'];
+    }
+    ini_set('date.timezone', 'America/El_Salvador');
+    $hora = date("Y/m/d ") . date("h-i-s");
+    $actividad="Ingreso actividades de la materia:". $nom_m.' '."Grado :".$nom;
+    mysqli_query($conexion,"INSERT INTO bitacora(id_usuario,actividad,fecha) VALUES('$usuario','$actividad','$hora')");
+   //fin bitacora
                 echo '<script>swal({
                     title: "Exito",
                     text: "El registro ha sido Guardado!",
@@ -279,22 +298,7 @@ if (isset($_REQUEST['tirar'])) {
                     
                 });</script>';
             }
-        } else {
-            mysqli_query($conexion, "INSERT INTO actividades_materia(id_asignacion_m,periodo,act_1,act_2,act_3,act_4,act_5,act_6,act_7,act_8,act_9,id_materia,turno_a,estado_a,id_grado) VALUES ('$mi_id','$pe','$ac1','$ac2','$ac3','$ac4','$ac5','$ac6','$ac7','$ac8','$act9','$materia','$turno','$estado','$grado')");
-            echo '<script>swal({
-                    title: "Exito",
-                    text: "El registro ha sido Guardado!",
-                    type: "success",
-                    confirmButtonText: "ok",
-                    closeOnConfirm: false
-                },
-                function () {
-                    location.href="grados_registrar.php";
-                    
-                });</script>';
-        }
-         
-     }
+        } 
     } catch (Exception $exc) {
         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos e intentar nuevamente", "error");</script>';
     }

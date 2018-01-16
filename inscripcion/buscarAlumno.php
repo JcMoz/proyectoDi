@@ -29,7 +29,7 @@ include_once '../plantilla/menu_navegacion.php';
                     <form name="form1" method="post" action="">
                         <div class="input-append">
                             <input type="text" name="buscar" id="filtrar" class="input-xlarge" autocomplete="off" autofocus placeholder="   Buscar Alumno">
-                      
+
 
                         </div>
 
@@ -61,9 +61,9 @@ include_once '../plantilla/menu_navegacion.php';
                             $nomEnca = $row1['nom_enc'];
                             $apeX = $row1['ape_enc'];
                             $prof = $row1['profe_enc'];
-                            $tX=$row1['tel_enc'];
-                            $duX=$row1['dui_enc'];
-                            $trab=$row1['dir_trab_enc'];
+                            $tX = $row1['tel_enc'];
+                            $duX = $row1['dui_enc'];
+                            $trab = $row1['dir_trab_enc'];
                         }
                         $pame = mysqli_query($conexion, "SELECT * FROM alumno");
                         while ($row = mysqli_fetch_array($pame)) {
@@ -71,16 +71,17 @@ include_once '../plantilla/menu_navegacion.php';
                             $apeY = $row['ape_alumno'];
                             $dirY = $row['dir_alum'];
                             $nieY = $row['nie'];
-                            $dY=$row['distancia'];
-                            $depY=$row['depto_alum'];
-                            $m2=$row['mun_alum'];
+                            $dY = $row['distancia'];
+                            $depY = $row['depto_alum'];
+                            $m2 = $row['mun_alum'];
                             $idA = $row['id_alumno'];
                             ?>
 
                             <tr>
                                 <td class="text-center"><!--boton de modificar-->
-                                    <a href=""  data-toggle="modal" data-target="#modal-default" onclick="editar_alumno('<?php echo $nomY; ?>', '<?php echo $nomEnca; ?>', '<?php echo $apeY; ?>', '<?php echo $apeX; ?>', '<?php echo $dirY; ?>', '<?php echo $prof; ?>','<?php echo $dY; ?>',
-                                                '<?php echo $tX; ?>','<?php echo $duX; ?>','<?php echo $depY; ?>','<?php echo $m2; ?>','<?php echo $trab; ?>','<?php echo $idA; ?>', '<?php echo $idEn; ?>')">Editar </a>
+                                    <a href="../inscripcion/antiguo1.php?ir=<?php echo $idA; ?>" class="btn">
+                                        <button class="btn btn-outline-success">Inscribir</button>
+                                    </a>
                                 </td>
                                 <td><?php echo $row['nom_alumno']; ?></td>
                                 <td><?php echo $row['ape_alumno']; ?></td>
@@ -105,19 +106,19 @@ include_once '../plantilla/menu_navegacion.php';
 
 </div><!--Fin de content wrapper mi codigo-->
 <script>
-    function editar_alumno(nom, nomc, ap, ap1, dir, profX, d, t,du,dep,mu, pr,pass, pass1) {
+    function editar_alumno(nom, nomc, ap, ap1, dir, profX, d, t, du, dep, mu, pr, pass, pass1) {
         $("#nomA").val(nom);
         $("#nomEnc").val(nomc);
         $("#apeA").val(ap);
         $("#apE").val(ap1);
         $("#diA").val(dir);
-         $("#prE").val(profX);
+        $("#prE").val(profX);
         $("#disA").val(d);
         $("#tel").val(t);
         $("#depAl").val(dep);
         $("#dui").val(du);
-         $("#muA").val(mu);
-         $("#pro").val(pr);
+        $("#muA").val(mu);
+        $("#pro").val(pr);
         $("#actu").val(pass);
         $("#actul").val(pass1);
 

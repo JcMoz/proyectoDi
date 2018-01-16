@@ -5,6 +5,10 @@ include_once '../conexion/php_conexion.php';
 ?>
 <!--inicio de content wrapper mi codigo-->
 <div class="content-wrapper">
+    <div align="right">
+        <img  name="edit" data-toggle="modal" data-target="#modalayudaBuscarDocente" data-html="true" title="Ayuda"  src="../imagenes/ayu.ico" width="35" height="35">
+        <?php include_once '../ayuda/ayudaBuscarDocente.php'; ?>
+    </div>
     <div class="container-fluid"> <!--Comienza container Fluid-->
         <div class="col-md-12"><!--Dimencion de la pantalla-->
             <!--Encabezado de la pantalla-->
