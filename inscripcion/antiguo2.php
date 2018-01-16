@@ -82,7 +82,7 @@ $antiguo = $_GET['ir'];
     <div class="container-fluid">
         <font face="Arial Narrow" size="5" color="#001f4d">Ficha de registro de estudiantes.
         </font>
-        <form id="FORMULARIO_VALIDADO"  method="post" class="form-register" action="antiguo3.php?ir=<?php echo $antiguo; ?>" >
+        <form id="FORMULARIO_VALIDADO"  method="post" class="form-register" >
 
             <input type="hidden" name="pase" id="pase"/>
 
@@ -312,11 +312,16 @@ $antiguo = $_GET['ir'];
                         </div>
                         <br> <br> <br>
                         <div align="center">
-                            <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
+                            <input type="submit" value="Guardar" name="Siguiente" class="btn btn-siguiente">
                         </div>    
                     </div>
                 </div>
             </div>
+        </form>
+         <form id="FORMULARIo"  method="post" class="form-register" action="antiguo3.php?ir=<?php echo $antiguo; ?>" >
+             <div class="text-center">
+                 <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
+             </div>
         </form>
 
     </div>
@@ -324,22 +329,17 @@ $antiguo = $_GET['ir'];
 <!--Cierre Mi codigo -->
 
 <?php
-if (isset($_REQUEST['pase'])) {
-//    try {
-//    include_once '../conexion/php_conexion.php';
-//    $ultimo = $_POST["Ugrado"];
-//    $añoq = $_POST["añoC"];
-//    $intcurso = $_POST["inCurso"];
-//    $codigo = $_POST["cod"];
-//    $turno = $_POST["turno"];
-//    $nivel=$_POST["nivel"];
-//    $seccion=$_POST["Secciones"];
-//    $gra=$_POST["Grado"];
-//    $fM=$_POST["fechaM"];
-//    $pre=$_POST["docpre"];
-//
-//
-//    mysqli_query($conexion, "INSERT INTO inscripcion(ult_grado,anio_cgrado,nom_cea,cod_inst_ant,turno,nivel,id_seccion,id_grado,id_alumno,f_matricula,pres_docs) VALUES ('$ultimo','$añoq','$intcurso','$codigo','$turno','$nivel','$seccion','$gra','$idAre','$fM','$pre')");
+if (isset($_REQUEST['Siguiente'])) {
+    try {
+    include_once '../conexion/php_conexion.php';
+    $turno = $_REQUEST["turno"];
+    $nivel=$_POST["nivel"];
+    $seccion=$_POST["Secciones"];
+    $fM=$_POST["fechaM"];
+    $pre=$_POST["docpre"];
+
+
+    mysqli_query($conexion, "INSERT INTO inscripcion(turno,nivel,id_seccion,id_grado,id_alumno,f_matricula,pres_docs) VALUES ('$turno','$nivel','$seccion','$id_g_inser','$antiguo','$fM','$pre')");
 //   // mysqli_query($conexion, "INSERT INTO inscripcion(id_seccion,id_grado,id_alumno,f_matricula) values('$seccion','$gra','$idAre','$fM')");
 //   
 //     echo '<script>swal({
@@ -350,16 +350,16 @@ if (isset($_REQUEST['pase'])) {
 //                    closeOnConfirm: false
 //                },
 //                function () {
-//                    location.href="inscripcionNuevo1.php";
+//                    location.href="i.php";
 //                    
 //                });</script>';
-//    } catch (Exception $exc) {
-//         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
-//   
+    } catch (Exception $exc) {
+         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
+   
 }
-//    
-//
-//}
+    
+
+}
 
 include_once '../plantilla/fin_plantilla.php';
 ?>
