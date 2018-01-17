@@ -80,6 +80,12 @@ $antiguo = $_GET['ir'];
 
 <div class="content-wrapper">
     <div class="container-fluid">
+                 <form id="FORMULARIo"  method="post" class="form-register" action="antiguo3.php?ir=<?php echo $antiguo; ?>" >
+            <div style="text-align:right;">
+                 <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
+             </div>
+        </form>
+
         <font face="Arial Narrow" size="5" color="#001f4d">Ficha de registro de estudiantes.
         </font>
         <form id="FORMULARIO_VALIDADO"  method="post" class="form-register" >
@@ -318,18 +324,12 @@ $antiguo = $_GET['ir'];
                 </div>
             </div>
         </form>
-         <form id="FORMULARIo"  method="post" class="form-register" action="antiguo3.php?ir=<?php echo $antiguo; ?>" >
-             <div class="text-center">
-                 <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
-             </div>
-        </form>
-
     </div>
 </div>
 <!--Cierre Mi codigo -->
 
 <?php
-if (isset($_REQUEST['Siguiente'])) {
+if (isset($_REQUEST['pase'])) {
     try {
     include_once '../conexion/php_conexion.php';
     $turno = $_REQUEST["turno"];

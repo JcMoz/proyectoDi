@@ -77,6 +77,12 @@ $antiguo = $_GET['ir'];
 <!-- /.content-wrapper -->
 <div class="content-wrapper">
     <div class="container-fluid">
+        <form id="FORMULARIo"  method="post" class="form-register" action="antiguo2.php?ir=<?php echo $antiguo; ?>" >
+             <div style="text-align:right;">
+                 <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
+             </div>
+        </form>
+        
          <?php
         $sacarIns=  mysqli_query($conexion,"SELECT*FROM alumno INNER JOIN c_inscripcion ON alumno.id_alumno=c_inscripcion.id_alumno WHERE "
                 . "c_inscripcion.id_alumno='$antiguo'");
@@ -106,10 +112,7 @@ $antiguo = $_GET['ir'];
         </font>
         <!--comienza formulario-->
        
-        
-        <form id="FORMULARIO_VALIDADO"  method="post" class="form-register" >
-            <input type="hidden" name="pase" id="pase"/>
-
+    
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-default">
@@ -187,13 +190,16 @@ $antiguo = $_GET['ir'];
 
                     </div>
                 </div>
-
+                 
 
 
             </div> 
         </form>
+        
                 <?php }?>
+
     </div>
+     
 
 </div>
 
@@ -201,37 +207,27 @@ $antiguo = $_GET['ir'];
 <?php
 
 if (isset($_REQUEST['siguiente'])) {
-//    try{
-//    include_once '../conexion/php_conexion.php';
+    try{
+    include_once '../conexion/php_conexion.php';
     $nombre = $_POST["nombreA"];
-//    $apellido = $_POST["apellidosA"];
-//    $gen = $_POST["Genero"];
-//    $fecha = $_POST["fecha"];
-//    $nie = $_POST["nie"];
-//    $nac = $_POST["na"];
-//    $dir = $_POST["direccion"];
-//    $distancia = $_POST["distanciaC"];
-//    $depa = $_POST["depto"];
-//    $muni = $_POST["municipio"];
-//    $telefono = $_POST["telefono"];
-       mysqli_query($conexion,"INSERT INTO alumno( nom_alumno,ape_alumno,gen_alumno,f_nac_alum,nie,nac_alum,dir_alum,distancia,depto_alum,mun_alum,tel) VALUES ('$nombre','$apellido','$gen','$fecha','$nie','$nac','$dir','$distancia','$depa','$muni','$telefono')");
-//    
-//     echo '<script>swal({
-//                    title: "Exito",
-//                    text: "El registro ha sido Guardado!",
-//                    type: "success",
-//                    confirmButtonText: "ok",
-//                    closeOnConfirm: false
-//                },
-//                function () {
-//                    location.href="inscripcionNuevo3.php";
-//                    
-//                });</script>';
-//    } catch (Exception $exc) {
-//         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
-//               
-//    }
-//
+    $apellido = $_POST["apellidosA"];
+    $nie = $_POST["nie"];
+    $nac = $_POST["na"];
+    $dir = $_POST["direccion"];
+    $distancia = $_POST["distanciaC"];
+    $depa = $_POST["depto"];
+    $muni = $_POST["municipio"];
+    $telefono = $_POST["telefono"];
+       mysqli_query($conexion,"UPDATE alumno SET nom_alumno='$nombre',ape_alumno='$apellido',"
+               . "nie='$nie',nac_alum='$nac',dir_alum='$dir',distancia='$distancia',depto_alum='$depa',"
+               . "mun_alum='$muni',tel='$telefono' WHERE id_alumno='$prueba'");
+       echo '<script>swal("Registro Actualizado!", "Presione Ok!", "success")</script>';
+
+    } catch (Exception $exc) {
+         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
+               
+    }
+
 }
 
 include_once '../plantilla/fin_plantilla.php';

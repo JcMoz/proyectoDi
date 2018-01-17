@@ -282,9 +282,8 @@ if (isset($_REQUEST['pasar'])) {
                     closeOnConfirm: false
                 },
                 function () {
-                    location.href="antiguo_encargado.php";
-                    
-//                });</script>';
+                    location.href="buscarAlumno.php";
+                   });</script>';
     } catch (Exception $exc) {
         echo '<script>swal("No se puedo realizar el registro", "Favor revisar los datos", "error");</script>';
     }

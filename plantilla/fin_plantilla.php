@@ -19,6 +19,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
+          <??>      
                 <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -29,7 +30,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="../seguridad/cambiar.php" class="btn">
                 <button class="btn btn-success btn-block btn-large " type="button"  data-toggle="modal" data-target="#cambiar">Cambiar Contraseña </button>
+                </a>
                 <a class="btn btn-primary" href="#">Cerrar sesión</a>
             </div>
         </div>

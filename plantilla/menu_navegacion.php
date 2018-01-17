@@ -69,7 +69,7 @@
                         <a href="../seguridad/bitacora.php"  style="color: white">Bitácora</a>
                     </li>
                     <li>
-                        <a href="mantenimientoUsuarios.php"  style="color: white">Mantenimiento de usuarios</a>
+                        <a href="../seguridad/usuarios.php"  style="color: white">Mantenimiento de usuarios</a>
                     </li>
                 </ul>
             </li>

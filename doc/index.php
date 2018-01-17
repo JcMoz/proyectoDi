@@ -83,9 +83,11 @@ include_once '../mensajes.php';
                 if (!empty($_POST['usu']) and ! empty($_POST['con'])) {
                     $usu = $_POST['usu'];
                     $con = $_POST['con'];
-                    $consulta = mysqli_query($conexion, "SELECT * FROM usuarios WHERE user='$usu' AND con='$con'");
+                    $consulta = mysqli_query($conexion, "SELECT * FROM usuarios WHERE user='$usu'");
                     if ($row = mysqli_fetch_array($consulta)) {
-                        if ($row['estado'] == 'a') {
+                        $contra=$row['con'];
+                       // if (password_verify($con, $contra)) {
+                            if ($row['estado'] == 'a') {
                             $nombre = $row['user'];
                             $nombre = explode(" ", $nombre);
                             $nombre = $nombre[0];
@@ -97,6 +99,9 @@ include_once '../mensajes.php';
                             echo '<center><img src="../imagenes/cargando2.gif" width="90" height="90"></center><br>';
                             echo '<meta http-equiv="refresh" content="2;url=principal.php">';
                         }
+                            
+                       // }
+                        
                     }
                 } else {
                     echo '	<input type="text" name="usu" class="form-control" placeholder="Documento" autocomplete="off" required>
