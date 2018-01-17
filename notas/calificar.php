@@ -48,20 +48,21 @@ $materia = $_GET['llego'];
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <?php
-                $s_grado=  mysqli_query($conexion,"SELECT*FROM grado WHERE id_grado='$grado'");
-                while ($ver=  mysqli_fetch_array($s_grado)){
-                    $v_grado=$ver['nom_grado'];
+                $s_grado = mysqli_query($conexion, "SELECT*FROM grado WHERE id_grado='$grado'");
+                while ($ver = mysqli_fetch_array($s_grado)) {
+                    $v_grado = $ver['nom_grado'];
                 }
                 ?>
                 <div align="center">
-                    <font face="Arial Narrow" size="5" color="#001f4d">Alumnos de <?php echo $v_grado;?> grado</font>
+                    <font face="Arial Narrow" size="5" color="#001f4d">Alumnos de <?php echo $v_grado; ?> grado</font>
                     <img src="../imagenes/boletin.png" width="65" height="65">
                 </div>
                 <br/>
                 <!--Comienza tabla-->
                 <div class="panel-body">
-
-
+                    <?php
+                    if ($grado == 1|| $grado == 2 || $grado == 3 || $grado == 4) {
+                    ?>
                     <table class="table table-bordered table table-active">
                         <thead class="">
 
@@ -76,32 +77,64 @@ $materia = $_GET['llego'];
                         <tbody>
                             <?php
                             $alumnos = mysqli_query($conexion, "SELECT*FROM inscripcion INNER JOIN alumno on inscripcion.id_alumno=alumno.id_alumno WHERE id_grado='$grado'");
-                            while ($row=  mysqli_fetch_array($alumnos)){
-                                $nombre=$row['nie'];
-                                $id=$row['id_inscripcion'];
-                                
-                            ?>
+                            while ($row = mysqli_fetch_array($alumnos)) {
+                                $nombre = $row['nie'];
+                                $id = $row['id_inscripcion'];
+                                ?>
 
-                            <tr>
-                                <td class="text-center"><?php echo $row['nie'];?></td>
-                                <td class="text-center"><?php echo $row['nom_alumno'];?></td>
-                                <td class="text-center"><?php echo $row['ape_alumno'];?></td>
-                                <td class="text-center"><a href="../notas/ingresar_notas.php?ir=<?php echo $grado;?>&llego=<?php echo $materia;?>&id=<?php echo $id; ?>" class="btn">Calificar</a></td>
+                                <tr>
+                                    <td class="text-center"><?php echo $row['nie']; ?></td>
+                                    <td class="text-center"><?php echo $row['nom_alumno']; ?></td>
+                                    <td class="text-center"><?php echo $row['ape_alumno']; ?></td>
+                                    <td class="text-center"><a href="../notas/ingresar_notas.php?ir=<?php echo $grado; ?>&llego=<?php echo $materia; ?>&id=<?php echo $id; ?>" class="btn">Calificar</a></td>
 
-                            </tr>
-                            <?php }?>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table> <!--termina tabla-->
+                    <?php } else{?>
+                    <table class="table table-bordered table table-active">
+                        <thead class="">
+
+                        <th class="text-center">NIE</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Apellido</th>
+                        <th class="text-center">Acción</th>
+
+
+                        </thead>
+
+                        <tbody>
+                            <?php
+                            $alumnos = mysqli_query($conexion, "SELECT*FROM inscripcion INNER JOIN alumno on inscripcion.id_alumno=alumno.id_alumno WHERE id_grado='$grado'");
+                            while ($row = mysqli_fetch_array($alumnos)) {
+                                $nombre = $row['nie'];
+                                $id = $row['id_inscripcion'];
+                                ?>
+
+                                <tr>
+                                    <td class="text-center"><?php echo $row['nie']; ?></td>
+                                    <td class="text-center"><?php echo $row['nom_alumno']; ?></td>
+                                    <td class="text-center"><?php echo $row['ape_alumno']; ?></td>
+                                    <td class="text-center"><a href="../notas/ingresar_notas2.php?ir=<?php echo $grado; ?>&llego=<?php echo $materia; ?>&id=<?php echo $id; ?>" class="btn">Calificar</a></td>
+
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table> <!--termina tabla-->
+                    <?php    
+                    }
+                    ?>
                 </div><!--div panel body-->
             </div><!--div row 10-->
             <div class="col-md-2"></div><!--margen de dos-->
         </div><!--fin de row-->
         <div class="text-center">
             <a href="../notas/cuadro_notas.php?ir=<?php echo $grado; ?>&llego=<?php echo $materia; ?>" class="btn">
-             <button class="btn btn-outline-success">Consultar Cuadro de notas</button>
+                <button class="btn btn-outline-success">Consultar Cuadro de notas</button>
             </a>
         </div>
-        </div><!--fin container fluid-->
+    </div><!--fin container fluid-->
 
 </div>
 

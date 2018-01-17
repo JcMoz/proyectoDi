@@ -31,9 +31,9 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <a href="../seguridad/cambiar.php" class="btn">
-                <button class="btn btn-success btn-block btn-large " type="button"  data-toggle="modal" data-target="#cambiar">Cambiar Contraseña </button>
+                <button class="btn btn-success btn-block btn-large " type="button">Cambiar Contraseña </button>
                 </a>
-                <a class="btn btn-primary" href="#">Cerrar sesión</a>
+                <a class="btn btn-primary" href="../doc/cerrar.php">Cerrar sesión</a>
             </div>
         </div>
     </div>

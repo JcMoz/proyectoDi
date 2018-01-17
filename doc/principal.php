@@ -1,5 +1,6 @@
 <?php
 session_start();
+if($_SESSION['tipo_user']!=''){
 include_once '../conexion/php_conexion.php';
 try {
 if ($_SESSION['tipo_user']=='ad' or $_SESSION['tipo_user']=='p') {
@@ -43,4 +44,7 @@ if ($_SESSION['tipo_user']=='ad') {
 
 <?php
 include '../plantilla/fin_plantilla.php';
+}  else {
+    header("Location: index.php");
+}
 ?>

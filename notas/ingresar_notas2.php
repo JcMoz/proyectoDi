@@ -29,9 +29,9 @@ if ($_SESSION['tipo_user'] == 'ad') {
 $grado = $_GET['ir'];
 $materia = $_GET['llego'];
 $alumno = $_GET['id'];
- $validarMaterias=  mysqli_query($conexion,"SELECT * FROM asignacion_a_g WHERE id_docentes='$profesor' AND id_gra='$grado'");
+ $validarMaterias=  mysqli_query($conexion,"SELECT*FROM asignacion_m WHERE id_docente='$profesor' AND id_materia='$materia'");
  while ($teto=  mysqli_fetch_array($validarMaterias)){
-     $id_Asignacion=$teto['id_asignacion'];
+     $id_Asignacion=$teto['id_asig_m'];
  }
  $hoysi=  mysqli_query($conexion,"SELECT * FROM actividades WHERE id_asignacion_a_g='$id_Asignacion' AND id_materia='$materia' AND estado_a='enProceso'");
 

@@ -104,7 +104,7 @@ include_once '../mensajes.php';
                         
                     }
                 } else {
-                    echo '	<input type="text" name="usu" class="form-control" placeholder="Documento" autocomplete="off" required>
+                    echo '	<input type="text" name="usu" class="form-control" placeholder="Usuario" autocomplete="off" required>
 			        <input type="password" name="con" class="form-control" placeholder="Password" autocomplete="off" required>
 			        <div align="right"><button class="btn btn-large btn-primary" type="submit"><strong>Entrar</strong></button></div>';
                 }
